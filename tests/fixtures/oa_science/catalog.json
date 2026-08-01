@@ -1,0 +1,24 @@
+[
+  {
+    "id": "fixture-oa-001",
+    "title": "Fixture OA Science Abstract (local)",
+    "authors": [
+      "SkyCache Fixture"
+    ],
+    "license": "cc-by-4.0",
+    "subjects": [
+      "science",
+      "stem",
+      "open_access"
+    ],
+    "language": "en",
+    "url": "sample-paper.txt",
+    "source": "fixture"
+  },
+  {
+    "id": "blocked-arr",
+    "title": "Should be skipped",
+    "license": "all rights reserved commercial",
+    "url": "sample-paper.txt"
+  }
+]

@@ -1,0 +1,9 @@
+# DHCP + captive-style DNS for SkyCache AP
+interface=wlan0
+bind-interfaces
+dhcp-range=10.0.0.50,10.0.0.200,12h
+dhcp-option=3,10.0.0.1
+dhcp-option=6,10.0.0.1
+address=/#/10.0.0.1
+domain=skycache.local
+local=/skycache.local/

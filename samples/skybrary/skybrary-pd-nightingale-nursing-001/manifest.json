@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-nightingale-nursing-001",
+  "kind": "skybrary_text",
+  "priority_class": "health",
+  "title": {
+    "en": "Notes on Nursing - ventilation & cleanliness excerpts (Nightingale)"
+  },
+  "summary": {
+    "en": "Public-domain nursing education excerpts - historical hygiene literacy, not modern clinical protocol."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 4742,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-nightingale-nursing-001",
+        "title": {
+          "en": "Notes on Nursing - ventilation & cleanliness excerpts (Nightingale)"
+        },
+        "creators": [
+          "Florence Nightingale"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "medicine",
+          "history_pd",
+          "safety"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain nursing education excerpts - historical hygiene literacy, not modern clinical protocol."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-nightingale-nursing-001-txt",
+        "work_id": "skybrary-pd-nightingale-nursing-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1915,
+        "sha256": "11f8eb00dcec5e960e85eabf1d36fa5a7b63e9223aadc331e5b47d472db77924",
+        "priority_class": "health",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "11f8eb00dcec5e960e85eabf1d36fa5a7b63e9223aadc331e5b47d472db77924"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 2827,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1915,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "medicine",
+    "history_pd",
+    "safety",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}

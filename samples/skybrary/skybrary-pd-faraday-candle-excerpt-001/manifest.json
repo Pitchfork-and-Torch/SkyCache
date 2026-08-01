@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-faraday-candle-excerpt-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Faraday: The Chemical History of a Candle (excerpt)"
+  },
+  "summary": {
+    "en": "Classic public-domain science lecture excerpt on flame and air."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2177,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-faraday-candle-excerpt-001",
+        "title": {
+          "en": "Faraday: The Chemical History of a Candle (excerpt)"
+        },
+        "creators": [
+          "Michael Faraday"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "science",
+          "stem",
+          "literacy",
+          "education"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Classic public-domain science lecture excerpt on flame and air."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-faraday-candle-excerpt-001-txt",
+        "work_id": "skybrary-pd-faraday-candle-excerpt-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 651,
+        "sha256": "44e647179880de3665a6e0a328e92f5bdd1dd19acd5be4e2b945899f80813cd8",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "44e647179880de3665a6e0a328e92f5bdd1dd19acd5be4e2b945899f80813cd8"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1526,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 651,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "science",
+    "stem",
+    "literacy",
+    "education",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

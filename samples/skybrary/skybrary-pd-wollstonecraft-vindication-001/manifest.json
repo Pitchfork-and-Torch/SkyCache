@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-wollstonecraft-vindication-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)"
+  },
+  "summary": {
+    "en": "Public-domain feminist philosophy excerpt for civics and history literacy."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 8281,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-wollstonecraft-vindication-001",
+        "title": {
+          "en": "A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)"
+        },
+        "creators": [
+          "Mary Wollstonecraft"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "civics",
+          "literacy",
+          "heritage"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain feminist philosophy excerpt for civics and history literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-wollstonecraft-vindication-001-txt",
+        "work_id": "skybrary-pd-wollstonecraft-vindication-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 3683,
+        "sha256": "e3555120c4e1d1391c891f73c3fad67e5616865a48b1b1524e84161d10da1f51",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "e3555120c4e1d1391c891f73c3fad67e5616865a48b1b1524e84161d10da1f51"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 4598,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 3683,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "civics",
+    "literacy",
+    "heritage",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

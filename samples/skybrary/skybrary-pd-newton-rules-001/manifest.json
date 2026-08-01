@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-newton-rules-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Newton - Rules of Reasoning in Philosophy (Principia excerpt)"
+  },
+  "summary": {
+    "en": "Public-domain scientific method principles for STEM education packs."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 4736,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-newton-rules-001",
+        "title": {
+          "en": "Newton - Rules of Reasoning in Philosophy (Principia excerpt)"
+        },
+        "creators": [
+          "Isaac Newton"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "science",
+          "stem",
+          "history_pd"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain scientific method principles for STEM education packs."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-newton-rules-001-txt",
+        "work_id": "skybrary-pd-newton-rules-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1922,
+        "sha256": "00bc8d8c683f085a752d72556e124c9eb3e066b6d24a31e4f3c06e72440f44bd",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "00bc8d8c683f085a752d72556e124c9eb3e066b6d24a31e4f3c06e72440f44bd"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 2814,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1922,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "science",
+    "stem",
+    "history_pd",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

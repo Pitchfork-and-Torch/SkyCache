@@ -1,0 +1,44 @@
+{
+  "id": "education-reading-001",
+  "kind": "html_pack",
+  "priority_class": "education",
+  "title": {
+    "en": "Reading corner",
+    "fr": "Coin lecture",
+    "es": "Rincón de lectura",
+    "sw": "Kona ya kusoma",
+    "hi": "पठन कोना",
+    "pt": "Canto de leitura",
+    "ar": "ركن القراءة"
+  },
+  "summary": {
+    "en": "Short literacy demo. Replace with Kiwix ZIM packs in production."
+  },
+  "languages": [
+    "en",
+    "fr",
+    "es",
+    "sw"
+  ],
+  "received_at": "2026-07-27T00:28:43.121615+00:00",
+  "freshness_hours": 8760,
+  "license": "CC-BY-4.0",
+  "source": {
+    "type": "sample",
+    "legal_note": "Sample open content",
+    "plugin": "sim_file"
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 618
+    }
+  ],
+  "tags": [
+    "education",
+    "literacy"
+  ],
+  "icon": "education",
+  "size_bytes": 618
+}

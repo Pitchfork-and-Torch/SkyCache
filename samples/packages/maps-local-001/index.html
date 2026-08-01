@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Offline maps notes  -  SkyCache</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 1.5rem auto; padding: 0 1rem;
+           line-height: 1.5; background: #0b1220; color: #f1f5f9; }
+    h1 { color: #5eead4; font-size: 1.35rem; }
+    .meta { color: #94a3b8; font-size: 0.9rem; }
+    code { background: #1e293b; padding: 0.1rem 0.35rem; border-radius: 4px; }
+    .banner { border: 1px solid #1e3a5f; background: #0f172a; padding: 0.75rem; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <p class="meta">SkyCache  |  maps-offline pack  |  CC-BY-4.0 sample</p>
+  <h1>Offline maps (operator guide)</h1>
+  <div class="banner">
+    This package is a <strong>license-clean placeholder + guide</strong> for offline maps.
+    Ship real <strong>MBTiles</strong> or OSM extracts only when the license (e.g. ODbL attribution)
+    is recorded in the package passport. Not a commercial map service. Not free broadband.
+  </div>
+  <h2>How villages use maps packs</h2>
+  <ol>
+    <li>Obtain an open extract (e.g. Geofabrik region) or self-built MBTiles.</li>
+    <li><code>skycache skybrary import-folder ./maps --license "ODbL" --subjects maps,mbtiles --ingest</code></li>
+    <li>Or place <code>region.mbtiles</code> in a package and: <code>skycache blobs put region.mbtiles</code></li>
+    <li>Build kit: <code>skycache skybrary pack --profile maps-offline</code></li>
+  </ol>
+  <h2>Priority</h2>
+  <p>Maps rank below Emergency and Health under disk pressure. The <code>maps-offline</code>
+  profile reserves room for life-safety packs.</p>
+  <p class="meta">See docs/content-packaging.md  |  pack profile maps-offline (v0.9.1)</p>
+</body>
+</html>

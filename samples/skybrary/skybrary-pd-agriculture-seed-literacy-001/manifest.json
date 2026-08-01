@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-agriculture-seed-literacy-001",
+  "kind": "skybrary_text",
+  "priority_class": "agriculture",
+  "title": {
+    "en": "Seed saving literacy (historical agricultural summary)"
+  },
+  "summary": {
+    "en": "Community seed literacy - not a substitute for agronomist advice."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2389,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-agriculture-seed-literacy-001",
+        "title": {
+          "en": "Seed saving literacy (historical agricultural summary)"
+        },
+        "creators": [
+          "Public-domain agricultural extension themes (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "agriculture",
+          "stem",
+          "literacy",
+          "education"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Community seed literacy - not a substitute for agronomist advice."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-agriculture-seed-literacy-001-txt",
+        "work_id": "skybrary-pd-agriculture-seed-literacy-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 735,
+        "sha256": "42819c512676af091601f4f617aff5772452047426a14271fb0b6afc4b98b8f3",
+        "priority_class": "agriculture",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "42819c512676af091601f4f617aff5772452047426a14271fb0b6afc4b98b8f3"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1654,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 735,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "agriculture",
+    "stem",
+    "literacy",
+    "education",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

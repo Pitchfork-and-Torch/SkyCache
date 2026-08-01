@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SkyCache">
+  <rect width="512" height="512" rx="96" fill="#0b1220"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#2dd4bf" stroke-width="18" opacity="0.35"/>
+  <circle cx="256" cy="256" r="98" fill="none" stroke="#22d3ee" stroke-width="14" opacity="0.55"/>
+  <circle cx="256" cy="256" r="36" fill="#2dd4bf"/>
+  <ellipse cx="256" cy="256" rx="190" ry="70" fill="none" stroke="#5eead4" stroke-width="12" transform="rotate(-25 256 256)" opacity="0.9"/>
+  <ellipse cx="256" cy="256" rx="190" ry="70" fill="none" stroke="#0891b2" stroke-width="10" transform="rotate(35 256 256)" opacity="0.55"/>
+  <circle cx="390" cy="175" r="14" fill="#67e8f9"/>
+  <circle cx="140" cy="320" r="10" fill="#34d399"/>
+</svg>

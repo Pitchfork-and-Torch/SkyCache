@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-food-hygiene-001",
+  "kind": "skybrary_text",
+  "priority_class": "health",
+  "title": {
+    "en": "Food hygiene literacy (historical household summary)"
+  },
+  "summary": {
+    "en": "Household food safety literacy themes - not commercial food regulation."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2291,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-food-hygiene-001",
+        "title": {
+          "en": "Food hygiene literacy (historical household summary)"
+        },
+        "creators": [
+          "Public-domain domestic science and sanitation texts (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "safety",
+          "agriculture"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Household food safety literacy themes - not commercial food regulation."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-food-hygiene-001-txt",
+        "work_id": "skybrary-pd-food-hygiene-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 684,
+        "sha256": "8dd734d77b7b5c31cec1bf6aa132234f7c54fccfcfac81fa593bded6af315c2f",
+        "priority_class": "health",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "8dd734d77b7b5c31cec1bf6aa132234f7c54fccfcfac81fa593bded6af315c2f"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1607,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 684,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "safety",
+    "agriculture",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}

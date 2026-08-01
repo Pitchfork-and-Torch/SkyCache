@@ -1,0 +1,95 @@
+{
+  "id": "skybrary-pd-basho-ja-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Matsuo Basho - selected haiku (romaji)",
+    "ja": "Basho haiku (selected)"
+  },
+  "summary": {
+    "en": "Public-domain Basho haiku in romaji with English gloss for multilingual poetry literacy."
+  },
+  "languages": [
+    "ja",
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2294,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-basho-ja-001",
+        "title": {
+          "en": "Matsuo Basho - selected haiku (romaji)",
+          "ja": "Basho haiku (selected)"
+        },
+        "creators": [
+          "Matsuo Basho"
+        ],
+        "languages": [
+          "ja",
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "poetry",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain Basho haiku in romaji with English gloss for multilingual poetry literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-basho-ja-001-txt",
+        "work_id": "skybrary-pd-basho-ja-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 724,
+        "sha256": "3b2b5a6f841b1fd68d61ae212dd093bfb93d8c5cd85458bfd1e12f256f83664b",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "3b2b5a6f841b1fd68d61ae212dd093bfb93d8c5cd85458bfd1e12f256f83664b"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1570,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 724,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "poetry",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

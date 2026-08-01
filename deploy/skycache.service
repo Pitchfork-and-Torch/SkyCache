@@ -1,0 +1,24 @@
+[Unit]
+Description=SkyCache community content hub
+After=network.target
+
+[Service]
+Type=simple
+User=skycache
+Group=skycache
+WorkingDirectory=/opt/skycache
+Environment=SKYCACHE_DATA_DIR=/var/lib/skycache
+Environment=SKYCACHE_HOST=0.0.0.0
+Environment=SKYCACHE_PORT=8080
+# Set to 0 / false for live-ready deployments after content is loaded
+Environment=SKYCACHE_SIM_MODE=false
+ExecStart=/opt/skycache/.venv/bin/python -m skycache serve --data-dir /var/lib/skycache --host 0.0.0.0 --port 8080
+Restart=on-failure
+RestartSec=5
+
+# Hardening (adjust if USB SDR access requires more)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
