@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0b1220"/>
+  <rect x="40" y="40" width="1200" height="640" rx="24" fill="#111827" stroke="#2dd4bf" stroke-width="3"/>
+  <text x="80" y="120" fill="#5eead4" font-family="system-ui,sans-serif" font-size="28">SkyCache dual-radio validation  |  06</text>
+  <text x="80" y="220" fill="#f1f5f9" font-family="system-ui,sans-serif" font-size="48" font-weight="700">Portal over mesh</text>
+  <text x="80" y="320" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="28"><tspan x="80" dy="0">Phone joins client SSID; curl /api/health;</tspan>
+<tspan x="80" dy="1.35em">Library works offline.</tspan></text>
+  <text x="80" y="640" fill="#64748b" font-family="system-ui,sans-serif" font-size="20">Unlicensed Wi-Fi/ISM  |  not free commercial broadband</text>
+</svg>

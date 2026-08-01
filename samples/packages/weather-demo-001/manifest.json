@@ -1,0 +1,48 @@
+{
+  "id": "weather-demo-001",
+  "kind": "weather_image",
+  "priority_class": "weather",
+  "title": {
+    "en": "Demo weather map",
+    "fr": "Carte météo démo",
+    "es": "Mapa del tiempo (demo)",
+    "sw": "Ramani ya hali ya hewa",
+    "pt": "Mapa do tempo (demo)"
+  },
+  "summary": {
+    "en": "Placeholder weather image. Live systems use SatDump APT/LRPT/HRIT products."
+  },
+  "languages": [
+    "en",
+    "fr",
+    "es",
+    "sw",
+    "pt"
+  ],
+  "received_at": "2026-07-27T00:28:43.121615+00:00",
+  "freshness_hours": 12,
+  "license": "CC-BY-4.0",
+  "source": {
+    "type": "sample",
+    "legal_note": "Synthetic demo image, not a real satellite pass",
+    "plugin": "sim_file"
+  },
+  "files": [
+    {
+      "path": "map.png",
+      "mime": "image/png",
+      "size_bytes": 837
+    },
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 439
+    }
+  ],
+  "tags": [
+    "weather",
+    "demo"
+  ],
+  "icon": "weather",
+  "size_bytes": 1276
+}

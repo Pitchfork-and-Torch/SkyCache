@@ -1,0 +1,44 @@
+{
+  "id": "maps-local-001",
+  "kind": "html_pack",
+  "priority_class": "maps",
+  "title": {
+    "en": "Offline maps operator guide",
+    "fr": "Guide cartes hors ligne",
+    "es": "Guía de mapas sin conexión",
+    "sw": "Mwongozo wa ramani nje ya mtandao",
+    "pt": "Guia de mapas offline"
+  },
+  "summary": {
+    "en": "License-clean guide for MBTiles / OSM extracts in maps-offline kits (sample; add real tiles with ODbL/CC attribution)."
+  },
+  "languages": ["en", "fr", "es", "sw", "pt"],
+  "received_at": "2026-07-30T00:00:00+00:00",
+  "freshness_hours": 8760,
+  "license": "CC-BY-4.0",
+  "source": {
+    "type": "sample",
+    "legal_note": "Guide only  -  real map data must carry its own license passport (e.g. ODbL).",
+    "plugin": "sim_file",
+    "extra": {
+      "subjects": ["maps", "mbtiles", "osm", "geography"]
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1800,
+      "role": "index"
+    },
+    {
+      "path": "MAPS-README.txt",
+      "mime": "text/plain",
+      "size_bytes": 900,
+      "role": "payload"
+    }
+  ],
+  "tags": ["maps", "mbtiles", "osm", "geography", "local_maps"],
+  "icon": "maps",
+  "size_bytes": 2700
+}

@@ -1,0 +1,95 @@
+{
+  "id": "skybrary-pd-tagore-bn-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Tagore - Gitanjali selections (public domain EN)",
+    "bn": "Gitanjali (selected EN)"
+  },
+  "summary": {
+    "en": "Public-domain English Gitanjali selections (1913 Nobel tradition) for heritage literacy."
+  },
+  "languages": [
+    "en",
+    "bn"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 3225,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-tagore-bn-001",
+        "title": {
+          "en": "Tagore - Gitanjali selections (public domain EN)",
+          "bn": "Gitanjali (selected EN)"
+        },
+        "creators": [
+          "Rabindranath Tagore"
+        ],
+        "languages": [
+          "en",
+          "bn"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "poetry",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain English Gitanjali selections (1913 Nobel tradition) for heritage literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-tagore-bn-001-txt",
+        "work_id": "skybrary-pd-tagore-bn-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1176,
+        "sha256": "58c37c87cf6ef0d753141de29f2194a8abcebbf51af13d6f0c1fdfed53cea8f7",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "58c37c87cf6ef0d753141de29f2194a8abcebbf51af13d6f0c1fdfed53cea8f7"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 2049,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1176,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "poetry",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

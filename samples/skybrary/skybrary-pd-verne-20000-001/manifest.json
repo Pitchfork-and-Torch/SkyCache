@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-verne-20000-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Twenty Thousand Leagues Under the Seas - Chapter I (Verne)"
+  },
+  "summary": {
+    "en": "Public-domain adventure/science fiction opening for literacy and STEM interest."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 7175,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-verne-20000-001",
+        "title": {
+          "en": "Twenty Thousand Leagues Under the Seas - Chapter I (Verne)"
+        },
+        "creators": [
+          "Jules Verne"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "science",
+          "children"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain adventure/science fiction opening for literacy and STEM interest."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-verne-20000-001-txt",
+        "work_id": "skybrary-pd-verne-20000-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 3145,
+        "sha256": "70ff5e9c1610b8b7c05ebe59ac75600b124391236d0c481a5646ee8a4d49afea",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "70ff5e9c1610b8b7c05ebe59ac75600b124391236d0c481a5646ee8a4d49afea"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 4030,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 3145,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "science",
+    "children",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

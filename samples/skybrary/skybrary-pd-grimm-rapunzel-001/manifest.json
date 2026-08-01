@@ -1,0 +1,90 @@
+{
+  "id": "skybrary-pd-grimm-rapunzel-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Rapunzel (Brothers Grimm, public-domain English)"
+  },
+  "summary": {
+    "en": "Public-domain fairy tale (curated full short form) for literacy kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 9773,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-grimm-rapunzel-001",
+        "title": {
+          "en": "Rapunzel (Brothers Grimm, public-domain English)"
+        },
+        "creators": [
+          "Jacob Grimm",
+          "Wilhelm Grimm"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "children",
+          "fable"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain fairy tale (curated full short form) for literacy kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-grimm-rapunzel-001-txt",
+        "work_id": "skybrary-pd-grimm-rapunzel-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 4445,
+        "sha256": "d0861919931c872fe0677f9e8e1185e085a8c942a08a887bf5da4756524ff7f4",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "d0861919931c872fe0677f9e8e1185e085a8c942a08a887bf5da4756524ff7f4"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 5328,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 4445,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "children",
+    "fable",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "agriculture-soil-001",
+  "kind": "html_pack",
+  "priority_class": "agriculture",
+  "title": {
+    "en": "Soil cover tips",
+    "fr": "Couverture du sol",
+    "es": "Cobertura del suelo",
+    "sw": "Kufunika udongo",
+    "pt": "Cobertura do solo",
+    "hi": "मिट्टी ढकना"
+  },
+  "summary": {
+    "en": "Simple mulching and soil-cover tips for smallholders."
+  },
+  "languages": [
+    "en",
+    "fr",
+    "es",
+    "sw",
+    "pt",
+    "hi"
+  ],
+  "received_at": "2026-07-27T00:28:43.121615+00:00",
+  "freshness_hours": 8760,
+  "license": "CC-BY-4.0",
+  "source": {
+    "type": "sample",
+    "legal_note": "Sample open content",
+    "plugin": "sim_file"
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 619
+    }
+  ],
+  "tags": [
+    "agriculture",
+    "soil"
+  ],
+  "icon": "agriculture",
+  "size_bytes": 619
+}

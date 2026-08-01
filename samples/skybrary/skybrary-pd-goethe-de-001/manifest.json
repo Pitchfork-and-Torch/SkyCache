@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-goethe-de-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Erlkoenig (Goethe)",
+    "de": "Erlkoenig"
+  },
+  "summary": {
+    "en": "Full public-domain German ballad for multilingual poetry literacy."
+  },
+  "languages": [
+    "de"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 3638,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-goethe-de-001",
+        "title": {
+          "en": "Erlkoenig (Goethe)",
+          "de": "Erlkoenig"
+        },
+        "creators": [
+          "Johann Wolfgang von Goethe"
+        ],
+        "languages": [
+          "de"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "poetry",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Full public-domain German ballad for multilingual poetry literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-goethe-de-001-txt",
+        "work_id": "skybrary-pd-goethe-de-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1409,
+        "sha256": "bb88a6c590ac3a393cafa40092e0dec7854f30b18e473adbfdc7c156e015e41e",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "bb88a6c590ac3a393cafa40092e0dec7854f30b18e473adbfdc7c156e015e41e"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 2229,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1409,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "poetry",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-gettysburg-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Gettysburg Address (Abraham Lincoln)"
+  },
+  "summary": {
+    "en": "U.S. public-domain civic text (full short address)."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 3875,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-gettysburg-001",
+        "title": {
+          "en": "Gettysburg Address (Abraham Lincoln)"
+        },
+        "creators": [
+          "Abraham Lincoln"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "literacy",
+          "civics"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "U.S. public-domain civic text (full short address)."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-gettysburg-001-txt",
+        "work_id": "skybrary-pd-gettysburg-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1515,
+        "sha256": "850ce13ee8fe7f02adc9146c51bcc600a5dc4a94bf34d29d9df5c567a73ad2b9",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "850ce13ee8fe7f02adc9146c51bcc600a5dc4a94bf34d29d9df5c567a73ad2b9"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 2360,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1515,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "literacy",
+    "civics",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

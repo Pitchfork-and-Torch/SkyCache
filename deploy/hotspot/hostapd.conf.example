@@ -1,0 +1,16 @@
+# Example hostapd config for SkyCache WiFi AP
+# Interface name varies (wlan0, wlan1). Use a dedicated USB WiFi adapter if needed.
+interface=wlan0
+driver=nl80211
+ssid=SkyCache-Local
+hw_mode=g
+channel=6
+wmm_enabled=1
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+# Open network for maximum phone compatibility in schools (or set WPA2 below)
+# wpa=2
+# wpa_passphrase=change-me-please
+# wpa_key_mgmt=WPA-PSK
+# rsn_pairwise=CCMP

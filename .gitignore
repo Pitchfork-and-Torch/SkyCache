@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg
+
+# SkyCache runtime data (local)
+data/
+*.db
+*.sqlite3
+
+# Local RX tool downloads (rtl-sdr zips / bins - not product source)
+tools/rx-windows/
+
+# SDR captures (large)
+samples/iq/*.iq
+samples/iq/*.wav
+samples/iq/*.ts
+!samples/iq/README.md
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Secrets never commit
+*.pem
+*.key
+*token*
+*secret*
+.env.*
+!*.example

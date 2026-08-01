@@ -1,0 +1,90 @@
+{
+  "id": "skybrary-pd-euclid-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Euclid's Elements - Book I Definitions (public domain)"
+  },
+  "summary": {
+    "en": "Classic geometry definitions for STEM literacy kits (Book I defs)."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 5520,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-euclid-001",
+        "title": {
+          "en": "Euclid's Elements - Book I Definitions (public domain)"
+        },
+        "creators": [
+          "Euclid",
+          "Thomas L. Heath (translator, public domain)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "science",
+          "stem",
+          "math",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Classic geometry definitions for STEM literacy kits (Book I defs)."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-euclid-001-txt",
+        "work_id": "skybrary-pd-euclid-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2300,
+        "sha256": "fd3177eae63eb8fd19b412ff64abed46fed91a43ad9a3ee6bd54f302962460f5",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "fd3177eae63eb8fd19b412ff64abed46fed91a43ad9a3ee6bd54f302962460f5"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3220,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2300,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "science",
+    "stem",
+    "math",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

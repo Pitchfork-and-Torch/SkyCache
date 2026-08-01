@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-lafontaine-fr-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "La Cigale et la Fourmi (La Fontaine)",
+    "fr": "La Cigale et la Fourmi"
+  },
+  "summary": {
+    "en": "Classic French public-domain fable (full short text) for multilingual literacy demos."
+  },
+  "languages": [
+    "fr"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2235,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-lafontaine-fr-001",
+        "title": {
+          "en": "La Cigale et la Fourmi (La Fontaine)",
+          "fr": "La Cigale et la Fourmi"
+        },
+        "creators": [
+          "Jean de La Fontaine"
+        ],
+        "languages": [
+          "fr"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "fable",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Classic French public-domain fable (full short text) for multilingual literacy demos."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-lafontaine-fr-001-txt",
+        "work_id": "skybrary-pd-lafontaine-fr-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 693,
+        "sha256": "a0e31d45ea89a06b4ed163d4a9f655fe884d50ef8bedf3391d48532de4daf38e",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "a0e31d45ea89a06b4ed163d4a9f655fe884d50ef8bedf3391d48532de4daf38e"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1542,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 693,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "fable",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

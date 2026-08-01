@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SkyCache dual-radio validation</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#0b1220;color:#e2e8f0;margin:0;padding:1.5rem;line-height:1.45}
+h1{color:#5eead4} table{border-collapse:collapse;width:100%;font-size:.85rem;margin:1rem 0}
+th,td{border:1px solid #334155;padding:.4rem;text-align:left;vertical-align:top}
+th{background:#111827} .frame{margin:2rem 0;padding:1rem;border:1px solid #1e293b;border-radius:12px}
+.banner{background:#0f172a;border:1px solid #1e3a5f;padding:.75rem;border-radius:8px}
+</style></head><body>
+<h1>Dual-radio validation  -  all board models</h1>
+<div class="banner">Unlicensed mesh only. Not free commercial broadband. Operator verifies national spectrum rules per site.</div>
+<p>Shared day-one proof for village mesh. Sim path always available. Optional FFmpeg slideshow: <code>render-slideshow.sh</code>.</p>
+<h2>Board matrix</h2>
+<table><thead><tr><th>Board</th><th>Status</th><th>Mesh radio</th><th>Client radio</th><th>Notes</th></tr></thead>
+<tbody><tr><td>Raspberry Pi 4 (2 - 4 GB)</td><td>primary_supported</td><td>USB Wi-Fi adapter (ath9k_htc / mt76 recommended)</td><td>onboard wlan0 or second USB</td><td>Most common village BOM; dual USB radio for batman + hostapd</td></tr><tr><td>Raspberry Pi 5</td><td>primary_supported</td><td>USB Wi-Fi (PCIe HAT optional later)</td><td>onboard or USB</td><td>Same day-one script; watch 5 V power budget with dual radios</td></tr><tr><td>Raspberry Pi 3B+</td><td>supported_limited</td><td>USB Wi-Fi (onboard often weak for mesh)</td><td>onboard wlan0</td><td>1 GB RAM OK for portal; keep pack profiles small</td></tr><tr><td>Orange Pi 5 / similar RK3588</td><td>community</td><td>USB Wi-Fi</td><td>onboard if present</td><td>Debian/Ubuntu images vary; verify batctl/kernel module</td></tr><tr><td>OpenWrt dual AP + Pi Ethernet</td><td>recommended_field</td><td>OpenWrt batman-adv on APs</td><td>AP SSID for phones</td><td>Preferred field topology: Pi on Ethernet, mesh on APs</td></tr><tr><td>Laptop / CI sim (no RF)</td><td>always_green</td><td>sim</td><td>n/a</td><td>skycache nexus validate --nodes 2|3  -  zero hardware</td></tr></tbody></table>
+<h2>Storyboard</h2>
+<section class='frame'><h2>Legal rails</h2><p>Unlicensed Wi-Fi/ISM only. Receive-only satellite. Not free Starlink.</p><img src='frames/01-legal.svg' alt='Legal rails' width='100%'/></section><section class='frame'><h2>Identify two radios</h2><p>MESH_IF (batman) vs CLIENT_IF (hostapd phones). ip link; iw dev.</p><img src='frames/02-radios.svg' alt='Identify two radios' width='100%'/></section><section class='frame'><h2>batman-adv day-one</h2><p>sudo bash deploy/mesh/batman-day-one.sh  -  bat0 address 10.42.0.N</p><img src='frames/03-batman.svg' alt='batman-adv day-one' width='100%'/></section><section class='frame'><h2>Client AP</h2><p>hostapd on CLIENT_IF  -  SSID SkyCache-Village for phones.</p><img src='frames/04-client-ap.svg' alt='Client AP' width='100%'/></section><section class='frame'><h2>Peer visible</h2><p>batctl n shows neighbor. Second node same mesh SSID/channel.</p><img src='frames/05-peers.svg' alt='Peer visible' width='100%'/></section><section class='frame'><h2>Portal over mesh</h2><p>Phone joins client SSID; curl /api/health; Library works offline.</p><img src='frames/06-portal.svg' alt='Portal over mesh' width='100%'/></section><section class='frame'><h2>Sim fallback</h2><p>No hardware? skycache nexus validate --nodes 2 always green in CI.</p><img src='frames/07-sim.svg' alt='Sim fallback' width='100%'/></section>
+</body></html>
