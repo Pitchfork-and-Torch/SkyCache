@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-andersen-duckling-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "The Ugly Duckling (Hans Christian Andersen, PD English)"
+  },
+  "summary": {
+    "en": "Public-domain fairy tale (curated) for literacy and values discussion."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 8879,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-andersen-duckling-001",
+        "title": {
+          "en": "The Ugly Duckling (Hans Christian Andersen, PD English)"
+        },
+        "creators": [
+          "Hans Christian Andersen"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "children",
+          "fable"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain fairy tale (curated) for literacy and values discussion."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-andersen-duckling-001-txt",
+        "work_id": "skybrary-pd-andersen-duckling-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 3994,
+        "sha256": "da5959d47edf94db8990ddf92411205a11eb949bb3fa3ca9dec2d8553c628e1d",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "da5959d47edf94db8990ddf92411205a11eb949bb3fa3ca9dec2d8553c628e1d"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 4885,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 3994,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "children",
+    "fable",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

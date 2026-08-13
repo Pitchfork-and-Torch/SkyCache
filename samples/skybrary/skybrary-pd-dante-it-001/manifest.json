@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-dante-it-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Inferno Canto I opening (Dante)",
+    "it": "Inferno, Canto I (inizio)"
+  },
+  "summary": {
+    "en": "Public-domain Italian opening of the Divine Comedy Inferno (short)."
+  },
+  "languages": [
+    "it"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 1969,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-dante-it-001",
+        "title": {
+          "en": "Inferno Canto I opening (Dante)",
+          "it": "Inferno, Canto I (inizio)"
+        },
+        "creators": [
+          "Dante Alighieri"
+        ],
+        "languages": [
+          "it"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain Italian opening of the Divine Comedy Inferno (short)."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-dante-it-001-txt",
+        "work_id": "skybrary-pd-dante-it-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 567,
+        "sha256": "c75d4d2757f8fab1a603ee782efd3a404f4cada063080ec215a42b7b6c081f49",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "c75d4d2757f8fab1a603ee782efd3a404f4cada063080ec215a42b7b6c081f49"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1402,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 567,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

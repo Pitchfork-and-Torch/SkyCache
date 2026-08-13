@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-heat-cold-literacy-001",
+  "kind": "skybrary_text",
+  "priority_class": "emergency",
+  "title": {
+    "en": "Heat and cold exposure literacy (historical field summary)"
+  },
+  "summary": {
+    "en": "Field literacy on heat exhaustion and cold exposure themes - not clinical treatment."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2827,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-heat-cold-literacy-001",
+        "title": {
+          "en": "Heat and cold exposure literacy (historical field summary)"
+        },
+        "creators": [
+          "Public-domain first-aid and field hygiene sources (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "emergency",
+          "safety"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Field literacy on heat exhaustion and cold exposure themes - not clinical treatment."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-heat-cold-literacy-001-txt",
+        "work_id": "skybrary-pd-heat-cold-literacy-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 947,
+        "sha256": "9a6d121acd69d0f524eef131eda90002ca56355a734634b704ab8831d8f3a5a6",
+        "priority_class": "emergency",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "9a6d121acd69d0f524eef131eda90002ca56355a734634b704ab8831d8f3a5a6"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1880,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 947,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "emergency",
+    "safety",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}

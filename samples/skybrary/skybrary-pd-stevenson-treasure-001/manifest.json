@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-stevenson-treasure-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Treasure Island - Chapter I (Robert Louis Stevenson)"
+  },
+  "summary": {
+    "en": "Public-domain adventure novel opening for literacy kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 5808,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-stevenson-treasure-001",
+        "title": {
+          "en": "Treasure Island - Chapter I (Robert Louis Stevenson)"
+        },
+        "creators": [
+          "Robert Louis Stevenson"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "children"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain adventure novel opening for literacy kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-stevenson-treasure-001-txt",
+        "work_id": "skybrary-pd-stevenson-treasure-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2462,
+        "sha256": "32b98ed2249045d28a0e0a1a36325a63ccc05a1176b5bf572ac1e1c8f2e71851",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "32b98ed2249045d28a0e0a1a36325a63ccc05a1176b5bf572ac1e1c8f2e71851"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3346,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2462,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "children",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

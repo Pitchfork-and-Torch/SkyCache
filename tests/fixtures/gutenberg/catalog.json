@@ -1,0 +1,24 @@
+[
+  {
+    "id": "fixture-fox",
+    "title": "Fixture Fox Fable (local)",
+    "authors": [
+      "Traditional (fixture)"
+    ],
+    "language": "en",
+    "subjects": [
+      "literature_pd",
+      "literacy",
+      "fable"
+    ],
+    "text_url": "fixture-fox.txt"
+  },
+  {
+    "id": "fixture-skip-no-url",
+    "title": "Missing URL entry",
+    "language": "en",
+    "subjects": [
+      "literature_pd"
+    ]
+  }
+]
