@@ -4,7 +4,7 @@ help:
 	@echo "SkyCache targets:"
 	@echo "  make install  - install package + dev deps"
 	@echo "  make init     - create data dirs and load sample packages"
-	@echo "  make demo     - init + serve simulation mode"
+	@echo "  make demo     - first-boot sim node + serve (README golden path)"
 	@echo "  make serve    - run portal (use SKYCACHE_SIM=1 for sim)"
 	@echo "  make test     - run pytest"
 	@echo "  make doctor   - environment health check"
@@ -17,7 +17,12 @@ install:
 init:
 	python -m skycache init --load-samples
 
-demo: init
+# Matches README quick start: first-boot --sim, then local portal.
+# PIN is local-only demo default; change before any shared/field node.
+demo:
+	python scripts/make_sample_package.py
+	python -m skycache first-boot --data-dir data --yes --pin 739184 \
+		--ssid SkyCache-Sim --legal-rf-mode receive_only --sim
 	python -m skycache serve --sim --host 127.0.0.1 --port 8080
 
 serve:
