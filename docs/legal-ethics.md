@@ -13,6 +13,7 @@ SkyCache exists to improve **information access** for communities with little or
 - Wi-Fi hotspot and mesh operation remain subject to **national law** (EIRP, outdoor channels, DFS, registration).
 - Any amateur radio transmit beyond unlicensed mesh requires a **valid license** and is **outside** the default product scope.
 - Software validators refuse forbidden mesh/source keywords (`satellite-uplink`, commercial decrypt names, etc.).
+- RX ops doctor (`legal_receive_only`) is **fail-closed**: unknown, empty, or forbidden modes (Starlink / sat uplink / commercial decrypt) do not get a green check. Allowed modes stay satellite receive-only; ISM mesh TX is not satellite TX.
 
 ## 2. Allowed content and signals
 

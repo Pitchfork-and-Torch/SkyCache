@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from skycache import __version__
+from skycache.capabilities.modes import satellite_receive_only_ok
 from skycache.rx.doctor import rx_doctor_report
 
 HONEST = (
@@ -39,10 +40,17 @@ def _settings(data_dir: Path | None):
     return settings
 
 
-def rx_ops_status(*, data_dir: Path | None = None) -> dict[str, Any]:
+def rx_ops_status(
+    *,
+    data_dir: Path | None = None,
+    legal_rf_mode: str | None = None,
+) -> dict[str, Any]:
     """Station + duty + doctor snapshot for RX ops."""
     settings = _settings(data_dir)
-    doc = rx_doctor_report(data_dir=settings.data_dir)
+    doc = rx_doctor_report(
+        data_dir=settings.data_dir,
+        legal_rf_mode=legal_rf_mode,
+    )
     station = None
     try:
         from skycache.rx.station import load_station
@@ -81,7 +89,11 @@ def rx_ops_status(*, data_dir: Path | None = None) -> dict[str, Any]:
     }
 
 
-def rx_ops_doctor(*, data_dir: Path | None = None) -> dict[str, Any]:
+def rx_ops_doctor(
+    *,
+    data_dir: Path | None = None,
+    legal_rf_mode: str | None = None,
+) -> dict[str, Any]:
     """RX path readiness: product import always, decode path, station, legal rails."""
     settings = _settings(data_dir)
     checks: list[dict[str, Any]] = []
@@ -89,7 +101,10 @@ def rx_ops_doctor(*, data_dir: Path | None = None) -> dict[str, Any]:
     def add(cid: str, ok: bool, detail: str, weight: int = 10) -> None:
         checks.append({"id": cid, "ok": bool(ok), "detail": detail, "weight": weight})
 
-    base = rx_doctor_report(data_dir=settings.data_dir)
+    base = rx_doctor_report(
+        data_dir=settings.data_dir,
+        legal_rf_mode=legal_rf_mode,
+    )
     ready = base.get("ready") or {}
     tools = base.get("tools") or {}
     station = base.get("station")
@@ -119,10 +134,11 @@ def rx_ops_doctor(*, data_dir: Path | None = None) -> dict[str, Any]:
         f"station={'set' if station else 'missing'}",
         16,
     )
+    legal_ok, legal_detail = satellite_receive_only_ok(str(legal.get("mode") or ""))
     add(
         "legal_receive_only",
-        (legal.get("mode") == "receive_only") or True,
-        f"mode={legal.get('mode') or 'receive_only'}",
+        legal_ok,
+        legal_detail,
         16,
     )
     add(
@@ -131,10 +147,16 @@ def rx_ops_doctor(*, data_dir: Path | None = None) -> dict[str, Any]:
         f"rtl_device_seen={ready.get('rtl_device_seen')} (hardware optional for lab)",
         8,
     )
+    forbidden_txt = str(legal.get("forbidden") or "").lower()
+    no_claim = legal_ok and (
+        "starlink" in forbidden_txt or "commercial" in forbidden_txt
+    )
     add(
         "no_commercial_claim",
-        True,
-        "forbidden commercial decrypt / Starlink-class clients",
+        no_claim,
+        "forbidden commercial decrypt / Starlink-class clients"
+        if no_claim
+        else "legal banner missing commercial-decrypt refusal or mode failed",
         10,
     )
 
@@ -142,8 +164,11 @@ def rx_ops_doctor(*, data_dir: Path | None = None) -> dict[str, Any]:
     earned = sum(c["weight"] for c in checks if c["ok"])
     score = int(round(100.0 * earned / total_w))
     go_rx_lab = bool(ready.get("product_import"))
-    go_rx_live = go_rx_lab and bool(ready.get("live_decode_path")) and bool(
-        station and not (isinstance(station, dict) and station.get("error"))
+    go_rx_live = (
+        go_rx_lab
+        and legal_ok
+        and bool(ready.get("live_decode_path"))
+        and bool(station and not (isinstance(station, dict) and station.get("error")))
     )
 
     return {
@@ -329,6 +354,7 @@ Software v{__version__}
 {HONEST}
 
 - [ ] rx doctor go_rx_lab true
+- [ ] rx doctor legal_receive_only OK (fail-closed; not sat uplink / Starlink)
 - [ ] SatDump installed for live decode path
 - [ ] station lat/lon set for passes
 - [ ] RTL-SDR only if live capture planned (Zadig on Windows if needed)

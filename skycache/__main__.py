@@ -2073,11 +2073,25 @@ def cmd_rx_doctor(args: argparse.Namespace) -> int:
 
     settings = Settings(data_dir=Path(args.data_dir))
     if getattr(args, "legacy", False):
-        print(json.dumps(rx_doctor_report(data_dir=settings.data_dir), indent=2))
+        print(
+            json.dumps(
+                rx_doctor_report(
+                    data_dir=settings.data_dir,
+                    legal_rf_mode=settings.legal_rf_mode,
+                ),
+                indent=2,
+            )
+        )
         return 0
-    rep = rx_ops_doctor(data_dir=settings.data_dir)
+    rep = rx_ops_doctor(
+        data_dir=settings.data_dir,
+        legal_rf_mode=settings.legal_rf_mode,
+    )
     # attach raw tool inventory for field operators
-    raw = rx_doctor_report(data_dir=settings.data_dir)
+    raw = rx_doctor_report(
+        data_dir=settings.data_dir,
+        legal_rf_mode=settings.legal_rf_mode,
+    )
     rep["tools"] = raw.get("tools")
     rep["probes"] = raw.get("probes")
     rep["station"] = raw.get("station")

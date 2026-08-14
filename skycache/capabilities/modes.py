@@ -33,6 +33,34 @@ FORBIDDEN_MODE_KEYWORDS = frozenset(
 )
 
 
+def satellite_receive_only_ok(mode: str) -> tuple[bool, str]:
+    """Fail-closed: satellite RF stays receive-only.
+
+    Allowed legal_rf_mode values may enable unlicensed ISM mesh TX. None of them
+    enable satellite uplink or commercial constellation clients. Unknown or
+    forbidden mode strings fail (including empty).
+    """
+    lowered = (mode or "").strip().lower().replace(" ", "_")
+    if not lowered:
+        return False, "legal_rf_mode unset"
+    for bad in FORBIDDEN_MODE_KEYWORDS:
+        if bad in lowered:
+            return False, f"forbidden satellite/commercial mode keyword '{bad}'"
+    try:
+        from skycache.config import FORBIDDEN_SOURCE_KEYWORDS
+    except Exception:  # noqa: BLE001
+        FORBIDDEN_SOURCE_KEYWORDS = frozenset()
+    for bad in FORBIDDEN_SOURCE_KEYWORDS:
+        if bad in lowered:
+            return False, f"forbidden source/uplink keyword '{bad}'"
+    if lowered not in ALLOWED_MODES:
+        return False, (
+            f"unknown legal_rf_mode '{mode}' "
+            "(not an allowed satellite receive-only mode)"
+        )
+    return True, f"mode={lowered}; satellite TX never enabled"
+
+
 def validate_legal_rf_mode(mode: str, *, amateur_license_affirmed: bool = False) -> LegalRfMode:
     lowered = (mode or "").strip().lower().replace(" ", "_")
     for bad in FORBIDDEN_MODE_KEYWORDS:

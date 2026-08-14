@@ -97,7 +97,53 @@ def _satdump_probe(path: str) -> dict[str, Any]:
     return raw
 
 
-def rx_doctor_report(*, data_dir: Path | None = None) -> dict[str, Any]:
+def resolve_rx_legal_rf_mode(
+    data_dir: Path | None = None,
+    *,
+    legal_rf_mode: str | None = None,
+) -> str:
+    """Prefer an explicit mode, then first-boot state, then Settings."""
+    if legal_rf_mode and str(legal_rf_mode).strip():
+        return str(legal_rf_mode).strip()
+    if data_dir:
+        try:
+            from skycache.first_boot import read_first_boot_state
+
+            state = read_first_boot_state(Path(data_dir))
+            if state and state.get("legal_rf_mode"):
+                return str(state["legal_rf_mode"]).strip()
+        except Exception:  # noqa: BLE001
+            pass
+    from skycache.config import Settings
+
+    settings = Settings(data_dir=Path(data_dir) if data_dir else Path("data"))
+    return str(settings.legal_rf_mode or "").strip()
+
+
+def _rx_legal_block(
+    data_dir: Path | None,
+    *,
+    legal_rf_mode: str | None = None,
+) -> dict[str, Any]:
+    from skycache.capabilities.modes import satellite_receive_only_ok
+
+    mode = resolve_rx_legal_rf_mode(data_dir, legal_rf_mode=legal_rf_mode)
+    ok, detail = satellite_receive_only_ok(mode)
+    return {
+        "mode": mode or "unset",
+        "satellite_tx": "never",
+        "receive_only_ok": ok,
+        "detail": detail,
+        "allowed": "unencrypted free-to-air weather + open amateur telemetry",
+        "forbidden": "commercial constellation decryption / Starlink-class broadband clients",
+    }
+
+
+def rx_doctor_report(
+    *,
+    data_dir: Path | None = None,
+    legal_rf_mode: str | None = None,
+) -> dict[str, Any]:
     """Inventory RX tools and devices. Never claims commercial broadband capability."""
     extra = _windows_extra_dirs() if os.name == "nt" else [
         Path.cwd() / "tools" / "rx-windows" / "rtlsdr",
@@ -189,11 +235,7 @@ def rx_doctor_report(*, data_dir: Path | None = None) -> dict[str, Any]:
             "amsat_path": bool(tools["gr_satellites"]),
         },
         "station": station,
-        "legal": {
-            "mode": "receive_only",
-            "allowed": "unencrypted free-to-air weather + open amateur telemetry",
-            "forbidden": "commercial constellation decryption / Starlink-class broadband clients",
-        },
+        "legal": _rx_legal_block(data_dir, legal_rf_mode=legal_rf_mode),
         "next_steps": next_steps,
         "honest": (
             "SkyCache orchestrates legal open RX products; SatDump/gr-satellites do demodulation. "

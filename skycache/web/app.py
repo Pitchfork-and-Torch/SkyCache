@@ -953,7 +953,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         from skycache.rx.doctor import rx_doctor_report
         from skycache.rx.station import load_station
 
-        doc = rx_doctor_report(data_dir=settings.data_dir)
+        doc = rx_doctor_report(
+            data_dir=settings.data_dir,
+            legal_rf_mode=settings.legal_rf_mode,
+        )
         return {
             **doc,
             "signal": {
@@ -975,8 +978,14 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         """RX Ops (v1.17): doctor go flags + station/duty status. Receive-only FTA."""
         from skycache.ops.rx_ops import rx_ops_doctor, rx_ops_status
 
-        doc = rx_ops_doctor(data_dir=settings.data_dir)
-        st = rx_ops_status(data_dir=settings.data_dir)
+        doc = rx_ops_doctor(
+            data_dir=settings.data_dir,
+            legal_rf_mode=settings.legal_rf_mode,
+        )
+        st = rx_ops_status(
+            data_dir=settings.data_dir,
+            legal_rf_mode=settings.legal_rf_mode,
+        )
         return {"doctor": doc, **st}
 
     @app.get("/api/rx/recipes")

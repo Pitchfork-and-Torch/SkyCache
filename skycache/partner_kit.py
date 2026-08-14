@@ -390,7 +390,10 @@ def partner_readiness(*, data_dir: Path | None = None) -> dict[str, Any]:
     )
 
     # RX doctor
-    doc = rx_doctor_report(data_dir=settings.data_dir)
+    doc = rx_doctor_report(
+        data_dir=settings.data_dir,
+        legal_rf_mode=settings.legal_rf_mode,
+    )
     ready = doc.get("ready") or {}
     add(
         "product_import",
