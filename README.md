@@ -47,6 +47,8 @@ python -m skycache serve --sim --host 127.0.0.1 --port 8080
 
 Open **http://127.0.0.1:8080/** - icon portal with sample Emergency, Health, Education, Farm, Weather, Maps, and Skybrary Library content.
 
+Shortcut (same path): `make demo` after `make install`.
+
 **Village / Pi golden path** (&lt;2 hours): [`docs/first-boot.md`](docs/first-boot.md)  |  `sudo bash deploy/install-village-fabric.sh`
 
 ```bash
