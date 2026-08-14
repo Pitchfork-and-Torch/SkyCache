@@ -269,7 +269,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             "version": __version__,
             "product": "SkyCache Nexus",
             "phase": 4,
-            "edition": "0.4 community broadband experience",
+            "edition": "1.34 Software Mission Seal",
             "banner": NEXUS_HONEST_BANNER,
             "node_id": node_id,
             "packages": catalog.count(),

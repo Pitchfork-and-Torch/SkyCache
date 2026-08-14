@@ -1,4 +1,4 @@
-/* SkyCache Nexus 0.4 - community broadband experience PWA */
+/* SkyCache Nexus PWA - receive-only hub UI (not commercial broadband) */
 (function () {
   const LANGS = ["en", "fr", "es", "ar", "sw", "hi", "pt"];
   const READER_BM_KEY = "skycache_reader_bookmarks";
@@ -124,12 +124,22 @@
   }
 
   function renderHeader() {
-    $("legalBanner").textContent = t(
-      "legal_banner",
-      "SkyCache Nexus: store-and-forward knowledge + community mesh. Receive-only satellite. Not free commercial broadband or Starlink."
-    );
+    $("legalBanner").textContent =
+      (state.status && state.status.legal_banner) ||
+      t(
+        "legal_banner",
+        "SkyCache Nexus: store-and-forward knowledge + community mesh. Receive-only satellite. Not free commercial broadband or Starlink."
+      );
     $("offlineChip").textContent = t("offline_ok", "Offline OK");
-    $("pkgCount").textContent = `${state.packages.length} ${t("items", "items")}`;
+    const ver = state.status && state.status.version ? `v${state.status.version}` : "";
+    const n = state.packages.length;
+    $("pkgCount").textContent = ver
+      ? `${ver} · ${n} ${t("items", "items")}`
+      : `${n} ${t("items", "items")}`;
+    $("pkgCount").title = t(
+      "pkg_count_hint",
+      "Software version and local package count. Sample holdings are not a complete archive."
+    );
     const mode = state.status ? state.status.power_mode : " - ";
     const bat =
       state.status && state.status.battery_percent != null
@@ -1099,6 +1109,14 @@
         if (e.target === $("passportSheet")) closePassport();
       });
     }
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const sheet = $("passportSheet");
+      if (sheet && !sheet.classList.contains("hidden")) {
+        e.preventDefault();
+        closePassport();
+      }
+    });
     $("backHome").addEventListener("click", () => {
       state.category = null;
       showView("home");
