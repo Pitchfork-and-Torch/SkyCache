@@ -1,0 +1,9 @@
+Why Open Literacy Packs Matter (Operator Note)
+
+A village node is not free commercial satellite broadband. It is a store-and-forward library: open books, health literacy, civics primary sources, and STEM primers that survive when the backhaul fails.
+
+Dual access means the same works can be browsed online when a link exists, and served from USB, mesh, or SD when it does not. Every package should carry a license passport, SHA-256 integrity, and honest scope banners.
+
+SkyCache / Skybrary expands only public-domain and clearly open-licensed materials. No commercial constellation decryption. No pirate mirrors. Fail closed on licenses.
+
+[Operator educational note. Free to redistribute with SkyCache. Not free Starlink.]

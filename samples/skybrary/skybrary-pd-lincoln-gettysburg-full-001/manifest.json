@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-lincoln-gettysburg-full-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Lincoln: Gettysburg Address (full public domain)"
+  },
+  "summary": {
+    "en": "Full Gettysburg Address for civics and literacy packs."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 4097,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-lincoln-gettysburg-full-001",
+        "title": {
+          "en": "Lincoln: Gettysburg Address (full public domain)"
+        },
+        "creators": [
+          "Abraham Lincoln"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "civics",
+          "history_pd",
+          "heritage",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Full Gettysburg Address for civics and literacy packs."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-lincoln-gettysburg-full-001-txt",
+        "work_id": "skybrary-pd-lincoln-gettysburg-full-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1614,
+        "sha256": "e5788a54fbdd6bce2c7828b9706b69173cb87edea526f02d8cc2094af0e2acea",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "e5788a54fbdd6bce2c7828b9706b69173cb87edea526f02d8cc2094af0e2acea"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 2483,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1614,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "civics",
+    "history_pd",
+    "heritage",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

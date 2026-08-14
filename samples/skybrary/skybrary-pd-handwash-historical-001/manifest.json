@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-handwash-historical-001",
+  "kind": "skybrary_text",
+  "priority_class": "health",
+  "title": {
+    "en": "Hand hygiene principles (historical educational summary)"
+  },
+  "summary": {
+    "en": "Historical hand-washing literacy for community health education - not clinical protocol."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2874,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-handwash-historical-001",
+        "title": {
+          "en": "Hand hygiene principles (historical educational summary)"
+        },
+        "creators": [
+          "Public-domain nursing and sanitation handbooks (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "safety",
+          "medicine",
+          "emergency"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Historical hand-washing literacy for community health education - not clinical protocol."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-handwash-historical-001-txt",
+        "work_id": "skybrary-pd-handwash-historical-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 974,
+        "sha256": "0e7ceee5baa51a6d27965050ba56ceb0e31ad5589ce454143f8264d34ce54725",
+        "priority_class": "health",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "0e7ceee5baa51a6d27965050ba56ceb0e31ad5589ce454143f8264d34ce54725"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1900,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 974,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "safety",
+    "medicine",
+    "emergency",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}

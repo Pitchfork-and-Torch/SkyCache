@@ -1,0 +1,2 @@
+# /etc/cron.d/skycache-bitrot
+15 3 * * 0 root skycache skybrary doctor --data-dir /var/lib/skycache --verify --record >>/var/log/skycache-bitrot.log 2>&1
