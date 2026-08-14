@@ -1,0 +1,44 @@
+name: apply-skycache-payload-once
+on:
+  push:
+    branches: [cursor/skycache-improvements-f500]
+    paths:
+      - '.github/workflows/apply-skycache-payload-once.yml'
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cursor/skycache-improvements-f500
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Apply edition + webui patch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python3 <<'PY'
+          from pathlib import Path
+          p = Path('skycache/web/app.py')
+          t = p.read_text()
+          old = '"edition": "0.4 community broadband experience"'
+          new = '"edition": "1.34 Software Mission Seal"'
+          if old in t:
+              p.write_text(t.replace(old, new, 1))
+              print('app.py updated')
+          else:
+              print('app.py already updated')
+          PY
+          if [ -f .payload-chunks/webui.patch ]; then
+            patch -p1 < .payload-chunks/webui.patch
+            echo 'webui patched'
+          fi
+          git add skycache/web/app.py webui/js/app.js || true
+          if git diff --cached --quiet; then
+            echo 'No changes'
+          else
+            git commit -m 'feat: Software Mission Seal edition + honest webui banner/passport UX'
+            git push
+          fi
