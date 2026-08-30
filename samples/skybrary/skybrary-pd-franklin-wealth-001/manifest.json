@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-franklin-wealth-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "The Way to Wealth - excerpt (Benjamin Franklin)"
+  },
+  "summary": {
+    "en": "Public-domain practical wisdom essay for literacy kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 6207,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-franklin-wealth-001",
+        "title": {
+          "en": "The Way to Wealth - excerpt (Benjamin Franklin)"
+        },
+        "creators": [
+          "Benjamin Franklin"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "civics",
+          "history_pd"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain practical wisdom essay for literacy kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-franklin-wealth-001-txt",
+        "work_id": "skybrary-pd-franklin-wealth-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2669,
+        "sha256": "f443914c03316820ddc1a5cec351b000561fff325799b49255a13a998e48f26e",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "f443914c03316820ddc1a5cec351b000561fff325799b49255a13a998e48f26e"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3538,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2669,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "civics",
+    "history_pd",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

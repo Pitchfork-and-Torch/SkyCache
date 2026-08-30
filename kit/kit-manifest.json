@@ -1,0 +1,1204 @@
+{
+  "format": "skycache-zero-network-kit-v1",
+  "generated_at": "2026-08-01T21:57:00Z",
+  "work_count": 78,
+  "works": [
+    {
+      "work_id": "skybrary-pd-aesop-001",
+      "title": "The Fox and the Grapes (Aesop)",
+      "creators": [
+        "Aesop (traditional)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-gettysburg-001",
+      "title": "Gettysburg Address (Abraham Lincoln)",
+      "creators": [
+        "Abraham Lincoln"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-hippocratic-001",
+      "title": "Hippocratic Oath (public domain translation excerpt)",
+      "creators": [
+        "Hippocratic tradition (public domain English excerpt)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-declaration-001",
+      "title": "United States Declaration of Independence (1776)",
+      "creators": [
+        "Continental Congress (U.S.)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-bill-of-rights-001",
+      "title": "United States Bill of Rights (Amendments I - X)",
+      "creators": [
+        "U.S. Congress (1789)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-shakespeare-sonnet18-001",
+      "title": "Sonnet 18 - Shall I compare thee to a summer's day? (Shakespeare)",
+      "creators": [
+        "William Shakespeare"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-austen-pride-001",
+      "title": "Pride and Prejudice - Opening chapter (Jane Austen)",
+      "creators": [
+        "Jane Austen"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-dickens-carol-001",
+      "title": "A Christmas Carol - Stave One opening (Charles Dickens)",
+      "creators": [
+        "Charles Dickens"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-euclid-001",
+      "title": "Euclid's Elements - Book I Definitions (public domain)",
+      "creators": [
+        "Euclid",
+        "Thomas L. Heath (translator, public domain)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-darwin-origin-001",
+      "title": "On the Origin of Species - Chapter I excerpt (Darwin)",
+      "creators": [
+        "Charles Darwin"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-sunzi-artofwar-001",
+      "title": "The Art of War - Lionel Giles translation excerpts",
+      "creators": [
+        "Sun Tzu",
+        "Lionel Giles (translator)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-firstaid-historical-001",
+      "title": "Historical first-aid principles (public-domain educational summary)",
+      "creators": [
+        "Public-domain first-aid handbooks (curated summary)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-emerson-self-001",
+      "title": "Self-Reliance - excerpt (Ralph Waldo Emerson)",
+      "creators": [
+        "Ralph Waldo Emerson"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-franklin-wealth-001",
+      "title": "The Way to Wealth - excerpt (Benjamin Franklin)",
+      "creators": [
+        "Benjamin Franklin"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-newton-rules-001",
+      "title": "Newton - Rules of Reasoning in Philosophy (Principia excerpt)",
+      "creators": [
+        "Isaac Newton"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-nightingale-nursing-001",
+      "title": "Notes on Nursing - ventilation & cleanliness excerpts (Nightingale)",
+      "creators": [
+        "Florence Nightingale"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-psalm23-001",
+      "title": "Psalm 23 (King James Version)",
+      "creators": [
+        "Biblical text (KJV public domain)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-twain-jumping-001",
+      "title": "The Celebrated Jumping Frog - opening (Mark Twain)",
+      "creators": [
+        "Mark Twain (Samuel L. Clemens)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-poe-raven-001",
+      "title": "The Raven (Edgar Allan Poe)",
+      "creators": [
+        "Edgar Allan Poe"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-carroll-alice-001",
+      "title": "Alice's Adventures in Wonderland - Chapter I (Lewis Carroll)",
+      "creators": [
+        "Lewis Carroll (Charles Lutwidge Dodgson)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-melville-moby-001",
+      "title": "Moby-Dick - Opening (Herman Melville)",
+      "creators": [
+        "Herman Melville"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-shelley-frank-001",
+      "title": "Frankenstein - Letter I (Mary Shelley)",
+      "creators": [
+        "Mary Wollstonecraft Shelley"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-doyle-study-001",
+      "title": "A Study in Scarlet - Opening (Arthur Conan Doyle)",
+      "creators": [
+        "Arthur Conan Doyle"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-wells-time-001",
+      "title": "The Time Machine - Chapter I opening (H. G. Wells)",
+      "creators": [
+        "H. G. Wells"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-stevenson-treasure-001",
+      "title": "Treasure Island - Chapter I (Robert Louis Stevenson)",
+      "creators": [
+        "Robert Louis Stevenson"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-grimm-rapunzel-001",
+      "title": "Rapunzel (Brothers Grimm, public-domain English)",
+      "creators": [
+        "Jacob Grimm",
+        "Wilhelm Grimm"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-andersen-duckling-001",
+      "title": "The Ugly Duckling (Hans Christian Andersen, PD English)",
+      "creators": [
+        "Hans Christian Andersen"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-whitman-captain-001",
+      "title": "O Captain! My Captain! (Walt Whitman)",
+      "creators": [
+        "Walt Whitman"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-dickinson-hope-001",
+      "title": "Hope is the thing with feathers (Emily Dickinson)",
+      "creators": [
+        "Emily Dickinson"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-federalist-1-001",
+      "title": "The Federalist No. 1 (Alexander Hamilton)",
+      "creators": [
+        "Alexander Hamilton"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-constitution-us-001",
+      "title": "United States Constitution - Preamble and Article I (excerpts)",
+      "creators": [
+        "Constitutional Convention (U.S., 1787)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-rights-man-fr-001",
+      "title": "Declaration of the Rights of Man and of the Citizen (1789)",
+      "creators": [
+        "National Assembly of France (1789)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-magna-carta-001",
+      "title": "Magna Carta (1215) - selected clauses (PD English)",
+      "creators": [
+        "English barons and King John (1215)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-confucius-analects-001",
+      "title": "The Analects - selected sayings (Confucius, Legge PD)",
+      "creators": [
+        "Confucius (tradition)",
+        "James Legge (translator)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-dhammapada-001",
+      "title": "The Dhammapada - selected verses (Max Muller PD)",
+      "creators": [
+        "Buddhist tradition",
+        "F. Max Muller (translator)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-faraday-candle-001",
+      "title": "The Chemical History of a Candle - Lecture I excerpt (Faraday)",
+      "creators": [
+        "Michael Faraday"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-plato-apology-001",
+      "title": "Apology of Socrates - opening (Plato, Jowett PD)",
+      "creators": [
+        "Plato",
+        "Benjamin Jowett (translator)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-thoreau-walden-001",
+      "title": "Walden - Economy excerpt (Henry David Thoreau)",
+      "creators": [
+        "Henry David Thoreau"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-douglass-narrative-001",
+      "title": "Narrative of the Life of Frederick Douglass - Chapter I",
+      "creators": [
+        "Frederick Douglass"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-washington-farewell-001",
+      "title": "Washington's Farewell Address (1796) - excerpts",
+      "creators": [
+        "George Washington"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-verne-20000-001",
+      "title": "Twenty Thousand Leagues Under the Seas - Chapter I (Verne)",
+      "creators": [
+        "Jules Verne"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-wollstonecraft-vindication-001",
+      "title": "A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)",
+      "creators": [
+        "Mary Wollstonecraft"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-aesop-tortoise-001",
+      "title": "The Tortoise and the Hare (Aesop)",
+      "creators": [
+        "Aesop (traditional)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-kipling-if-001",
+      "title": "If - (Rudyard Kipling)",
+      "creators": [
+        "Rudyard Kipling"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-lafontaine-fr-001",
+      "title": "La Cigale et la Fourmi (La Fontaine)",
+      "creators": [
+        "Jean de La Fontaine"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-quijote-es-001",
+      "title": "Don Quixote - opening (Cervantes)",
+      "creators": [
+        "Miguel de Cervantes"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-dante-it-001",
+      "title": "Inferno Canto I opening (Dante)",
+      "creators": [
+        "Dante Alighieri"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-goethe-de-001",
+      "title": "Erlkoenig (Goethe)",
+      "creators": [
+        "Johann Wolfgang von Goethe"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-camoes-pt-001",
+      "title": "Os Lusiadas - opening stanza (Camoes)",
+      "creators": [
+        "Luis de Camoes"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-gaudeamus-la-001",
+      "title": "Gaudeamus igitur (traditional Latin)",
+      "creators": [
+        "Traditional (Latin academic song)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-pushkin-ru-001",
+      "title": "Ya vas lyubil (Pushkin)",
+      "creators": [
+        "Alexander Pushkin"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-confucius-zh-001",
+      "title": "Analects - selected sayings (traditional)",
+      "creators": [
+        "Confucian tradition (public domain English)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-kalila-ar-001",
+      "title": "Kalila and Dimna - the crow and the snake (traditional)",
+      "creators": [
+        "Traditional (Kalila and Dimna tradition)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-swahili-proverbs-001",
+      "title": "Swahili proverbs (traditional selection)",
+      "creators": [
+        "Traditional East African proverbs"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-kabir-hi-001",
+      "title": "Kabir - selected dohas (public domain tradition)",
+      "creators": [
+        "Kabir (traditional public-domain verses)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-basho-ja-001",
+      "title": "Matsuo Basho - selected haiku (romaji)",
+      "creators": [
+        "Matsuo Basho"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-yoruba-proverbs-001",
+      "title": "Yoruba proverbs (traditional selection)",
+      "creators": [
+        "Traditional Yoruba proverbs"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-tagore-bn-001",
+      "title": "Tagore - Gitanjali selections (public domain EN)",
+      "creators": [
+        "Rabindranath Tagore"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-handwash-historical-001",
+      "title": "Hand hygiene principles (historical educational summary)",
+      "creators": [
+        "Public-domain nursing and sanitation handbooks (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-water-sanitation-001",
+      "title": "Safe water and latrine literacy (historical public-health summary)",
+      "creators": [
+        "Public-domain sanitation education sources (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-ors-literacy-001",
+      "title": "Oral rehydration literacy (educational public-health overview)",
+      "creators": [
+        "Open public-health education tradition (curated summary)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-pasteur-germ-001",
+      "title": "Germ theory for the public - Pasteur era literacy (PD summary)",
+      "creators": [
+        "Louis Pasteur tradition / public-domain science popularization (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-quarantine-literacy-001",
+      "title": "Quarantine and isolation literacy (historical public-health summary)",
+      "creators": [
+        "Public-domain epidemic response literature (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-heat-cold-literacy-001",
+      "title": "Heat and cold exposure literacy (historical field summary)",
+      "creators": [
+        "Public-domain first-aid and field hygiene sources (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-food-hygiene-001",
+      "title": "Food hygiene literacy (historical household summary)",
+      "creators": [
+        "Public-domain domestic science and sanitation texts (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-mosquito-literacy-001",
+      "title": "Mosquito-borne illness literacy (historical community summary)",
+      "creators": [
+        "Public-domain tropical hygiene education (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-wound-care-literacy-001",
+      "title": "Simple wound care literacy (historical educational summary)",
+      "creators": [
+        "Public-domain first-aid handbooks (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-mental-rest-literacy-001",
+      "title": "Rest, grief, and helper stress literacy (historical community summary)",
+      "creators": [
+        "Public-domain nursing and disaster community notes (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-euclid-book1-defs-001",
+      "title": "Euclid Book I definitions (public-domain excerpt)",
+      "creators": [
+        "Euclid (Heath translation tradition, public domain)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-faraday-candle-excerpt-001",
+      "title": "Faraday: The Chemical History of a Candle (excerpt)",
+      "creators": [
+        "Michael Faraday"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-franklin-lightning-001",
+      "title": "Franklin on lightning and electricity (historical literacy)",
+      "creators": [
+        "Benjamin Franklin (public-domain writings, curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-darwin-selection-excerpt-001",
+      "title": "Darwin: natural selection (short public-domain excerpt)",
+      "creators": [
+        "Charles Darwin"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-jefferson-rights-001",
+      "title": "Rights literacy: Declaration of Independence (US, public domain)",
+      "creators": [
+        "United States Continental Congress (1776)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-mill-liberty-excerpt-001",
+      "title": "Mill: On Liberty (harm principle excerpt)",
+      "creators": [
+        "John Stuart Mill"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-agriculture-seed-literacy-001",
+      "title": "Seed saving literacy (historical agricultural summary)",
+      "creators": [
+        "Public-domain agricultural extension themes (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-weather-cloud-literacy-001",
+      "title": "Cloud and weather literacy (observational primer)",
+      "creators": [
+        "Public-domain meteorology primers (curated)"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-lincoln-gettysburg-full-001",
+      "title": "Lincoln: Gettysburg Address (full public domain)",
+      "creators": [
+        "Abraham Lincoln"
+      ],
+      "license": "public domain"
+    },
+    {
+      "work_id": "skybrary-pd-unesco-pd-literacy-note-001",
+      "title": "Why open literacy packs matter (operator educational note)",
+      "creators": [
+        "SkyCache / Skybrary (operator educational note, free to redistribute)"
+      ],
+      "license": "public domain"
+    }
+  ],
+  "files": [
+    {
+      "path": "READ-OFFLINE.html",
+      "role": "offline_reader"
+    },
+    {
+      "path": "README.txt",
+      "role": "instructions"
+    },
+    {
+      "path": "texts/skybrary-pd-aesop-001.txt",
+      "work_id": "skybrary-pd-aesop-001",
+      "title": "The Fox and the Grapes (Aesop)",
+      "bytes": 753,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-gettysburg-001.txt",
+      "work_id": "skybrary-pd-gettysburg-001",
+      "title": "Gettysburg Address (Abraham Lincoln)",
+      "bytes": 1515,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-hippocratic-001.txt",
+      "work_id": "skybrary-pd-hippocratic-001",
+      "title": "Hippocratic Oath (public domain translation excerpt)",
+      "bytes": 1972,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-declaration-001.txt",
+      "work_id": "skybrary-pd-declaration-001",
+      "title": "United States Declaration of Independence (1776)",
+      "bytes": 3301,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-bill-of-rights-001.txt",
+      "work_id": "skybrary-pd-bill-of-rights-001",
+      "title": "United States Bill of Rights (Amendments I - X)",
+      "bytes": 2841,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-shakespeare-sonnet18-001.txt",
+      "work_id": "skybrary-pd-shakespeare-sonnet18-001",
+      "title": "Sonnet 18 - Shall I compare thee to a summer's day? (Shakespeare)",
+      "bytes": 692,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-austen-pride-001.txt",
+      "work_id": "skybrary-pd-austen-pride-001",
+      "title": "Pride and Prejudice - Opening chapter (Jane Austen)",
+      "bytes": 4559,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-dickens-carol-001.txt",
+      "work_id": "skybrary-pd-dickens-carol-001",
+      "title": "A Christmas Carol - Stave One opening (Charles Dickens)",
+      "bytes": 2908,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-euclid-001.txt",
+      "work_id": "skybrary-pd-euclid-001",
+      "title": "Euclid's Elements - Book I Definitions (public domain)",
+      "bytes": 2300,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-darwin-origin-001.txt",
+      "work_id": "skybrary-pd-darwin-origin-001",
+      "title": "On the Origin of Species - Chapter I excerpt (Darwin)",
+      "bytes": 2730,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-sunzi-artofwar-001.txt",
+      "work_id": "skybrary-pd-sunzi-artofwar-001",
+      "title": "The Art of War - Lionel Giles translation excerpts",
+      "bytes": 2068,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-firstaid-historical-001.txt",
+      "work_id": "skybrary-pd-firstaid-historical-001",
+      "title": "Historical first-aid principles (public-domain educational summary)",
+      "bytes": 2326,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-emerson-self-001.txt",
+      "work_id": "skybrary-pd-emerson-self-001",
+      "title": "Self-Reliance - excerpt (Ralph Waldo Emerson)",
+      "bytes": 2139,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-franklin-wealth-001.txt",
+      "work_id": "skybrary-pd-franklin-wealth-001",
+      "title": "The Way to Wealth - excerpt (Benjamin Franklin)",
+      "bytes": 2669,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-newton-rules-001.txt",
+      "work_id": "skybrary-pd-newton-rules-001",
+      "title": "Newton - Rules of Reasoning in Philosophy (Principia excerpt)",
+      "bytes": 1922,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-nightingale-nursing-001.txt",
+      "work_id": "skybrary-pd-nightingale-nursing-001",
+      "title": "Notes on Nursing - ventilation & cleanliness excerpts (Nightingale)",
+      "bytes": 1915,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-psalm23-001.txt",
+      "work_id": "skybrary-pd-psalm23-001",
+      "title": "Psalm 23 (King James Version)",
+      "bytes": 740,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-twain-jumping-001.txt",
+      "work_id": "skybrary-pd-twain-jumping-001",
+      "title": "The Celebrated Jumping Frog - opening (Mark Twain)",
+      "bytes": 2141,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-poe-raven-001.txt",
+      "work_id": "skybrary-pd-poe-raven-001",
+      "title": "The Raven (Edgar Allan Poe)",
+      "bytes": 6402,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-carroll-alice-001.txt",
+      "work_id": "skybrary-pd-carroll-alice-001",
+      "title": "Alice's Adventures in Wonderland - Chapter I (Lewis Carroll)",
+      "bytes": 2840,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-melville-moby-001.txt",
+      "work_id": "skybrary-pd-melville-moby-001",
+      "title": "Moby-Dick - Opening (Herman Melville)",
+      "bytes": 2868,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-shelley-frank-001.txt",
+      "work_id": "skybrary-pd-shelley-frank-001",
+      "title": "Frankenstein - Letter I (Mary Shelley)",
+      "bytes": 2980,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-doyle-study-001.txt",
+      "work_id": "skybrary-pd-doyle-study-001",
+      "title": "A Study in Scarlet - Opening (Arthur Conan Doyle)",
+      "bytes": 3921,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-wells-time-001.txt",
+      "work_id": "skybrary-pd-wells-time-001",
+      "title": "The Time Machine - Chapter I opening (H. G. Wells)",
+      "bytes": 2649,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-stevenson-treasure-001.txt",
+      "work_id": "skybrary-pd-stevenson-treasure-001",
+      "title": "Treasure Island - Chapter I (Robert Louis Stevenson)",
+      "bytes": 2462,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-grimm-rapunzel-001.txt",
+      "work_id": "skybrary-pd-grimm-rapunzel-001",
+      "title": "Rapunzel (Brothers Grimm, public-domain English)",
+      "bytes": 4445,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-andersen-duckling-001.txt",
+      "work_id": "skybrary-pd-andersen-duckling-001",
+      "title": "The Ugly Duckling (Hans Christian Andersen, PD English)",
+      "bytes": 3994,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-whitman-captain-001.txt",
+      "work_id": "skybrary-pd-whitman-captain-001",
+      "title": "O Captain! My Captain! (Walt Whitman)",
+      "bytes": 1177,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-dickinson-hope-001.txt",
+      "work_id": "skybrary-pd-dickinson-hope-001",
+      "title": "Hope is the thing with feathers (Emily Dickinson)",
+      "bytes": 461,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-federalist-1-001.txt",
+      "work_id": "skybrary-pd-federalist-1-001",
+      "title": "The Federalist No. 1 (Alexander Hamilton)",
+      "bytes": 3280,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-constitution-us-001.txt",
+      "work_id": "skybrary-pd-constitution-us-001",
+      "title": "United States Constitution - Preamble and Article I (excerpts)",
+      "bytes": 4261,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-rights-man-fr-001.txt",
+      "work_id": "skybrary-pd-rights-man-fr-001",
+      "title": "Declaration of the Rights of Man and of the Citizen (1789)",
+      "bytes": 3692,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-magna-carta-001.txt",
+      "work_id": "skybrary-pd-magna-carta-001",
+      "title": "Magna Carta (1215) - selected clauses (PD English)",
+      "bytes": 2412,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-confucius-analects-001.txt",
+      "work_id": "skybrary-pd-confucius-analects-001",
+      "title": "The Analects - selected sayings (Confucius, Legge PD)",
+      "bytes": 2998,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-dhammapada-001.txt",
+      "work_id": "skybrary-pd-dhammapada-001",
+      "title": "The Dhammapada - selected verses (Max Muller PD)",
+      "bytes": 2151,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-faraday-candle-001.txt",
+      "work_id": "skybrary-pd-faraday-candle-001",
+      "title": "The Chemical History of a Candle - Lecture I excerpt (Faraday)",
+      "bytes": 3029,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-plato-apology-001.txt",
+      "work_id": "skybrary-pd-plato-apology-001",
+      "title": "Apology of Socrates - opening (Plato, Jowett PD)",
+      "bytes": 2981,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-thoreau-walden-001.txt",
+      "work_id": "skybrary-pd-thoreau-walden-001",
+      "title": "Walden - Economy excerpt (Henry David Thoreau)",
+      "bytes": 3150,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-douglass-narrative-001.txt",
+      "work_id": "skybrary-pd-douglass-narrative-001",
+      "title": "Narrative of the Life of Frederick Douglass - Chapter I",
+      "bytes": 3868,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-washington-farewell-001.txt",
+      "work_id": "skybrary-pd-washington-farewell-001",
+      "title": "Washington's Farewell Address (1796) - excerpts",
+      "bytes": 3518,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-verne-20000-001.txt",
+      "work_id": "skybrary-pd-verne-20000-001",
+      "title": "Twenty Thousand Leagues Under the Seas - Chapter I (Verne)",
+      "bytes": 3145,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-wollstonecraft-vindication-001.txt",
+      "work_id": "skybrary-pd-wollstonecraft-vindication-001",
+      "title": "A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)",
+      "bytes": 3683,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-aesop-tortoise-001.txt",
+      "work_id": "skybrary-pd-aesop-tortoise-001",
+      "title": "The Tortoise and the Hare (Aesop)",
+      "bytes": 861,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-kipling-if-001.txt",
+      "work_id": "skybrary-pd-kipling-if-001",
+      "title": "If - (Rudyard Kipling)",
+      "bytes": 1645,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-lafontaine-fr-001.txt",
+      "work_id": "skybrary-pd-lafontaine-fr-001",
+      "title": "La Cigale et la Fourmi (La Fontaine)",
+      "bytes": 693,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-quijote-es-001.txt",
+      "work_id": "skybrary-pd-quijote-es-001",
+      "title": "Don Quixote - opening (Cervantes)",
+      "bytes": 1024,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-dante-it-001.txt",
+      "work_id": "skybrary-pd-dante-it-001",
+      "title": "Inferno Canto I opening (Dante)",
+      "bytes": 567,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-goethe-de-001.txt",
+      "work_id": "skybrary-pd-goethe-de-001",
+      "title": "Erlkoenig (Goethe)",
+      "bytes": 1409,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-camoes-pt-001.txt",
+      "work_id": "skybrary-pd-camoes-pt-001",
+      "title": "Os Lusiadas - opening stanza (Camoes)",
+      "bytes": 671,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-gaudeamus-la-001.txt",
+      "work_id": "skybrary-pd-gaudeamus-la-001",
+      "title": "Gaudeamus igitur (traditional Latin)",
+      "bytes": 522,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-pushkin-ru-001.txt",
+      "work_id": "skybrary-pd-pushkin-ru-001",
+      "title": "Ya vas lyubil (Pushkin)",
+      "bytes": 699,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-confucius-zh-001.txt",
+      "work_id": "skybrary-pd-confucius-zh-001",
+      "title": "Analects - selected sayings (traditional)",
+      "bytes": 980,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-kalila-ar-001.txt",
+      "work_id": "skybrary-pd-kalila-ar-001",
+      "title": "Kalila and Dimna - the crow and the snake (traditional)",
+      "bytes": 793,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-swahili-proverbs-001.txt",
+      "work_id": "skybrary-pd-swahili-proverbs-001",
+      "title": "Swahili proverbs (traditional selection)",
+      "bytes": 656,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-kabir-hi-001.txt",
+      "work_id": "skybrary-pd-kabir-hi-001",
+      "title": "Kabir - selected dohas (public domain tradition)",
+      "bytes": 841,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-basho-ja-001.txt",
+      "work_id": "skybrary-pd-basho-ja-001",
+      "title": "Matsuo Basho - selected haiku (romaji)",
+      "bytes": 724,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-yoruba-proverbs-001.txt",
+      "work_id": "skybrary-pd-yoruba-proverbs-001",
+      "title": "Yoruba proverbs (traditional selection)",
+      "bytes": 649,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-tagore-bn-001.txt",
+      "work_id": "skybrary-pd-tagore-bn-001",
+      "title": "Tagore - Gitanjali selections (public domain EN)",
+      "bytes": 1176,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-handwash-historical-001.txt",
+      "work_id": "skybrary-pd-handwash-historical-001",
+      "title": "Hand hygiene principles (historical educational summary)",
+      "bytes": 974,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-water-sanitation-001.txt",
+      "work_id": "skybrary-pd-water-sanitation-001",
+      "title": "Safe water and latrine literacy (historical public-health summary)",
+      "bytes": 984,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-ors-literacy-001.txt",
+      "work_id": "skybrary-pd-ors-literacy-001",
+      "title": "Oral rehydration literacy (educational public-health overview)",
+      "bytes": 1265,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-pasteur-germ-001.txt",
+      "work_id": "skybrary-pd-pasteur-germ-001",
+      "title": "Germ theory for the public - Pasteur era literacy (PD summary)",
+      "bytes": 875,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-quarantine-literacy-001.txt",
+      "work_id": "skybrary-pd-quarantine-literacy-001",
+      "title": "Quarantine and isolation literacy (historical public-health summary)",
+      "bytes": 1024,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-heat-cold-literacy-001.txt",
+      "work_id": "skybrary-pd-heat-cold-literacy-001",
+      "title": "Heat and cold exposure literacy (historical field summary)",
+      "bytes": 947,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-food-hygiene-001.txt",
+      "work_id": "skybrary-pd-food-hygiene-001",
+      "title": "Food hygiene literacy (historical household summary)",
+      "bytes": 684,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-mosquito-literacy-001.txt",
+      "work_id": "skybrary-pd-mosquito-literacy-001",
+      "title": "Mosquito-borne illness literacy (historical community summary)",
+      "bytes": 762,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-wound-care-literacy-001.txt",
+      "work_id": "skybrary-pd-wound-care-literacy-001",
+      "title": "Simple wound care literacy (historical educational summary)",
+      "bytes": 790,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-mental-rest-literacy-001.txt",
+      "work_id": "skybrary-pd-mental-rest-literacy-001",
+      "title": "Rest, grief, and helper stress literacy (historical community summary)",
+      "bytes": 767,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-euclid-book1-defs-001.txt",
+      "work_id": "skybrary-pd-euclid-book1-defs-001",
+      "title": "Euclid Book I definitions (public-domain excerpt)",
+      "bytes": 745,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-faraday-candle-excerpt-001.txt",
+      "work_id": "skybrary-pd-faraday-candle-excerpt-001",
+      "title": "Faraday: The Chemical History of a Candle (excerpt)",
+      "bytes": 651,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-franklin-lightning-001.txt",
+      "work_id": "skybrary-pd-franklin-lightning-001",
+      "title": "Franklin on lightning and electricity (historical literacy)",
+      "bytes": 748,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-darwin-selection-excerpt-001.txt",
+      "work_id": "skybrary-pd-darwin-selection-excerpt-001",
+      "title": "Darwin: natural selection (short public-domain excerpt)",
+      "bytes": 528,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-jefferson-rights-001.txt",
+      "work_id": "skybrary-pd-jefferson-rights-001",
+      "title": "Rights literacy: Declaration of Independence (US, public domain)",
+      "bytes": 855,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-mill-liberty-excerpt-001.txt",
+      "work_id": "skybrary-pd-mill-liberty-excerpt-001",
+      "title": "Mill: On Liberty (harm principle excerpt)",
+      "bytes": 549,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-agriculture-seed-literacy-001.txt",
+      "work_id": "skybrary-pd-agriculture-seed-literacy-001",
+      "title": "Seed saving literacy (historical agricultural summary)",
+      "bytes": 735,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-weather-cloud-literacy-001.txt",
+      "work_id": "skybrary-pd-weather-cloud-literacy-001",
+      "title": "Cloud and weather literacy (observational primer)",
+      "bytes": 690,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-lincoln-gettysburg-full-001.txt",
+      "work_id": "skybrary-pd-lincoln-gettysburg-full-001",
+      "title": "Lincoln: Gettysburg Address (full public domain)",
+      "bytes": 1614,
+      "role": "work_text"
+    },
+    {
+      "path": "texts/skybrary-pd-unesco-pd-literacy-note-001.txt",
+      "work_id": "skybrary-pd-unesco-pd-literacy-note-001",
+      "title": "Why open literacy packs matter (operator educational note)",
+      "bytes": 722,
+      "role": "work_text"
+    },
+    {
+      "path": "kit-manifest.json",
+      "role": "manifest"
+    }
+  ],
+  "how_to_load": [
+    "USB/OTG: copy this folder to phone storage, open READ-OFFLINE.html",
+    "microSD: copy folder to card, open from Files app",
+    "Bluetooth: send READ-OFFLINE.html (or whole zip) from a peer device",
+    "Pre-deploy: copy before leaving connectivity"
+  ],
+  "honest": "Zero network to read. Transfer requires USB, SD, Bluetooth, or prior copy. Not free commercial broadband. Curated PD samples only."
+}

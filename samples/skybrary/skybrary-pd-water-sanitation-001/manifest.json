@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-water-sanitation-001",
+  "kind": "skybrary_text",
+  "priority_class": "health",
+  "title": {
+    "en": "Safe water and latrine literacy (historical public-health summary)"
+  },
+  "summary": {
+    "en": "Village-scale water and sanitation literacy from historical public-health teaching - not engineering design."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2910,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-water-sanitation-001",
+        "title": {
+          "en": "Safe water and latrine literacy (historical public-health summary)"
+        },
+        "creators": [
+          "Public-domain sanitation education sources (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "safety",
+          "water",
+          "emergency"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Village-scale water and sanitation literacy from historical public-health teaching - not engineering design."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-water-sanitation-001-txt",
+        "work_id": "skybrary-pd-water-sanitation-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 984,
+        "sha256": "e3240876c8cc7e2e90af4d9aac17e385223837f45517d5b02484278e4edd04f1",
+        "priority_class": "health",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "e3240876c8cc7e2e90af4d9aac17e385223837f45517d5b02484278e4edd04f1"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1926,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 984,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "safety",
+    "water",
+    "emergency",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}

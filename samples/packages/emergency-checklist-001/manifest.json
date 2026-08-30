@@ -1,0 +1,50 @@
+{
+  "id": "emergency-checklist-001",
+  "kind": "html_pack",
+  "priority_class": "emergency",
+  "title": {
+    "en": "Emergency checklist",
+    "fr": "Liste d'urgence",
+    "es": "Lista de emergencia",
+    "sw": "Orodha ya dharura",
+    "ar": "قائمة الطوارئ",
+    "hi": "आपातकालीन सूची",
+    "pt": "Lista de emergência"
+  },
+  "summary": {
+    "en": "What to do first in a community emergency. Not a substitute for local authorities.",
+    "fr": "Gestes prioritaires en urgence communautaire."
+  },
+  "languages": [
+    "en",
+    "fr",
+    "es",
+    "sw",
+    "ar",
+    "hi",
+    "pt"
+  ],
+  "received_at": "2026-07-27T00:28:43.121615+00:00",
+  "freshness_hours": 8760,
+  "license": "CC-BY-4.0",
+  "source": {
+    "type": "sample",
+    "legal_note": "Sample open content for demo",
+    "plugin": "sim_file"
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "role": "payload",
+      "size_bytes": 744
+    }
+  ],
+  "tags": [
+    "emergency",
+    "safety"
+  ],
+  "pinned": true,
+  "icon": "emergency",
+  "size_bytes": 744
+}

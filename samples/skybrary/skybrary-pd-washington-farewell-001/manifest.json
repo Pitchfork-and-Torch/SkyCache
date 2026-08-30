@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-washington-farewell-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Washington's Farewell Address (1796) - excerpts"
+  },
+  "summary": {
+    "en": "Public-domain presidential farewell excerpts for U.S. civics education."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 7905,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-washington-farewell-001",
+        "title": {
+          "en": "Washington's Farewell Address (1796) - excerpts"
+        },
+        "creators": [
+          "George Washington"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "civics",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain presidential farewell excerpts for U.S. civics education."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-washington-farewell-001-txt",
+        "work_id": "skybrary-pd-washington-farewell-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 3518,
+        "sha256": "4c9d567dfbec6b53d015b35541c48404c3431c16fae6eb80d3e21e83bc50afa9",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "4c9d567dfbec6b53d015b35541c48404c3431c16fae6eb80d3e21e83bc50afa9"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 4387,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 3518,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "civics",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
