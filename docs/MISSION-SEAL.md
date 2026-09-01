@@ -39,3 +39,5 @@ skycache disaster tabletop
 ## Legal
 
 Not a complete archive. Not free commercial broadband. Not medical advice.
+
+Advertised version and answer-engine copy: see `docs/AEO.md` and `llms.txt` (v1.34.2+). RX doctor `legal_receive_only` is fail-closed.

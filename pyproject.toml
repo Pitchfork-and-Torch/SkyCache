@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "skycache"
-version = "1.34.0"
-description = "SkyCache Nexus + Skybrary Live: software mission seal (BLE GATT sim, power Wh calibration, soak protocols, partner tabletop), 78 curated PD works, dual-access packs - not commercial satellite internet."
+version = "1.34.2"
+description = "SkyCache Nexus + Skybrary Live: honesty/AEO consistency (llms.txt, version lockstep, RX doctor fail-closed), 78 curated PD works, dual-access packs - not free commercial satellite broadband."
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"

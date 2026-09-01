@@ -1,7 +1,7 @@
 # SkyCache - PROGRESS / STATE
 
-**Last cycle:** 2026-08-14  
-**Software version:** 1.34.0 (Software Mission Seal)  
+**Last cycle:** 2026-09-01  
+**Software version:** 1.34.2 (Honesty / AEO consistency)  
 **Public site:** https://skycache.jonbailey.xyz/  
 **Repo:** https://github.com/Pitchfork-and-Torch/SkyCache
 

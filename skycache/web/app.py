@@ -12,6 +12,7 @@ from fastapi.responses import FileResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from skycache import __version__
+from skycache.aeo import honesty_claims, render_llms_txt, render_robots_txt
 from skycache.community.boards import BoardStore
 from skycache.community.licenses import LicenseInventory
 from skycache.community.passport import package_record_passport, work_passport
@@ -202,9 +203,23 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     async def service_worker() -> FileResponse:
         return FileResponse(ui / "sw.js", media_type="application/javascript")
 
+    @app.get("/llms.txt")
+    async def llms_txt() -> Response:
+        return Response(
+            content=render_llms_txt(),
+            media_type="text/plain; charset=utf-8",
+        )
+
+    @app.get("/robots.txt")
+    async def robots_txt() -> Response:
+        return Response(
+            content=render_robots_txt(),
+            media_type="text/plain; charset=utf-8",
+        )
+
     @app.get("/api/health")
-    async def health() -> dict[str, str]:
-        return {"status": "ok", "version": __version__}
+    async def health() -> dict[str, Any]:
+        return {"status": "ok", "version": __version__, **honesty_claims()}
 
     @app.get("/api/status", response_model=SystemStatus)
     async def status() -> SystemStatus:
@@ -269,7 +284,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             "version": __version__,
             "product": "SkyCache Nexus",
             "phase": 4,
-            "edition": "1.34 Software Mission Seal",
+            "edition": f"{__version__} Honesty / AEO",
             "banner": NEXUS_HONEST_BANNER,
             "node_id": node_id,
             "packages": catalog.count(),

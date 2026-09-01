@@ -84,7 +84,7 @@ Deliverables:
 
 - Expand skycache.jonbailey.xyz Skybrary section -> catalog browse (static or API-backed)  
 - Download open packs  
-- SEO/AEO for mission (without over-claim)  
+- SEO/AEO for mission (without over-claim) — **shipped v1.34.2**: repo+portal `llms.txt`, version lockstep, no invented Mbps
 
 **Exit:** Visitor understands Skybrary + can fetch a legal starter kit.
 

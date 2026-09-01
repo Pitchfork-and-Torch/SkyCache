@@ -2,6 +2,8 @@
 
 **One project.** Field runtime (SkyCache / Nexus) + civilizational open archive (Skybrary) share one repo, one legal spine, one site.
 
+**As of v1.34.2 (Honesty / AEO):** advertised version, README badges, and `llms.txt` stay lockstep. Portal serves `/llms.txt` + honesty flags on `/api/health`. RX doctor `legal_receive_only` remains fail-closed (v1.34.1). Not free commercial satellite broadband. No invented Mbps. See `docs/AEO.md`.
+
 **As of v1.34.0 (Software Mission Seal):** software mission meter is 100. BLE GATT sim, power Wh calibration, soak protocols, and partner tabletop close remaining software tracks. Field residuals stay operator-owned. See `docs/MISSION-SEAL.md`.
 
 **As of v1.33.0 (Open Resilience Wave):** curated dual-access corpus **78** works (STEM/civics/health waves); disaster/power-critical prioritizer protects emergency+health; `open_fta_sim` + plugin extension docs; `archive-100mb`/`archive-1gb` + `library pack-budgets`; survival-first `priority_works_delta` federation. See `docs/OPEN-RESILIENCE-WAVE.md`.

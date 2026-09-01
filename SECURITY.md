@@ -4,6 +4,7 @@
 
 | Version | Supported |
 |---------|-----------|
+| 1.34.x | Current (RX doctor fail-closed; honesty / AEO) |
 | 0.1.x (alpha) | Best-effort |
 
 ## Reporting

@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 from skycache import __version__
+from skycache.aeo import honesty_claims, repo_root as aeo_repo_root, write_aeo_files
 from skycache.config import NEXUS_HONEST_BANNER, Settings, package_root, samples_dir
 from skycache.db.catalog import Catalog
 from skycache.health.power import get_power_provider, mode_from_soc
@@ -2535,6 +2536,32 @@ def cmd_watch(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_aeo(args: argparse.Namespace) -> int:
+    """Honesty / AEO: write or print llms.txt (no invented Mbps)."""
+    from skycache.aeo import render_llms_txt
+
+    sub = getattr(args, "aeo_cmd", "status")
+    if sub == "print":
+        print(render_llms_txt(), end="")
+        return 0
+    if sub == "status":
+        print(
+            json.dumps(
+                {
+                    "version": __version__,
+                    "claims": honesty_claims(),
+                    "banner": NEXUS_HONEST_BANNER,
+                },
+                indent=2,
+            )
+        )
+        return 0
+    out = Path(args.out) if getattr(args, "out", "") else aeo_repo_root()
+    rep = write_aeo_files(out)
+    print(json.dumps(rep, indent=2))
+    return 0 if rep.get("ok") else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="skycache",
@@ -3878,6 +3905,19 @@ def build_parser() -> argparse.ArgumentParser:
     rxduty = rx_sub.add_parser("duty", help="Station duty board: arm + next pass countdown")
     rxduty.add_argument("--data-dir", default="data")
     rxduty.set_defaults(func=cmd_rx_duty)
+
+    aeo = sub.add_parser(
+        "aeo",
+        help="Write/print honesty AEO files (llms.txt, robots.txt) — not commercial broadband",
+    )
+    aeo_sub = aeo.add_subparsers(dest="aeo_cmd", required=True)
+    aeo_w = aeo_sub.add_parser("write", help="Write llms.txt + robots.txt (repo root or --out)")
+    aeo_w.add_argument("--out", default="", help="Directory (default: repository root)")
+    aeo_w.set_defaults(func=cmd_aeo, aeo_cmd="write")
+    aeo_p = aeo_sub.add_parser("print", help="Print llms.txt to stdout")
+    aeo_p.set_defaults(func=cmd_aeo, aeo_cmd="print")
+    aeo_s = aeo_sub.add_parser("status", help="Honesty claims + advertised version")
+    aeo_s.set_defaults(func=cmd_aeo, aeo_cmd="status")
 
     return p
 

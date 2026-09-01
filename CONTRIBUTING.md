@@ -9,6 +9,7 @@ Thank you for helping improve offline information access.
 3. Prefer wrapping mature tools (SatDump, gr-satellites, Kiwix) over reimplementation.  
 4. Keep the sim demo working without hardware.  
 5. Add tests for prioritizer / ingest / API changes.  
+6. After a version bump, run `python -m skycache aeo write` so `llms.txt` matches `__version__`. Never add Mbps or dish-throughput claims.  
 
 ## Dev setup
 

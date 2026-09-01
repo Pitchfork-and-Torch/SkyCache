@@ -1,4 +1,4 @@
 """SkyCache - community satellite content hub (receive, cache, serve offline)."""
 
-__version__ = "1.34.0"
+__version__ = "1.34.2"
 __all__ = ["__version__"]

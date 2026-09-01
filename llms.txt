@@ -1,0 +1,56 @@
+# SkyCache Nexus  |  Skybrary
+
+> Open-source community knowledge fabric + Skybrary dual-access library. Receive-only satellite, unlicensed mesh, open content only - never free commercial satellite broadband.
+
+- Site: https://skycache.jonbailey.xyz/
+- How to use: https://skycache.jonbailey.xyz/use/
+- Roadmap tracker: https://skycache.jonbailey.xyz/roadmap/
+- Library: https://skycache.jonbailey.xyz/library/
+- Mission: https://skycache.jonbailey.xyz/mission/
+- RX: https://skycache.jonbailey.xyz/rx/
+- Developers: https://skycache.jonbailey.xyz/developers/
+- Software: https://github.com/Pitchfork-and-Torch/SkyCache
+- Latest: v1.34.2
+- Version: software 1.34.2
+- Status: Honesty / AEO consistency - 78 curated PD works; RX doctor legal_receive_only is fail-closed; not medical advice
+- Email: skycache@jonbailey.xyz
+
+## One-liner
+
+SkyCache turns lawful free-to-air reception and open education packs into a local Wi-Fi library and community mesh, with a dual-access Skybrary (78 curated public-domain works), archive size budgets, RX ops, and honest legal rails. SkyCache is receive-only for satellite RF and is NOT free commercial satellite broadband (not Starlink, OneWeb, or paid VSAT). Not a complete archive. Not medical advice. No invented Mbps. No dish Mbps.
+
+## What a stranger should know
+
+- Receive-only satellite RF: True
+- Commercial satellite broadband: False
+- RX doctor legal_receive_only fail-closed: True
+- Complete archive of every text: False
+- Medical advice: False
+- Invented Mbps / dish Mbps: False
+- Banner: SkyCache Nexus: store-and-forward knowledge + community mesh on unlicensed Wi-Fi/ISM. Receive-only for satellite. Not free commercial broadband or Starlink.
+
+## Operator downloads
+
+- Golden SD kit: https://skycache.jonbailey.xyz/downloads/skycache-golden-sd-kit.zip
+- Dual-radio kit: https://skycache.jonbailey.xyz/downloads/skycache-dual-radio-kit.zip
+- Mission kit: https://skycache.jonbailey.xyz/downloads/skycache-mission-kit.zip
+- Library kit: https://skycache.jonbailey.xyz/downloads/skycache-library-kit.zip
+- Zero-network kit: https://skycache.jonbailey.xyz/downloads/skycache-zero-network-demo-kit.zip
+- Literacy / clinic packs: https://skycache.jonbailey.xyz/library/
+
+## FAQ
+
+Q: Is SkyCache free commercial satellite broadband / free Starlink?
+A: No. Receive-only store-and-forward knowledge plus optional unlicensed community mesh. It does not decrypt paid constellations and does not provide bidirectional commercial internet.
+
+Q: Does RX doctor go green on a Starlink or uplink mode string?
+A: No. legal_receive_only is fail-closed (v1.34.1+). Unknown, empty, or forbidden modes fail; go_rx_live stays gated on that check.
+
+Q: What throughput does a dish get?
+A: SkyCache does not advertise dish Mbps or invented satellite speeds. FTA weather / open amateur paths vary by hardware, weather, and site. Measure locally; do not quote a product Mbps.
+
+Q: Do you ship a multi-GB .img in the repo?
+A: No. Download the golden SD kit zip, flash Pi OS Lite, run bake. Optional sealed .img.xz can attach to GitHub Releases when an operator builds one.
+
+Q: Multi-GB maps in the monorepo?
+A: No. Use skycache maps import + blob store for regional MBTiles you may legally redistribute.

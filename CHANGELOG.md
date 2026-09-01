@@ -1,5 +1,40 @@
 # Changelog
 
+## 1.34.2 - Honesty / AEO consistency
+
+Public polish after the v1.34.1 RX fail-closed release. Advertised version, README badges, and answer-engine copy (`llms.txt`) now stay lockstep. A stranger can see the same honesty brief on GitHub, the local portal (`/llms.txt`, `/api/health`), and the marketing apply-web path. **Not free commercial satellite broadband.** RX doctor `legal_receive_only` remains fail-closed. No invented Mbps. No dish Mbps.
+
+### Visible upgrades
+- Version badge + advertised-version lockstep (`__version__`, `pyproject.toml`, CHANGELOG, README, `llms.txt`, `PROGRESS.md`)
+- Repo-root `llms.txt` + `robots.txt` generated from `skycache.aeo` (UTF-8, no BOM)
+- Local portal serves `GET /llms.txt` and `GET /robots.txt`
+- `GET /api/health` includes receive-only / not-commercial-broadband / RX fail-closed flags
+- `skycache aeo write|print|status` and `library sync --apply-web` copy AEO files so the site cannot silently stay on 1.34.0
+- Docs: `docs/AEO.md`, `docs/V1342-SUCCESS-CRITERIA.md`
+
+### Rails held
+- Receive-only satellite RF. ISM mesh TX is not satellite TX.
+- RX doctor fail-closed (v1.34.1) still rejects Starlink / uplink / unknown modes.
+- No dish Mbps, no invented throughput slogans.
+
+### Tests
+- `tests/test_v1342_honesty_aeo.py`
+- Existing `tests/test_v1170_rx_ops.py` still green
+
+### Upgrade from 1.34.1
+1. pip install -e .
+2. skycache aeo write
+3. skycache library sync --skip-zero-network --apply-web
+4. Deploy skycache-web so https://skycache.jonbailey.xyz/llms.txt matches v1.34.2
+
+---
+
+## 1.34.1 - RX doctor fail-closed (released)
+
+GitHub release **v1.34.1** (2026-08-18): RX doctor `legal_receive_only` is fail-closed. A Starlink / satellite-uplink / commercial-decrypt mode string no longer goes green; `go_rx_live` stays gated on that check. Code landed on main with the Software Mission Seal tree; advertised version strings stayed 1.34.0 until 1.34.2. Not a complete archive. Not free commercial broadband. Not medical advice.
+
+---
+
 ## 1.34.0 - Software Mission Seal
 
 Closes remaining software-completable tracks and seals an honest **100% software mission** meter. Field residuals (physical dongle/dual-radio soak, institutional pilots, operator-hosted multi-GB `.img.xz`, live BLE radios, continuing corpus growth) stay listed and are **not** deducted. Not a complete archive. Not free commercial broadband. Not medical advice.

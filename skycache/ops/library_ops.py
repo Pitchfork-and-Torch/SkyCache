@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from skycache import __version__
+from skycache.aeo import write_aeo_files
 from skycache.skybrary.integrity import sha256_text
 from skycache.skybrary.sample_corpus import SAMPLES, build_sample_packages
 
@@ -161,6 +162,14 @@ def library_doctor(
         "architecture_doc",
         dual_doc.is_file(),
         str(dual_doc) if dual_doc.is_file() else "missing skybrary-architecture.md",
+        6,
+    )
+
+    llms = root / "llms.txt"
+    add(
+        "aeo_llms_txt",
+        llms.is_file() and f"v{__version__}" in llms.read_text(encoding="utf-8"),
+        "repo-root llms.txt matches advertised software version",
         6,
     )
 
@@ -1040,6 +1049,8 @@ def write_marketing_sitemap(
         "/roadmap/",
         "/developers/",
         "/prompt/",
+        "/mission/",
+        "/llms.txt",
     ]
     work_ids: list[str] = []
     cat_path = web_public / "skybrary-catalog.json"
@@ -1112,7 +1123,7 @@ def apply_staging_to_web_public(
         return {"ok": False, "error": f"missing web public: {web_public}"}
 
     copied: list[str] = []
-    for name in ("skybrary-catalog.json", "catalog.json"):
+    for name in ("skybrary-catalog.json", "catalog.json", "llms.txt", "robots.txt"):
         src = staging_public / name
         if src.is_file():
             shutil.copy2(src, web_public / name)
@@ -1182,6 +1193,8 @@ def library_sync(
         src = Path(pub["out_dir"]) / name
         if src.is_file():
             shutil.copy2(src, public / name)
+
+    write_aeo_files(public, sitemap=f"{site_base.rstrip('/')}/sitemap.xml")
 
     kit_meta: dict[str, Any] | None = None
     if rebuild_ops_kit:
@@ -1257,8 +1270,10 @@ From this staging `public/` into `~/skycache-web/public/`:
 
 1. skybrary-catalog.json
 2. catalog.json
-3. downloads/skycache-library-kit.zip
-4. downloads/skycache-zero-network-demo-kit.zip (if present)
+3. llms.txt
+4. robots.txt
+5. downloads/skycache-library-kit.zip
+6. downloads/skycache-zero-network-demo-kit.zip (if present)
 
 ## Deploy
 

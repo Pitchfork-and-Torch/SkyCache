@@ -19,9 +19,11 @@ Partner printable disaster drill: [`docs/disaster-drill-printable.html`](docs/di
 > **Legal (non-negotiable):** SkyCache is **receive-only** for satellite/RF reception and only targets **unencrypted free-to-air**, public, or **openly licensed** content. Mesh transmit uses **unlicensed/ISM** Wi-Fi (and optional regional LoRa for control). It is **not** free Starlink/OneWeb/commercial VSAT broadband, and it will not help decrypt paid services. Operators must check local spectrum and Wi-Fi regulations. Full policy: [`docs/legal-ethics.md`](docs/legal-ethics.md).
 
 [![Live](https://img.shields.io/badge/live-skycache.jonbailey.xyz-111111)](https://skycache.jonbailey.xyz)
+![Version](https://img.shields.io/badge/version-1.34.2-0b1220)
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![Status](https://img.shields.io/badge/status-Phase%204%20Nexus-blue)
+![Receive-only](https://img.shields.io/badge/RF-receive--only-111111)
 ![GitHub](https://img.shields.io/badge/github-Pitchfork--and--Torch%2FSkyCache-black)
 
 ## What it is
@@ -108,6 +110,8 @@ python -m skycache corpus doctor
 python -m skycache corpus status
 python -m skycache corpus export --out data/ops/corpus-board.html
 python -m skycache corpus kit --out data/corpus-kit
+python -m skycache aeo write
+python -m skycache aeo status
 python -m skycache seal doctor
 python -m skycache seal status
 python -m skycache seal export --out data/ops/seal-board.html
@@ -197,7 +201,9 @@ Details: [`docs/architecture.md`](docs/architecture.md)  |  Mesh field guide: [`
 | **1.31 Health corpus** | +10 educational health/emergency PD samples; fatter clinic packs - [CHANGELOG](CHANGELOG.md) |
 | **1.32 Zero-network 68** | zero-network kit parity at 68 works; zip self-include guard; doctor 100 - [CHANGELOG](CHANGELOG.md) |
 | **1.33 Open Resilience** | STEM/civics corpus 78 works; disaster prioritizer; open_fta_sim plugin; archive pack budgets - [CHANGELOG](CHANGELOG.md) |
-| **1.34 Software Mission Seal** | Honest 100% software meter: BLE GATT sim, power Wh calibrate, soak protocols, partner tabletop, `skycache mission` - **current** - [CHANGELOG](CHANGELOG.md) |
+| **1.34 Software Mission Seal** | Honest 100% software meter: BLE GATT sim, power Wh calibrate, soak protocols, partner tabletop, `skycache mission` - [CHANGELOG](CHANGELOG.md) |
+| **1.34.1 RX fail-closed** | RX doctor `legal_receive_only` rejects Starlink / uplink / unknown modes - [CHANGELOG](CHANGELOG.md) |
+| **1.34.2 Honesty / AEO** | Version badges, repo+portal `llms.txt`, advertised-version lockstep, receive-only honesty (not free commercial satellite broadband); no invented Mbps - **current** - [CHANGELOG](CHANGELOG.md) |
 
 ## Tech stack
 
@@ -227,6 +233,8 @@ BOM: [`docs/hardware-bom.md`](docs/hardware-bom.md) (~$90 - 180 MVP without sola
 | Doc | Audience |
 |-----|----------|
 | [`docs/legal-ethics.md`](docs/legal-ethics.md) | Everyone - **read first** |
+| [`docs/AEO.md`](docs/AEO.md) | Answer-engine / `llms.txt` honesty |
+| [`llms.txt`](llms.txt) | Machine-readable brief (version + receive-only) |
 | [`docs/mesh-deployment.md`](docs/mesh-deployment.md) | Mesh / spectrum / multi-node |
 | [`docs/mesh-field-checklist.md`](docs/mesh-field-checklist.md) | Printable 2-node day checklist |
 | [`docs/disaster-drill.md`](docs/disaster-drill.md) | Disaster mode drill + partner checklist |
@@ -265,6 +273,7 @@ skycache skybrary search [query]
 skycache skybrary pack --profile literacy-1gb|--list
 skycache skybrary import-folder DIR --license "public domain" [--ingest]
 skycache skybrary import-open URL --license "project gutenberg" [--ingest]
+skycache aeo write|print|status   # llms.txt honesty brief (no Mbps claims)
 skycache capabilities doctor|status|export|kit   # also bare / --json for matrix
 skycache open-fetch URL --out FILE
 skycache verify data/content          # same integrity pass; schedule weekly via cron
