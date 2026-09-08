@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="SkyCache Nexus - local knowledge mesh and store-and-forward portal (not free commercial broadband)" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/static/icons/icon.svg" />
+  <link rel="stylesheet" href="/static/css/app.css" />
+  <title>SkyCache Nexus</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">📡</div>
+      <div>
+        <div>SkyCache Nexus</div>
+        <div class="badges">
+          <span id="offlineChip" class="chip ok">Offline OK</span>
+          <span id="powerChip" class="chip"> - </span>
+          <span id="meshChip" class="chip">Mesh</span>
+        </div>
+      </div>
+    </div>
+    <div class="badges">
+      <span id="pkgCount" class="chip">0</span>
+      <button type="button" id="ttsToggle" class="chip tts-btn" aria-pressed="false">Voice</button>
+    </div>
+  </header>
+
+  <div class="legal-banner" role="note" id="legalBanner">
+    SkyCache Nexus: store-and-forward knowledge + community mesh. Receive-only satellite. Not free commercial broadband or Starlink.
+  </div>
+
+  <div id="onboardBanner" class="legal-banner" style="display:none;border-color:#0e7490;background:#0c4a6e">
+    <strong id="onboardTitle">Welcome</strong>
+    <p id="onboardBody" style="margin:0.35rem 0 0"></p>
+    <button type="button" class="btn" id="onboardNext" style="margin-top:0.5rem">Next</button>
+    <button type="button" class="btn" id="onboardSkip" style="margin-top:0.5rem">Skip</button>
+  </div>
+
+  <div class="lang-row" id="langRow" aria-label="Language"></div>
+
+  <div class="list" style="padding-top:0.5rem">
+    <input id="searchBox" type="search" placeholder="Search library..."
+      style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9;width:100%" />
+  </div>
+
+  <main id="viewHome">
+    <section id="phoneDemoCard" class="phone-demo-card" aria-label="Phone offline demos">
+      <h2 id="phoneDemoTitle">No cell plan? Save demos here</h2>
+      <p id="phoneDemoBody">
+        You are on the local hub Wi-Fi. Tap below to download three public-domain sample
+        texts onto this phone. Works without mobile data - not commercial satellite internet.
+      </p>
+      <p id="phoneDemoStatus" class="phone-demo-status" aria-live="polite">Checking demos...</p>
+      <div class="phone-demo-actions">
+        <a class="btn primary" id="phoneDemoDownload" href="/api/demo/pack.zip" download="skycache-skybrary-demo-3texts.zip">
+          Save demos to this phone
+        </a>
+        <button type="button" class="btn" id="phoneDemoOpenLib">Open Library</button>
+      </div>
+      <p id="zeroNetLead" class="phone-demo-status" style="margin-top:0.85rem">
+        No Wi-Fi and no cell? Use the zero-network kit (USB / Bluetooth / SD) - open READ-OFFLINE.html offline.
+      </p>
+      <div class="phone-demo-actions">
+        <a class="btn" id="zeroNetKit" href="/api/demo/zero-network-kit.zip" download="skycache-zero-network-demo-kit.zip">
+          Zero-network kit (USB/BT/SD)
+        </a>
+        <a class="btn" id="zeroNetHtml" href="/api/demo/READ-OFFLINE.html" download="READ-OFFLINE.html">
+          Offline reader HTML
+        </a>
+      </div>
+    </section>
+    <div class="grid" id="categoryGrid"></div>
+    <h2 class="section-title" id="recentTitle">Recent</h2>
+    <div class="list" id="recentList"></div>
+  </main>
+
+  <main id="viewCategory" class="hidden">
+    <div class="toolbar">
+      <button type="button" class="btn" id="backHome">← Back</button>
+    </div>
+    <h2 class="section-title" id="catTitle">Category</h2>
+    <div class="list" id="catList"></div>
+  </main>
+
+  <main id="viewSearch" class="hidden">
+    <h2 class="section-title" id="searchTitle">Search results</h2>
+    <div class="list" id="searchList"></div>
+  </main>
+
+  <main id="viewLibrary" class="hidden">
+    <h2 class="section-title" id="libTitle">Skybrary</h2>
+    <p id="libLead" style="color:#94a3b8;padding:0 1rem;font-size:0.9rem">
+      Open written knowledge - public domain samples. Not a complete archive. Not free commercial internet.
+    </p>
+    <div class="phone-demo-actions" style="padding:0 1rem 0.75rem">
+      <a class="btn primary" id="libDemoDownload" href="/api/demo/pack.zip" download="skycache-skybrary-demo-3texts.zip">
+        Save demos to this phone
+      </a>
+    </div>
+    <div class="list" style="padding-top:0">
+      <input id="libSearch" type="search" placeholder="Search Skybrary works..."
+        style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9;width:100%" />
+    </div>
+    <div class="lang-row" id="libFacets" aria-label="Subjects"></div>
+    <div class="list" id="libList"></div>
+  </main>
+
+  <main id="viewReader" class="hidden">
+    <div class="reader-toolbar">
+      <button type="button" class="btn" id="readerBack">← Back</button>
+      <button type="button" class="btn" id="readerPrev" title="Previous work">‹</button>
+      <button type="button" class="btn" id="readerNext" title="Next work">›</button>
+      <button type="button" class="btn" id="readerChapPrev" title="Previous chapter">Ch−</button>
+      <button type="button" class="btn" id="readerChapNext" title="Next chapter">Ch+</button>
+      <button type="button" class="btn" id="readerPagePrev" title="Previous page">Pg−</button>
+      <button type="button" class="btn" id="readerPageNext" title="Next page">Pg+</button>
+      <button type="button" class="btn" id="readerPaginate" title="Toggle paginated view" aria-pressed="false">Pages</button>
+      <button type="button" class="btn" id="readerFontDown" aria-label="Smaller text">A−</button>
+      <button type="button" class="btn" id="readerFontUp" aria-label="Larger text">A+</button>
+    </div>
+    <div id="readerChapters" class="reader-chapters" hidden></div>
+    <p class="reader-legal" id="readerLegal" role="note">
+      Open / public-domain text  |  local bookmark only  |  not free commercial broadband
+    </p>
+    <h1 class="reader-title" id="readerTitle"> - </h1>
+    <p class="reader-meta" id="readerMeta"></p>
+    <div class="reader-progress-wrap" aria-hidden="true">
+      <div class="reader-progress" id="readerProgress"></div>
+    </div>
+    <div id="readerPageWrap" class="reader-page-wrap">
+      <article id="readerBody" class="reader-body" tabindex="0"></article>
+    </div>
+    <p class="reader-page-ind" id="readerPageInd" hidden></p>
+    <div class="reader-footer-bar">
+      <a id="readerRaw" class="btn" href="#" target="_blank" rel="noopener">Raw file</a>
+      <a id="readerSave" class="btn primary" href="#" download>Save file</a>
+      <span class="chip" id="readerBookmarkHint">Position saved on this device</span>
+    </div>
+  </main>
+
+  <main id="viewMessages" class="hidden">
+    <h2 class="section-title" id="msgTitle">Community notes</h2>
+    <div class="list" id="msgList"></div>
+    <form id="msgForm" class="list" style="gap:0.5rem">
+      <input id="msgAuthor" placeholder="Name" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9" />
+      <input id="msgSubject" placeholder="Subject" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9" />
+      <textarea id="msgBody" placeholder="Message" rows="3" style="padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9"></textarea>
+      <button type="submit" class="btn primary" id="msgSend">Queue note</button>
+    </form>
+  </main>
+
+  <main id="viewBoard" class="hidden">
+    <h2 class="section-title" id="boardTitle">Village boards</h2>
+    <div class="lang-row" id="boardTabs"></div>
+    <div class="list" id="boardList"></div>
+    <form id="boardForm" class="list" style="gap:0.5rem">
+      <select id="boardSelect" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9"></select>
+      <input id="boardAuthor" placeholder="Name" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9" />
+      <input id="boardPostTitle" placeholder="Title" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9" />
+      <textarea id="boardBody" placeholder="Post" rows="3" style="padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9"></textarea>
+      <button type="submit" class="btn primary" id="boardSend">Post to board</button>
+    </form>
+  </main>
+
+  <main id="viewRequest" class="hidden">
+    <h2 class="section-title" id="reqTitle">Request content</h2>
+    <p id="reqLead" style="color:#94a3b8;padding:0 1rem;font-size:0.95rem">
+      Queue an open-content pack for the next USB mule or legal gateway pull.
+      Emergency and health requests go first. Not commercial internet.
+    </p>
+    <form id="reqForm" class="list" style="gap:0.5rem">
+      <input id="reqPackage" placeholder="Package id (e.g. health-ors-001)" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9" />
+      <select id="reqPriority" style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9">
+        <option value="health">Health</option>
+        <option value="education" selected>Education</option>
+        <option value="emergency">Emergency</option>
+        <option value="agriculture">Farm</option>
+        <option value="maps">Maps</option>
+        <option value="general">General</option>
+      </select>
+      <button type="submit" class="btn primary" id="reqSend">Queue request</button>
+      <p id="reqStatus" style="color:#34d399;font-size:0.9rem"></p>
+    </form>
+    <h2 class="section-title" id="meshTitle">Mesh &amp; traffic</h2>
+    <pre id="meshPanel" style="margin:0 1rem;background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.8rem;max-height:14rem"></pre>
+  </main>
+
+  <div id="passportSheet" class="passport-sheet hidden" role="dialog" aria-modal="true" aria-labelledby="passportTitle">
+    <div class="passport-sheet-inner">
+      <div class="passport-sheet-head">
+        <h2 id="passportTitle">License passport</h2>
+        <button type="button" class="btn" id="passportClose" aria-label="Close">Close</button>
+      </div>
+      <div id="passportBody" class="passport-body"></div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <button type="button" class="active" data-nav="home" id="navHome">Home</button>
+    <button type="button" data-nav="library" id="navLib">Library</button>
+    <button type="button" data-nav="board" id="navBoard">Board</button>
+    <button type="button" data-nav="messages" id="navMsg">Notes</button>
+    <button type="button" data-nav="request" id="navReq">Request</button>
+    <a href="/admin" id="navAdmin">Admin</a>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

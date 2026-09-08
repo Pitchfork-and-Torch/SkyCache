@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-carroll-alice-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Alice's Adventures in Wonderland - Chapter I (Lewis Carroll)"
+  },
+  "summary": {
+    "en": "Public-domain children's classic opening for literacy kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 6598,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-carroll-alice-001",
+        "title": {
+          "en": "Alice's Adventures in Wonderland - Chapter I (Lewis Carroll)"
+        },
+        "creators": [
+          "Lewis Carroll (Charles Lutwidge Dodgson)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "children"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain children's classic opening for literacy kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-carroll-alice-001-txt",
+        "work_id": "skybrary-pd-carroll-alice-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2840,
+        "sha256": "4576cf6d3a6a7fd05f6389cd74b12d7cfad01a5042a0f83fd99224c1b80ef59d",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "4576cf6d3a6a7fd05f6389cd74b12d7cfad01a5042a0f83fd99224c1b80ef59d"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3758,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2840,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "children",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

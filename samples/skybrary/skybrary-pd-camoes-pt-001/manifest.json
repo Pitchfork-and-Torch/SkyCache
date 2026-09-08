@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-camoes-pt-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Os Lusiadas - opening stanza (Camoes)",
+    "pt": "Os Lusiadas - estrofe inicial"
+  },
+  "summary": {
+    "en": "Public-domain Portuguese epic opening (short) for heritage literacy."
+  },
+  "languages": [
+    "pt"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2188,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-camoes-pt-001",
+        "title": {
+          "en": "Os Lusiadas - opening stanza (Camoes)",
+          "pt": "Os Lusiadas - estrofe inicial"
+        },
+        "creators": [
+          "Luis de Camoes"
+        ],
+        "languages": [
+          "pt"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain Portuguese epic opening (short) for heritage literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-camoes-pt-001-txt",
+        "work_id": "skybrary-pd-camoes-pt-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 671,
+        "sha256": "712ec1d4305aa296c31a7974b788748be6a61edbbf6307ce29e01a29432c7068",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "712ec1d4305aa296c31a7974b788748be6a61edbbf6307ce29e01a29432c7068"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1517,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 671,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

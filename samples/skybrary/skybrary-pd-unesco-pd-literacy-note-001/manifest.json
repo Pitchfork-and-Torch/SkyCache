@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-unesco-pd-literacy-note-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Why open literacy packs matter (operator educational note)"
+  },
+  "summary": {
+    "en": "Honest note on dual-access open knowledge for villages - not commercial broadband."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2387,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-unesco-pd-literacy-note-001",
+        "title": {
+          "en": "Why open literacy packs matter (operator educational note)"
+        },
+        "creators": [
+          "SkyCache / Skybrary (operator educational note, free to redistribute)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literacy",
+          "education",
+          "heritage",
+          "civics"
+        ],
+        "era": null,
+        "license": "cc0",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Honest note on dual-access open knowledge for villages - not commercial broadband."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-unesco-pd-literacy-note-001-txt",
+        "work_id": "skybrary-pd-unesco-pd-literacy-note-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 722,
+        "sha256": "883369683dd2934b35166b48ad73faf9ba343cae67f2efe7646afcf1373388a6",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "883369683dd2934b35166b48ad73faf9ba343cae67f2efe7646afcf1373388a6"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1665,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 722,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literacy",
+    "education",
+    "heritage",
+    "civics",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
