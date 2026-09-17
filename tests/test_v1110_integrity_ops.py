@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
 from fastapi.testclient import TestClient
 
 from skycache.config import Settings
@@ -66,3 +67,42 @@ def test_integrity_kit_and_api(tmp_path: Path):
     r2 = client.post("/api/integrity/verify", json={"record": True})
     assert r2.status_code == 200
     assert r2.json().get("ok") is True
+
+
+def test_cli_integrity_verify_record_flag(tmp_path: Path, capsys):
+    """The command doctor/kit/README print (`integrity verify --record`) must parse and run."""
+    import json
+
+    from skycache.__main__ import build_parser
+
+    settings = _seed(tmp_path)
+    data_dir = str(settings.data_dir)
+
+    def run(argv: list[str]) -> tuple[int, dict]:
+        args = build_parser().parse_args(argv)
+        code = int(args.func(args))
+        return code, json.loads(capsys.readouterr().out)
+
+    doc = integrity_doctor(data_dir=settings.data_dir)
+    assert "skycache integrity verify --record" in doc["next_steps"]
+
+    receipt = settings.data_dir / "ops" / "bitrot-last.json"
+
+    code, rep = run(["integrity", "verify", "--data-dir", data_dir, "--no-record"])
+    assert code == 0 and rep["ok"] is True
+    assert rep["receipt_path"] is None
+    assert not receipt.exists()
+
+    code, rep = run(["integrity", "verify", "--data-dir", data_dir, "--record"])
+    assert code == 0 and rep["ok"] is True
+    assert Path(rep["receipt_path"]) == receipt
+    assert receipt.is_file()
+
+    receipt.unlink()
+    code, rep = run(["integrity", "verify", "--data-dir", data_dir])
+    assert code == 0 and receipt.is_file(), "recording stays the default"
+
+    with pytest.raises(SystemExit):
+        build_parser().parse_args(
+            ["integrity", "verify", "--data-dir", data_dir, "--record", "--no-record"]
+        )

@@ -17,8 +17,12 @@ Public polish after the v1.34.1 RX fail-closed release. Advertised version, READ
 - RX doctor fail-closed (v1.34.1) still rejects Starlink / uplink / unknown modes.
 - No dish Mbps, no invented throughput slogans.
 
+### Fixes
+- `skycache integrity verify --record` now runs. The CLI only accepted `--no-record`, so the exact command printed by `integrity doctor` (`next_steps`), the generated integrity kit README / field checklist, and the README command block exited with an argparse error. `--record` is now an explicit flag (recording was and remains the default), mutually exclusive with `--no-record`.
+
 ### Tests
 - `tests/test_v1342_honesty_aeo.py`
+- `tests/test_v1110_integrity_ops.py::test_cli_integrity_verify_record_flag` (documented `--record` path)
 - Existing `tests/test_v1170_rx_ops.py` still green
 
 ### Upgrade from 1.34.1

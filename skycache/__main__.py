@@ -3549,7 +3549,15 @@ def build_parser() -> argparse.ArgumentParser:
     ind.set_defaults(func=cmd_integrity, integrity_cmd="doctor")
     inv = integ_sub.add_parser("verify", help="Verify content tree; record bitrot-last.json")
     inv.add_argument("--data-dir", default="data")
-    inv.add_argument("--no-record", action="store_true")
+    # Recording is the default; --record is accepted because doctor next_steps,
+    # the integrity kit README and the field checklist all print it.
+    inv_rec = inv.add_mutually_exclusive_group()
+    inv_rec.add_argument(
+        "--record",
+        action="store_true",
+        help="Persist receipt to data/ops/bitrot-last.json (default)",
+    )
+    inv_rec.add_argument("--no-record", action="store_true", help="Verify only; do not write a receipt")
     inv.set_defaults(func=cmd_integrity, integrity_cmd="verify")
     inr = integ_sub.add_parser("report", help="Printable HTML integrity report")
     inr.add_argument("--data-dir", default="data")
