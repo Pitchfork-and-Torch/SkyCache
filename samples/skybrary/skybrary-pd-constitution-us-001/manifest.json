@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-constitution-us-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "United States Constitution - Preamble and Article I (excerpts)"
+  },
+  "summary": {
+    "en": "Public-domain U.S. Constitution core text for civics education kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 9442,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-constitution-us-001",
+        "title": {
+          "en": "United States Constitution - Preamble and Article I (excerpts)"
+        },
+        "creators": [
+          "Constitutional Convention (U.S., 1787)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "civics",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain U.S. Constitution core text for civics education kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-constitution-us-001-txt",
+        "work_id": "skybrary-pd-constitution-us-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 4261,
+        "sha256": "515d55483d5550cca62fbd5159e88a8d4af204266e4dfa7aed7d4f03763e8b3d",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "515d55483d5550cca62fbd5159e88a8d4af204266e4dfa7aed7d4f03763e8b3d"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 5181,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 4261,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "civics",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
