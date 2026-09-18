@@ -160,7 +160,14 @@ def build_schedule(
         data_dir=data_dir,
     )
     slots: list[dict[str, Any]] = []
-    for p in (report.get("passes") or [])[: max(1, int(limit))]:
+    # Honor limit=0 (empty slots). max(1, limit) used to force one pass.
+    _lim = int(limit)
+    _passes = (report.get("passes") or [])
+    if _lim <= 0:
+        _passes = []
+    else:
+        _passes = _passes[:_lim]
+    for p in _passes:
         sat = str(p.get("satellite") or "")
         rid = recipe_for_satellite(sat)
         recipe = get_recipe(rid) or {}
