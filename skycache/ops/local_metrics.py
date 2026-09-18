@@ -28,8 +28,16 @@ def _disk(path: Path) -> dict[str, Any]:
 
 
 def _pack_freshness(content_dir: Path, *, limit: int = 50) -> dict[str, Any]:
+    """Scan package dirs for manifest mtimes, capped by ``limit``.
+
+    The ``limit`` kwarg used to be ignored (hard stop at 10_000), so a caller
+    asking for a small sample still walked the whole content tree and then
+    claimed ``scanned up to {limit}+`` in the note. Honor ``limit``.
+    """
     content_dir = Path(content_dir)
     if not content_dir.is_dir():
+        return {"packages": 0, "newest_mtime": None, "oldest_mtime": None}
+    if limit < 1:
         return {"packages": 0, "newest_mtime": None, "oldest_mtime": None}
     mtimes: list[float] = []
     count = 0
@@ -40,8 +48,8 @@ def _pack_freshness(content_dir: Path, *, limit: int = 50) -> dict[str, Any]:
         try:
             mtimes.append((child / "manifest.json").stat().st_mtime)
         except OSError:
-            continue
-        if count >= 10_000:
+            pass
+        if count >= limit:
             break
     if not mtimes:
         return {"packages": count, "newest_mtime": None, "oldest_mtime": None}
@@ -57,7 +65,7 @@ def _pack_freshness(content_dir: Path, *, limit: int = 50) -> dict[str, Any]:
         .replace(microsecond=0)
         .isoformat()
         .replace("+00:00", "Z"),
-        "sample_limit_note": f"scanned up to {limit}+ package dirs",
+        "sample_limit_note": f"scanned up to {limit} package dirs",
     }
 
 
