@@ -1,0 +1,95 @@
+{
+  "id": "skybrary-pd-kabir-hi-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Kabir - selected dohas (public domain tradition)",
+    "hi": "Kabir ke dohe (selected)"
+  },
+  "summary": {
+    "en": "Selected Kabir couplets in ASCII transliteration with English gloss for literacy demos."
+  },
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2576,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-kabir-hi-001",
+        "title": {
+          "en": "Kabir - selected dohas (public domain tradition)",
+          "hi": "Kabir ke dohe (selected)"
+        },
+        "creators": [
+          "Kabir (traditional public-domain verses)"
+        ],
+        "languages": [
+          "hi",
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "poetry",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Selected Kabir couplets in ASCII transliteration with English gloss for literacy demos."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-kabir-hi-001-txt",
+        "work_id": "skybrary-pd-kabir-hi-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 841,
+        "sha256": "928fa4e7df5453f13f68250603d586a5c71f8f4a8996b863ea9dce2aefa5302e",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "928fa4e7df5453f13f68250603d586a5c71f8f4a8996b863ea9dce2aefa5302e"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1735,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 841,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "poetry",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-mill-liberty-excerpt-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Mill: On Liberty (harm principle excerpt)"
+  },
+  "summary": {
+    "en": "Classic liberal civics excerpt on liberty and harm to others."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 1954,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-mill-liberty-excerpt-001",
+        "title": {
+          "en": "Mill: On Liberty (harm principle excerpt)"
+        },
+        "creators": [
+          "John Stuart Mill"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "civics",
+          "literature_pd",
+          "literacy",
+          "heritage"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Classic liberal civics excerpt on liberty and harm to others."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-mill-liberty-excerpt-001-txt",
+        "work_id": "skybrary-pd-mill-liberty-excerpt-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 549,
+        "sha256": "e0713fb1125a182c0bf3f41f7e6ef711e831dd18ecbcd8c3ff478f902643d93c",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "e0713fb1125a182c0bf3f41f7e6ef711e831dd18ecbcd8c3ff478f902643d93c"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1405,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 549,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "civics",
+    "literature_pd",
+    "literacy",
+    "heritage",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "skybrary-pd-confucius-analects-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "The Analects - selected sayings (Confucius, Legge PD)"
+  },
+  "summary": {
+    "en": "Public-domain Legge translation excerpts for heritage and ethics literacy."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 6910,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-confucius-analects-001",
+        "title": {
+          "en": "The Analects - selected sayings (Confucius, Legge PD)"
+        },
+        "creators": [
+          "Confucius (tradition)",
+          "James Legge (translator)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "heritage",
+          "literacy",
+          "history_pd"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain Legge translation excerpts for heritage and ethics literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-confucius-analects-001-txt",
+        "work_id": "skybrary-pd-confucius-analects-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2998,
+        "sha256": "1ef33b51f89ad89f9eb0f340decef0c31d98c007cb826a1f088c6fd8c72b54a3",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "1ef33b51f89ad89f9eb0f340decef0c31d98c007cb826a1f088c6fd8c72b54a3"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3912,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2998,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "heritage",
+    "literacy",
+    "history_pd",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
