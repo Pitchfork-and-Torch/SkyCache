@@ -71,11 +71,34 @@ class DtnQueue:
         self.load()
 
     def load(self) -> None:
+        """Load queue from disk. Corrupt or non-object JSON starts empty.
+
+        Nexus constructs DtnQueue on boot. A truncated or hand-edited queue
+        must not take down the node with JSONDecodeError / TypeError.
+        """
         self.path.parent.mkdir(parents=True, exist_ok=True)
         if not self.path.is_file():
             return
-        data = json.loads(self.path.read_text(encoding="utf-8"))
-        self.bundles = [Bundle(**b) for b in data.get("bundles", [])]
+        try:
+            data = json.loads(self.path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            log.warning("DTN queue unreadable at %s: %s; starting empty", self.path, exc)
+            self.bundles = []
+            return
+        if not isinstance(data, dict):
+            log.warning("DTN queue root is not an object at %s; starting empty", self.path)
+            self.bundles = []
+            return
+        bundles: list[Bundle] = []
+        for raw in data.get("bundles") or []:
+            if not isinstance(raw, dict):
+                log.warning("Skipping non-object DTN bundle in %s", self.path)
+                continue
+            try:
+                bundles.append(Bundle(**raw))
+            except TypeError as exc:
+                log.warning("Skipping corrupt DTN bundle in %s: %s", self.path, exc)
+        self.bundles = bundles
 
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)

@@ -119,6 +119,39 @@ def test_dtn_priority_order(tmp_path: Path):
     assert n >= 1
 
 
+def test_dtn_load_corrupt_queue_starts_empty(tmp_path: Path):
+    """Boot must not crash when dtn-queue.json is truncated or non-object."""
+    bad = tmp_path / "corrupt.json"
+    bad.write_text("{not-json", encoding="utf-8")
+    q = DtnQueue(bad)
+    assert q.bundles == []
+
+    arr = tmp_path / "array.json"
+    arr.write_text("[]", encoding="utf-8")
+    q2 = DtnQueue(arr)
+    assert q2.bundles == []
+
+    partial = tmp_path / "partial.json"
+    partial.write_text(
+        '{"bundles": [{"id": "only-id"}, {"kind": "request", "not": "a bundle"}]}',
+        encoding="utf-8",
+    )
+    q3 = DtnQueue(partial)
+    assert q3.bundles == []
+
+    # Valid neighbor still loads; corrupt file did not poison the class.
+    good = tmp_path / "good.json"
+    q4 = DtnQueue(good)
+    q4.enqueue(
+        kind=BundleKind.MESSAGE,
+        priority_class=PriorityClass.GENERAL.value,
+        origin_node="n1",
+        payload={"text": "hi"},
+    )
+    q5 = DtnQueue(good)
+    assert len(q5.bundles) == 1
+
+
 def test_gateway_fair_share_and_quota(tmp_path: Path):
     q = DtnQueue(tmp_path / "gw-q.json")
     gw = GatewayManager(dtn=q, node_id="gw", sim_uplink=True)
