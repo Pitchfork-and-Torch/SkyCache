@@ -198,7 +198,11 @@ class SkybraryCatalog:
         max_tier: int | None = None,
         limit: int = 40,
     ) -> list[dict[str, Any]]:
-        limit = max(1, min(int(limit), 200))
+        # Honor limit=0 (empty result). max(1, limit) used to force one hit.
+        _lim = int(limit)
+        if _lim <= 0:
+            return []
+        limit = min(_lim, 200)
         q = (q or "").strip()
         work_ids: list[str] | None = None
 
@@ -284,7 +288,11 @@ class SkybraryCatalog:
 
     def list_works(self, *, limit: int = 10_000) -> list[dict[str, Any]]:
         """All works ordered by tier (no FTS). Used for federation manifests."""
-        limit = max(1, min(int(limit), 50_000))
+        # Honor limit=0 (empty list). max(1, limit) used to force one work.
+        _lim = int(limit)
+        if _lim <= 0:
+            return []
+        limit = min(_lim, 50_000)
         rows = self._conn.execute(
             """
             SELECT * FROM works
