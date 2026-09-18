@@ -236,7 +236,10 @@ def export_phone_handoff(
 
     ids = list(package_ids or [])
     if not ids:
-        ids = [p.name for p in settings.content_dir.iterdir() if p.is_dir()][: max(1, int(limit))]
+        # Honor limit=0 (and negatives → 0). max(1, limit) used to force one
+        # package even when the operator asked for an empty dry export.
+        cap = max(0, int(limit))
+        ids = [p.name for p in settings.content_dir.iterdir() if p.is_dir()][:cap]
 
     dtn = DtnQueue(settings.nexus_dir / "dtn-queue.json")
     bundle = export_handoff_bundle(
