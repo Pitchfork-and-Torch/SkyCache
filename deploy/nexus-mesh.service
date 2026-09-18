@@ -1,0 +1,35 @@
+# Optional systemd unit notes for a Nexus node (Debian/Raspberry Pi OS).
+# Copy to /etc/systemd/system/skycache.service or merge with skycache.service.
+#
+# LEGAL: Mesh on unlicensed Wi-Fi/ISM only. Receive-only satellite.
+# Not free commercial broadband. Verify national spectrum rules.
+
+[Unit]
+Description=SkyCache Nexus community knowledge hub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=skycache
+Group=skycache
+WorkingDirectory=/opt/skycache
+Environment=SKYCACHE_DATA_DIR=/var/lib/skycache
+Environment=SKYCACHE_MESH_MODE=sim
+Environment=SKYCACHE_MESH_BAND=sim
+# For physical batman-adv fabric (after radio config):
+# Environment=SKYCACHE_MESH_MODE=batman
+# Environment=SKYCACHE_MESH_BAND=wifi_2g
+# Environment=SKYCACHE_NODE_ID=clinic-west
+Environment=SKYCACHE_GATEWAY_DAILY_QUOTA_MB=500
+Environment=SKYCACHE_NEXUS_ENABLED=1
+ExecStart=/opt/skycache/.venv/bin/python -m skycache serve --host 0.0.0.0 --port 8080
+Restart=on-failure
+RestartSec=5
+
+# Hardening (adjust paths as needed)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

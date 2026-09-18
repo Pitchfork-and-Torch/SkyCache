@@ -1,0 +1,48 @@
+{
+  "id": "health-ors-001",
+  "kind": "html_pack",
+  "priority_class": "health",
+  "title": {
+    "en": "Oral rehydration (ORS)",
+    "fr": "Réhydratation orale",
+    "es": "Rehidratación oral",
+    "sw": "Maji ya chumvi na sukari",
+    "hi": "ओआरएस",
+    "pt": "Reidratação oral",
+    "ar": "محلول الجفاف"
+  },
+  "summary": {
+    "en": "Basic ORS education flyer. Not medical diagnosis.",
+    "fr": "Fiche éducative SRO - pas un diagnostic médical."
+  },
+  "languages": [
+    "en",
+    "fr",
+    "es",
+    "sw",
+    "hi",
+    "pt",
+    "ar"
+  ],
+  "received_at": "2026-07-27T00:28:43.121615+00:00",
+  "freshness_hours": 8760,
+  "license": "CC-BY-4.0",
+  "source": {
+    "type": "sample",
+    "legal_note": "Educational sample",
+    "plugin": "sim_file"
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 764
+    }
+  ],
+  "tags": [
+    "health",
+    "water"
+  ],
+  "icon": "health",
+  "size_bytes": 764
+}
