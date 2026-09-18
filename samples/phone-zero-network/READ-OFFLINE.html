@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<meta name="description" content="SkyCache zero-network demo reader - no Wi-Fi or cell required" />
+<title>SkyCache  |  Offline demos (no Wi-Fi / no cell)</title>
+<style>
+:root {
+  --bg: #0b1220; --card: #121a2b; --text: #f1f5f9; --muted: #94a3b8;
+  --accent: #5eead4; --border: #1e293b; --touch: 48px;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; background: var(--bg); color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+body { max-width: 40rem; margin: 0 auto; padding: 0 0 3rem; }
+header {
+  position: sticky; top: 0; z-index: 5;
+  background: rgba(11,18,32,0.95); border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+}
+header h1 { margin: 0; font-size: 1.1rem; color: var(--accent); }
+header p { margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--muted); }
+.banner {
+  margin: 0.75rem 1rem; padding: 0.75rem 1rem; border-radius: 12px;
+  background: #0c4a6e; border: 1px solid #0e7490; font-size: 0.9rem;
+}
+.nav {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  padding: 0 1rem 1rem;
+}
+.nav-btn {
+  min-height: var(--touch); text-align: left; padding: 0.75rem 1rem;
+  border-radius: 12px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font-size: 1rem; cursor: pointer;
+}
+.nav-btn.active, .nav-btn:focus { border-color: var(--accent); outline: none; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0 1rem 0.75rem;
+  position: sticky; top: 4.5rem; background: var(--bg); z-index: 4;
+}
+.toolbar button {
+  min-height: var(--touch); min-width: var(--touch); padding: 0 0.85rem;
+  border-radius: 10px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font-size: 1rem; cursor: pointer;
+}
+.work { padding: 0 1rem 2rem; }
+.work h1 { font-size: 1.35rem; margin: 0 0 0.35rem; color: var(--accent); }
+.work .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 1rem; }
+.work .body {
+  white-space: pre-wrap; word-wrap: break-word;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: var(--fs, 1.2rem); line-height: 1.55;
+  margin: 0; background: var(--card); padding: 1rem; border-radius: 12px;
+  border: 1px solid var(--border);
+}
+footer {
+  padding: 1rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>SkyCache  |  Offline demos</h1>
+  <p>No Wi-Fi  |  No cell  |  Public-domain samples only</p>
+</header>
+<div class="banner" role="note">
+  This file works with <strong>zero network</strong>. Open it from Files / Downloads
+  (or after USB / Bluetooth / SD copy). Not free commercial satellite broadband.
+  Not a complete archive. Generated 2026-08-01T19:22:49Z.
+</div>
+<div class="nav" id="nav" role="navigation" aria-label="Works">
+<button type="button" class="nav-btn" data-i="0" id="nav0">The Fox and the Grapes (Aesop)</button>
+<button type="button" class="nav-btn" data-i="1" id="nav1">Gettysburg Address (Abraham Lincoln)</button>
+<button type="button" class="nav-btn" data-i="2" id="nav2">Hippocratic Oath (public domain translation excerpt)</button>
+<button type="button" class="nav-btn" data-i="3" id="nav3">United States Declaration of Independence (1776)</button>
+<button type="button" class="nav-btn" data-i="4" id="nav4">United States Bill of Rights (Amendments I - X)</button>
+<button type="button" class="nav-btn" data-i="5" id="nav5">Sonnet 18 - Shall I compare thee to a summer&#x27;s day? (Shakespeare)</button>
+<button type="button" class="nav-btn" data-i="6" id="nav6">Pride and Prejudice - Opening chapter (Jane Austen)</button>
+<button type="button" class="nav-btn" data-i="7" id="nav7">A Christmas Carol - Stave One opening (Charles Dickens)</button>
+<button type="button" class="nav-btn" data-i="8" id="nav8">Euclid&#x27;s Elements - Book I Definitions (public domain)</button>
+<button type="button" class="nav-btn" data-i="9" id="nav9">On the Origin of Species - Chapter I excerpt (Darwin)</button>
+<button type="button" class="nav-btn" data-i="10" id="nav10">The Art of War - Lionel Giles translation excerpts</button>
+<button type="button" class="nav-btn" data-i="11" id="nav11">Historical first-aid principles (public-domain educational summary)</button>
+<button type="button" class="nav-btn" data-i="12" id="nav12">Self-Reliance - excerpt (Ralph Waldo Emerson)</button>
+<button type="button" class="nav-btn" data-i="13" id="nav13">The Way to Wealth - excerpt (Benjamin Franklin)</button>
+<button type="button" class="nav-btn" data-i="14" id="nav14">Newton - Rules of Reasoning in Philosophy (Principia excerpt)</button>
+<button type="button" class="nav-btn" data-i="15" id="nav15">Notes on Nursing - ventilation &amp; cleanliness excerpts (Nightingale)</button>
+<button type="button" class="nav-btn" data-i="16" id="nav16">Psalm 23 (King James Version)</button>
+<button type="button" class="nav-btn" data-i="17" id="nav17">The Celebrated Jumping Frog - opening (Mark Twain)</button>
+<button type="button" class="nav-btn" data-i="18" id="nav18">The Raven (Edgar Allan Poe)</button>
+<button type="button" class="nav-btn" data-i="19" id="nav19">Alice&#x27;s Adventures in Wonderland - Chapter I (Lewis Carroll)</button>
+<button type="button" class="nav-btn" data-i="20" id="nav20">Moby-Dick - Opening (Herman Melville)</button>
+<button type="button" class="nav-btn" data-i="21" id="nav21">Frankenstein - Letter I (Mary Shelley)</button>
+<button type="button" class="nav-btn" data-i="22" id="nav22">A Study in Scarlet - Opening (Arthur Conan Doyle)</button>
+<button type="button" class="nav-btn" data-i="23" id="nav23">The Time Machine - Chapter I opening (H. G. Wells)</button>
+<button type="button" class="nav-btn" data-i="24" id="nav24">Treasure Island - Chapter I (Robert Louis Stevenson)</button>
+<button type="button" class="nav-btn" data-i="25" id="nav25">Rapunzel (Brothers Grimm, public-domain English)</button>
+<button type="button" class="nav-btn" data-i="26" id="nav26">The Ugly Duckling (Hans Christian Andersen, PD English)</button>
+<button type="button" class="nav-btn" data-i="27" id="nav27">O Captain! My Captain! (Walt Whitman)</button>
+<button type="button" class="nav-btn" data-i="28" id="nav28">Hope is the thing with feathers (Emily Dickinson)</button>
+<button type="button" class="nav-btn" data-i="29" id="nav29">The Federalist No. 1 (Alexander Hamilton)</button>
+<button type="button" class="nav-btn" data-i="30" id="nav30">United States Constitution - Preamble and Article I (excerpts)</button>
+<button type="button" class="nav-btn" data-i="31" id="nav31">Declaration of the Rights of Man and of the Citizen (1789)</button>
+<button type="button" class="nav-btn" data-i="32" id="nav32">Magna Carta (1215) - selected clauses (PD English)</button>
+<button type="button" class="nav-btn" data-i="33" id="nav33">The Analects - selected sayings (Confucius, Legge PD)</button>
+<button type="button" class="nav-btn" data-i="34" id="nav34">The Dhammapada - selected verses (Max Muller PD)</button>
+<button type="button" class="nav-btn" data-i="35" id="nav35">The Chemical History of a Candle - Lecture I excerpt (Faraday)</button>
+<button type="button" class="nav-btn" data-i="36" id="nav36">Apology of Socrates - opening (Plato, Jowett PD)</button>
+<button type="button" class="nav-btn" data-i="37" id="nav37">Walden - Economy excerpt (Henry David Thoreau)</button>
+<button type="button" class="nav-btn" data-i="38" id="nav38">Narrative of the Life of Frederick Douglass - Chapter I</button>
+<button type="button" class="nav-btn" data-i="39" id="nav39">Washington&#x27;s Farewell Address (1796) - excerpts</button>
+<button type="button" class="nav-btn" data-i="40" id="nav40">Twenty Thousand Leagues Under the Seas - Chapter I (Verne)</button>
+<button type="button" class="nav-btn" data-i="41" id="nav41">A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)</button>
+<button type="button" class="nav-btn" data-i="42" id="nav42">The Tortoise and the Hare (Aesop)</button>
+<button type="button" class="nav-btn" data-i="43" id="nav43">If - (Rudyard Kipling)</button>
+<button type="button" class="nav-btn" data-i="44" id="nav44">La Cigale et la Fourmi (La Fontaine)</button>
+<button type="button" class="nav-btn" data-i="45" id="nav45">Don Quixote - opening (Cervantes)</button>
+<button type="button" class="nav-btn" data-i="46" id="nav46">Inferno Canto I opening (Dante)</button>
+<button type="button" class="nav-btn" data-i="47" id="nav47">Erlkoenig (Goethe)</button>
+<button type="button" class="nav-btn" data-i="48" id="nav48">Os Lusiadas - opening stanza (Camoes)</button>
+<button type="button" class="nav-btn" data-i="49" id="nav49">Gaudeamus igitur (traditional Latin)</button>
+<button type="button" class="nav-btn" data-i="50" id="nav50">Ya vas lyubil (Pushkin)</button>
+<button type="button" class="nav-btn" data-i="51" id="nav51">Analects - selected sayings (traditional)</button>
+<button type="button" class="nav-btn" data-i="52" id="nav52">Kalila and Dimna - the crow and the snake (traditional)</button>
+<button type="button" class="nav-btn" data-i="53" id="nav53">Swahili proverbs (traditional selection)</button>
+<button type="button" class="nav-btn" data-i="54" id="nav54">Kabir - selected dohas (public domain tradition)</button>
+<button type="button" class="nav-btn" data-i="55" id="nav55">Matsuo Basho - selected haiku (romaji)</button>
+<button type="button" class="nav-btn" data-i="56" id="nav56">Yoruba proverbs (traditional selection)</button>
+<button type="button" class="nav-btn" data-i="57" id="nav57">Tagore - Gitanjali selections (public domain EN)</button>
+</div>
+<div class="toolbar" id="toolbar" hidden>
+  <button type="button" id="btnBack" aria-label="Back to list">← List</button>
+  <button type="button" id="btnSmaller" aria-label="Smaller text">A−</button>
+  <button type="button" id="btnLarger" aria-label="Larger text">A+</button>
+</div>
+<article class="work" id="work0" hidden><h1>The Fox and the Grapes (Aesop)</h1><p class="meta">Aesop (traditional)  |  public domain sample  |  skybrary-pd-aesop-001</p><pre class="body">A Fox one day spied a beautiful bunch of ripe grapes hanging from a vine trained along the branches of a tree. The grapes seemed ready to burst with juice, and the Fox&#x27;s mouth watered as he gazed longingly at them.
+
+The bunch hung from a high branch, and the Fox had to jump for it. The first time he jumped he missed it by a long way. So he walked off a short distance and took a running leap at it, only to fall short once more. Again and again he tried, but in vain.
+
+Now he sat down and looked at the grapes in disgust.
+
+&#x27;What a fool I am,&#x27; he said. &#x27;Here I am wearing myself out to get a bunch of sour grapes that are not worth gaping for.&#x27;
+
+And off he walked very, very scornfully.
+
+[Public domain traditional fable - curated sample for Skybrary.]</pre></article>
+<article class="work" id="work1" hidden><h1>Gettysburg Address (Abraham Lincoln)</h1><p class="meta">Abraham Lincoln  |  public domain sample  |  skybrary-pd-gettysburg-001</p><pre class="body">Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+But, in a larger sense, we can not dedicate - we can not consecrate - we can not hallow - this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us - that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion - that we here highly resolve that these dead shall not have died in vain - that this nation, under God, shall have a new birth of freedom - and that government of the people, by the people, for the people, shall not perish from the earth.
+
+[U.S. public domain - Skybrary curated pack.]</pre></article>
+<article class="work" id="work2" hidden><h1>Hippocratic Oath (public domain translation excerpt)</h1><p class="meta">Hippocratic tradition (public domain English excerpt)  |  public domain sample  |  skybrary-pd-hippocratic-001</p><pre class="body">I swear by Apollo Physician and Asclepius and Hygieia and Panacea and all the gods and goddesses, making them my witnesses, that I will fulfill according to my ability and judgment this oath and this covenant:
+
+To hold him who has taught me this art as equal to my parents and to live my life in partnership with him, and in his sons&#x27; male lineage as equal to my brothers and to teach them this art - if they desire to learn it - without fee and covenant; to give a share of precepts and oral instruction and all the other learning to my sons and to the sons of him who has instructed me and to pupils who have signed the covenant and have taken an oath according to the medical law, but no one else.
+
+I will apply dietetic measures for the benefit of the sick according to my ability and judgment; I will keep them from harm and injustice.
+
+I will neither give a deadly drug to anybody who asked for it, nor will I make a suggestion to this effect. Similarly I will not give to a woman an abortive remedy. In purity and holiness I will guard my life and my art.
+
+I will not use the knife, not even on sufferers from stone, but will withdraw in favor of such men as are engaged in this work.
+
+Whatever houses I may visit, I will come for the benefit of the sick, remaining free of all intentional injustice, of all mischief and in particular of sexual relations with both female and male persons, be they free or slaves.
+
+What I may see or hear in the course of the treatment or even outside of the treatment in regard to the life of men, which on no account one must spread abroad, I will keep to myself, holding such things shameful to be spoken about.
+
+If I fulfill this oath and do not violate it, may it be granted to me to enjoy life and art, being honored with fame among all men for all time to come; if I transgress it and swear falsely, may the opposite of all this be my lot.
+
+[Public domain English excerpt for educational demo - not medical advice. Skybrary.]</pre></article>
+<article class="work" id="work3" hidden><h1>United States Declaration of Independence (1776)</h1><p class="meta">Continental Congress (U.S.)  |  public domain sample  |  skybrary-pd-declaration-001</p><pre class="body">IN CONGRESS, July 4, 1776.
+
+The unanimous Declaration of the thirteen united States of America,
+
+When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature&#x27;s God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
+
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. - That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, - That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security. - Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.
+
+[... full enumeration of grievances omitted in some abridgments; this pack includes the opening philosophical statement and closes with the declaration of independence.]
+
+We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.
+
+[U.S. public domain - Skybrary curated civic pack.]</pre></article>
+<article class="work" id="work4" hidden><h1>United States Bill of Rights (Amendments I - X)</h1><p class="meta">U.S. Congress (1789)  |  public domain sample  |  skybrary-pd-bill-of-rights-001</p><pre class="body">Amendment I
+Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
+
+Amendment II
+A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
+
+Amendment III
+No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.
+
+Amendment IV
+The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.
+
+Amendment V
+No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.
+
+Amendment VI
+In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.
+
+Amendment VII
+In Suits at common law, where the value in controversy shall exceed twenty dollars, the right of trial by jury shall be preserved, and no fact tried by a jury, shall be otherwise re-examined in any Court of the United States, than according to the rules of the common law.
+
+Amendment VIII
+Excessive bail shall not be required, nor excessive fines imposed, nor cruel and unusual punishments inflicted.
+
+Amendment IX
+The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.
+
+Amendment X
+The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.
+
+[U.S. public domain - Skybrary civics pack.]</pre></article>
+<article class="work" id="work5" hidden><h1>Sonnet 18 - Shall I compare thee to a summer&#x27;s day? (Shakespeare)</h1><p class="meta">William Shakespeare  |  public domain sample  |  skybrary-pd-shakespeare-sonnet18-001</p><pre class="body">Shall I compare thee to a summer&#x27;s day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer&#x27;s lease hath all too short a date;
+Sometime too hot the eye of heaven shines,
+And often is his gold complexion dimm&#x27;d;
+And every fair from fair sometime declines,
+By chance or nature&#x27;s changing course untrimm&#x27;d;
+But thy eternal summer shall not fade,
+Nor lose possession of that fair thou ow&#x27;st;
+Nor shall death brag thou wander&#x27;st in his shade,
+When in eternal lines to time thou grow&#x27;st:
+   So long as men can breathe or eyes can see,
+   So long lives this, and this gives life to thee.
+
+[Public domain - Shakespeare Sonnet 18. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work6" hidden><h1>Pride and Prejudice - Opening chapter (Jane Austen)</h1><p class="meta">Jane Austen  |  public domain sample  |  skybrary-pd-austen-pride-001</p><pre class="body">Chapter I
+
+It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
+
+However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.
+
+&#x27;My dear Mr. Bennet,&#x27; said his lady to him one day, &#x27;have you heard that Netherfield Park is let at last?&#x27;
+
+Mr. Bennet replied that he had not.
+
+&#x27;But it is,&#x27; returned she; &#x27;for Mrs. Long has just been here, and she told me all about it.&#x27;
+
+Mr. Bennet made no answer.
+
+&#x27;Do you not want to know who has taken it?&#x27; cried his wife impatiently.
+
+&#x27;You want to tell me, and I have no objection to hearing it.&#x27;
+
+This was invitation enough.
+
+&#x27;Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it, that he agreed with Mr. Morris immediately; that he is to take possession before Michaelmas, and some of his servants are to be in the house by the end of next week.&#x27;
+
+&#x27;What is his name?&#x27;
+
+&#x27;Bingley.&#x27;
+
+&#x27;Is he married or single?&#x27;
+
+&#x27;Oh! Single, my dear, to be sure! A single man of large fortune; four or five thousand a year. What a fine thing for our girls!&#x27;
+
+&#x27;How so? How can it affect them?&#x27;
+
+&#x27;My dear Mr. Bennet,&#x27; replied his wife, &#x27;how can you be so tiresome! You must know that I am thinking of his marrying one of them.&#x27;
+
+&#x27;Is that his design in settling here?&#x27;
+
+&#x27;Design! Nonsense, how can you talk so! But it is very likely that he may fall in love with one of them, and therefore you must visit him as soon as he comes.&#x27;
+
+&#x27;I see no occasion for that. You and the girls may go, or you may send them by themselves, which perhaps will be still better, for as you are as handsome as any of them, Mr. Bingley may like you the best of the party.&#x27;
+
+&#x27;My dear, you flatter me. I certainly have had my share of beauty, but I do not pretend to be anything extraordinary now. When a woman has five grown-up daughters, she ought to give over thinking of her own beauty.&#x27;
+
+&#x27;In such cases, a woman has not often much beauty to think of.&#x27;
+
+&#x27;But, my dear, you must indeed go and see Mr. Bingley when he comes into the neighbourhood.&#x27;
+
+&#x27;It is more than I engage for, I assure you.&#x27;
+
+&#x27;But consider your daughters. Only think what an establishment it would be for one of them. Sir William and Lady Lucas are determined to go, merely on that account, for in general, you know, they visit no newcomers. Indeed you must go, for it will be impossible for us to visit him if you do not.&#x27;
+
+&#x27;You are over-scrupulous, surely. I dare say Mr. Bingley will be very glad to see you; and I will send a few lines by you to assure him of my hearty consent to his marrying whichever he chooses of the girls; though I must throw in a good word for my little Lizzy.&#x27;
+
+&#x27;I desire you will do no such thing. Lizzy is not a bit better than the others; and I am sure she is not half so handsome as Jane, nor half so good-humoured as Lydia. But you are always giving her the preference.&#x27;
+
+&#x27;They have none of them much to recommend them,&#x27; replied he; &#x27;they are all silly and ignorant like other girls; but Lizzy has something more of quickness than her sisters.&#x27;
+
+&#x27;Mr. Bennet, how can you abuse your own children in such a way? You take delight in vexing me. You have no compassion on my poor nerves.&#x27;
+
+&#x27;You mistake me, my dear. I have a high respect for your nerves. They are my old friends. I have heard you mention them with consideration these last twenty years at least.&#x27;
+
+&#x27;Ah, you do not know what I suffer.&#x27;
+
+&#x27;But I hope you will get over it, and live to see many young men of four thousand a year come into the neighbourhood.&#x27;
+
+&#x27;It will be no use to us, if twenty such should come, since you will not visit them.&#x27;
+
+&#x27;Depend upon it, my dear, that when there are twenty, I will visit them all.&#x27;
+
+Mr. Bennet was so odd a mixture of quick parts, sarcastic humour, reserve, and caprice, that the experience of three-and-twenty years had been insufficient to make his wife understand his character. Her mind was less difficult to develop. She was a woman of mean understanding, little information, and uncertain temper. When she was discontented, she fancied herself nervous. The business of her life was to get her daughters married; its solace was visiting and news.
+
+[Public domain - Pride and Prejudice, Chapter I. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work7" hidden><h1>A Christmas Carol - Stave One opening (Charles Dickens)</h1><p class="meta">Charles Dickens  |  public domain sample  |  skybrary-pd-dickens-carol-001</p><pre class="body">Stave One - Marley&#x27;s Ghost
+
+Marley was dead: to begin with. There is no doubt whatever about that. The register of his burial was signed by the clergyman, the clerk, the undertaker, and the chief mourner. Scrooge signed it: and Scrooge&#x27;s name was good upon &#x27;Change, for anything he chose to put his hand to. Old Marley was as dead as a door-nail.
+
+Mind! I don&#x27;t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail. I might have been inclined, myself, to regard a coffin-nail as the deadest piece of ironmongery in the trade. But the wisdom of our ancestors is in the simile; and my unhallowed hands shall not disturb it, or the Country&#x27;s done for. You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail.
+
+Scrooge knew he was dead? Of course he did. How could it be otherwise? Scrooge and he were partners for I don&#x27;t know how many years. Scrooge was his sole executor, his sole administrator, his sole assign, his sole residuary legatee, his sole friend, and sole mourner. And even Scrooge was not so dreadfully cut up by the sad event, but that he was an excellent man of business on the very day of the funeral, and solemnised it with an undoubted bargain.
+
+The mention of Marley&#x27;s funeral brings me back to the point I started from. There is no doubt that Marley was dead. This must be distinctly understood, or nothing wonderful can come of the story I am going to relate. If we were not perfectly convinced that Hamlet&#x27;s Father died before the play began, there would be nothing more remarkable in his taking a stroll at night, in an easterly wind, upon his own ramparts, than there would be in any other middle-aged gentleman rashly turning out after dark in a breezy spot - say Saint Paul&#x27;s Churchyard for instance - literally to astonish his son&#x27;s weak mind.
+
+Scrooge never painted out Old Marley&#x27;s name. There it stood, years afterwards, above the warehouse door: Scrooge and Marley. The firm was known as Scrooge and Marley. Sometimes people new to the business called Scrooge Scrooge, and sometimes Marley, but he answered to both names. It was all the same to him.
+
+Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner! Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster. The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait; made his eyes red, his thin lips blue; and spoke out shrewdly in his grating voice. A frosty rime was on his head, and on his eyebrows, and his wiry chin. He carried his own low temperature always about with him; he iced his office in the dog-days; and didn&#x27;t thaw it one degree at Christmas.
+
+[Public domain - A Christmas Carol opening. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work8" hidden><h1>Euclid&#x27;s Elements - Book I Definitions (public domain)</h1><p class="meta">Euclid, Thomas L. Heath (translator, public domain)  |  public domain sample  |  skybrary-pd-euclid-001</p><pre class="body">Book I - Definitions
+
+1. A point is that which has no part.
+
+2. A line is breadthless length.
+
+3. The extremities of a line are points.
+
+4. A straight line is a line which lies evenly with the points on itself.
+
+5. A surface is that which has length and breadth only.
+
+6. The extremities of a surface are lines.
+
+7. A plane surface is a surface which lies evenly with the straight lines on itself.
+
+8. A plane angle is the inclination to one another of two lines in a plane which meet one another and do not lie in a straight line.
+
+9. And when the lines containing the angle are straight, the angle is called rectilineal.
+
+10. When a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands.
+
+11. An obtuse angle is an angle greater than a right angle.
+
+12. An acute angle is an angle less than a right angle.
+
+13. A boundary is that which is an extremity of anything.
+
+14. A figure is that which is contained by any boundary or boundaries.
+
+15. A circle is a plane figure contained by one line such that all the straight lines falling upon it from one point among those lying within the figure are equal to one another.
+
+16. And the point is called the centre of the circle.
+
+17. A diameter of the circle is any straight line drawn through the centre and terminated in both directions by the circumference of the circle, and such a straight line also bisects the circle.
+
+23. Parallel straight lines are straight lines which, being in the same plane and being produced indefinitely in both directions, do not meet one another in either direction.
+
+Postulates
+
+1. To draw a straight line from any point to any point.
+
+2. To produce a finite straight line continuously in a straight line.
+
+3. To describe a circle with any centre and distance.
+
+4. That all right angles are equal to one another.
+
+5. That, if a straight line falling on two straight lines make the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.
+
+[Public domain English (Heath). Skybrary STEM pack - educational geometry foundations.]</pre></article>
+<article class="work" id="work9" hidden><h1>On the Origin of Species - Chapter I excerpt (Darwin)</h1><p class="meta">Charles Darwin  |  public domain sample  |  skybrary-pd-darwin-origin-001</p><pre class="body">Chapter I - Variation under Domestication
+
+Causes of Variability
+
+When we look to the individuals of the same variety or sub-variety of our older cultivated plants and animals, one of the first points which strikes us, is, that they generally differ much more from each other, than do the individuals of any one species or variety in a state of nature. When we reflect on the vast diversity of the plants and animals which have been cultivated, and which have varied during all ages under the most different climates and treatment, I think we are driven to conclude that this greater variability is simply due to our domestic productions having been raised under conditions of life not so uniform as, and somewhat different from, those to which the parent-species have been exposed under nature. There is, also, I think, some probability in the view propounded by Andrew Knight, that this variability may be partly connected with excess of food. It seems pretty clear that organic beings must be exposed during several generations to the new conditions of life to cause any appreciable amount of variation; and that when the organisation has once begun to vary, it generally continues to vary for many generations. No case is on record of a variable being ceasing to be variable under cultivation. Our oldest cultivated plants, such as wheat, still often yield new varieties: our oldest domesticated animals are still capable of rapid improvement or modification.
+
+Effects of Habit and of the Use or Disuse of Parts; Correlated Variation; Inheritance
+
+Changed habits produce an inherited effect, as in the period of the flowering of plants when transported from one climate to another. In animals the increased use or disuse of parts has had a more marked influence; thus I find in the domestic duck that the bones of the wing weigh less and the bones of the leg more, in proportion to the whole skeleton, than do the same bones in the wild-duck; and I presume that this change may be safely attributed to the domestic duck flying much less, and walking more, than its wild parent. The great and inherited development of the udders in cows and goats in countries where they are habitually milked, in comparison with the state of these organs in other countries, is another instance of the effect of use. Not a single domestic animal can be named which has not in some country drooping ears; and the view suggested by some authors, that the drooping is due to the disuse of the muscles of the ear, from the animals not being much alarmed by danger, seems probable.
+
+[Public domain - Origin of Species, Chapter I excerpt. Skybrary STEM / science history pack. Educational historical text - not a complete modern biology curriculum.]</pre></article>
+<article class="work" id="work10" hidden><h1>The Art of War - Lionel Giles translation excerpts</h1><p class="meta">Sun Tzu, Lionel Giles (translator)  |  public domain sample  |  skybrary-pd-sunzi-artofwar-001</p><pre class="body">I. Laying Plans
+
+1. Sun Tzu said: The art of war is of vital importance to the State.
+
+2. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected.
+
+3. The art of war, then, is governed by five constant factors, to be taken into account in one&#x27;s deliberations, when seeking to determine the conditions obtaining in the field.
+
+4. These are: (1) The Moral Law; (2) Heaven; (3) Earth; (4) The Commander; (5) Method and discipline.
+
+5, 6. The Moral Law causes the people to be in complete accord with their ruler, so that they will follow him regardless of their lives, undismayed by any danger.
+
+7. Heaven signifies night and day, cold and heat, times and seasons.
+
+8. Earth comprises distances, great and small; danger and security; open ground and narrow passes; the chances of life and death.
+
+9. The Commander stands for the virtues of wisdom, sincerely, benevolence, courage and strictness.
+
+10. By method and discipline are to be understood the marshaling of the army in its proper subdivisions, the graduations of rank among the officers, the maintenance of roads by which supplies may reach the army, and the control of military expenditure.
+
+18. All warfare is based on deception.
+
+19. Hence, when able to attack, we must seem unable; when using our forces, we must seem inactive; when we are near, we must make the enemy believe we are far away; when far away, we must make him believe we are near.
+
+III. Attack by Stratagem
+
+1. Sun Tzu said: In the practical art of war, the best thing of all is to take the enemy&#x27;s country whole and intact; to shatter and destroy it is not so good. So, too, it is better to recapture an army entire than to destroy it, to capture a regiment, a detachment or a company entire than to destroy them.
+
+2. Hence to fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy&#x27;s resistance without fighting.
+
+[Public domain - Lionel Giles translation (1910). Skybrary heritage / history pack.]</pre></article>
+<article class="work" id="work11" hidden><h1>Historical first-aid principles (public-domain educational summary)</h1><p class="meta">Public-domain first-aid handbooks (curated summary)  |  public domain sample  |  skybrary-pd-firstaid-historical-001</p><pre class="body">Historical First-Aid Principles (Educational Summary)
+
+IMPORTANT: This text is for historical and educational literacy only. It is NOT medical advice, NOT diagnosis, and NOT a substitute for trained emergency responders or modern clinical guidance. Follow current local health authority protocols.
+
+1. Keep calm and ensure scene safety.
+Historically, handbooks stressed that the helper must not become a second casualty. Remove obvious immediate danger when it is safe to do so; call for help; do not rush into hazards.
+
+2. Breathing and consciousness.
+Older manuals taught observation: is the person conscious? Breathing? Responsive to voice? Modern systems use updated CPR and AED guidance - train with certified instructors for current technique. Historical texts often emphasized open airway positioning and preventing further injury.
+
+3. Bleeding control (historical principle).
+Public-domain manuals commonly taught direct pressure with clean cloth on wounds, elevation of a limb when appropriate, and seeking skilled care for severe bleeding. Do not improvise tourniquets without current training.
+
+4. Burns (historical principle).
+Older guidance often included cooling with clean water for simple burns and covering with clean cloth; avoid folk remedies that contaminate wounds. Severe burns require professional care.
+
+5. Fractures and movement.
+Historical principle: avoid unnecessary movement of an injured person when spinal or major bone injury is possible; immobilize only if trained; wait for skilled help when available.
+
+6. Heat, cold, and dehydration (general literacy).
+Many open educational sources stress shade, gradual cooling, warm dry covering for cold exposure, and safe drinking water when available. Oral rehydration education (ORS) is taught separately in modern public-health materials when licenses permit packaging.
+
+7. Hygiene and infection awareness.
+Clean hands, clean water, and clean dressings reduce infection risk - a principle common to both historical nursing literature and modern community health education.
+
+8. Record and hand over.
+Note what happened, times, and care given; hand information to professional responders.
+
+[Curated educational summary inspired by public-domain first-aid literature. Skybrary emergency-health pack. Not medical advice. Not complete clinical protocol.]</pre></article>
+<article class="work" id="work12" hidden><h1>Self-Reliance - excerpt (Ralph Waldo Emerson)</h1><p class="meta">Ralph Waldo Emerson  |  public domain sample  |  skybrary-pd-emerson-self-001</p><pre class="body">Self-Reliance (excerpt)
+
+I read the other day some verses written by an eminent painter which were original and not conventional. The soul always hears an admonition in such lines, let the subject be what it may. The sentiment they instil is of more value than any thought they may contain. To believe your own thought, to believe that what is true for you in your private heart is true for all men, - that is genius. Speak your latent conviction, and it shall be the universal sense; for the inmost in due time becomes the outmost, and our first thought is rendered back to us by the trumpets of the Last Judgment. Familiar as the voice of the mind is to each, the highest merit we ascribe to Moses, Plato, and Milton is, that they set at naught books and traditions, and spoke not what men, but what they thought. A man should learn to detect and watch that gleam of light which flashes across his mind from within, more than the lustre of the firmament of bards and sages. Yet he dismisses without notice his thought, because it is his. In every work of genius we recognize our own rejected thoughts: they come back to us with a certain alienated majesty. Great works of art have no more affecting lesson for us than this. They teach us to abide by our spontaneous impression with good-humored inflexibility then most when the whole cry of voices is on the other side. Else, to-morrow a stranger will say with masterly good sense precisely what we have thought and felt all the time, and we shall be forced to take with shame our own opinion from another.
+
+There is a time in every man&#x27;s education when he arrives at the conviction that envy is ignorance; that imitation is suicide; that he must take himself for better, for worse, as his portion; that though the wide universe is full of good, no kernel of nourishing corn can come to him but through his toil bestowed on that plot of ground which is given to him to till. The power which resides in him is new in nature, and none but he knows what that is which he can do, nor does he know until he has tried.
+
+[Public domain - Emerson, Self-Reliance excerpt. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work13" hidden><h1>The Way to Wealth - excerpt (Benjamin Franklin)</h1><p class="meta">Benjamin Franklin  |  public domain sample  |  skybrary-pd-franklin-wealth-001</p><pre class="body">The Way to Wealth (excerpt)
+
+Courteous Reader,
+
+I have heard that nothing gives an author so great pleasure as to find his works respectfully quoted by other learned authors. This pleasure I have seldom enjoyed; for though I have been, if I may say it without vanity, an eminent author of almanacs annually now a full quarter of a century, my brother authors in the same way, for what reason I know not, have ever been very sparing in their applauses, and no other author has taken the least notice of me, so that did not my writings produce me some solid pudding, the great deficiency of praise would have quite discouraged me.
+
+I concluded at length, that the people were the best judges of my merit; for they buy my works; and besides, in my rambles, where I am not personally known, I have frequently heard one or other of my adages repeated, with as Poor Richard says at the end on&#x27;t; this gave me some satisfaction, as it showed not only that my instructions were regarded, but discovered likewise some respect for my authority; and I own, that to encourage the practice of remembering and repeating those wise sentences, I have sometimes quoted myself with great gravity.
+
+Judge, then, how much I must have been gratified by an incident I am going to relate to you. I stopped my horse lately where a great number of people were collected at a vendue of merchant goods. The hour of sale not being come, they were conversing on the badness of the times, and one of the company called to a plain clean old man, with white locks, &#x27;Pray, Father Abraham, what think you of the times? Won&#x27;t these heavy taxes quite ruin the country? How shall we ever be able to pay them? What would you advise us to?&#x27; Father Abraham stood up, and replied, &#x27;If you&#x27;d have my advice, I&#x27;ll give it you in short, for a word to the wise is enough, and many words won&#x27;t fill a bushel, as Poor Richard says.&#x27; They joined in desiring him to speak his mind, and gathering round him, he proceeded as follows.
+
+&#x27;Friends,&#x27; says he, &#x27;and neighbours, the taxes are indeed very heavy, and if those laid on by the government were the only ones we had to pay, we might more easily discharge them; but we have many others, and much more grievous to some of us. We are taxed twice as much by our idleness, three times as much by our pride, and four times as much by our folly; and from these taxes the commissioners cannot ease or deliver us by allowing an abatement. However let us hearken to good advice, and something may be done for us; God helps them that help themselves, as Poor Richard says in his almanac.&#x27;
+
+[Public domain - Franklin, The Way to Wealth excerpt. Skybrary literacy / civics pack.]</pre></article>
+<article class="work" id="work14" hidden><h1>Newton - Rules of Reasoning in Philosophy (Principia excerpt)</h1><p class="meta">Isaac Newton  |  public domain sample  |  skybrary-pd-newton-rules-001</p><pre class="body">Rules of Reasoning in Philosophy
+(from the Principia - public domain English)
+
+Rule I
+We are to admit no more causes of natural things than such as are both true and sufficient to explain their appearances.
+
+To this purpose the philosophers say that Nature does nothing in vain, and more is in vain when less will serve; for Nature is pleased with simplicity, and affects not the pomp of superfluous causes.
+
+Rule II
+Therefore to the same natural effects we must, as far as possible, assign the same causes.
+
+As to respiration in a man and in a beast; the descent of stones in Europe and in America; the light of our culinary fire and of the sun; the reflection of light in the earth, and in the planets.
+
+Rule III
+The qualities of bodies, which admit neither intensification nor remission of degrees, and which are found to belong to all bodies within the reach of our experiments, are to be esteemed the universal qualities of all bodies whatsoever.
+
+For since the qualities of bodies are only known to us by experiments, we are to hold for universal all such as universally agree with experiments; and such as are not liable to diminution can never be quite taken away. We are certainly not to relinquish the evidence of experiments for the sake of dreams and vain fictions of our own devising; nor are we to recede from the analogy of Nature, which is wont to be simple, and always consonant to itself.
+
+Rule IV
+In experimental philosophy we are to look upon propositions inferred by general induction from phenomena as accurately or very nearly true, notwithstanding any contrary hypotheses that may be imagined, till such time as other phenomena occur, by which they may either be made more accurate, or liable to exceptions.
+
+This rule we must follow, that the argument of induction may not be evaded by hypotheses.
+
+[Public domain English. Skybrary STEM / science history pack - educational foundations of method.]</pre></article>
+<article class="work" id="work15" hidden><h1>Notes on Nursing - ventilation &amp; cleanliness excerpts (Nightingale)</h1><p class="meta">Florence Nightingale  |  public domain sample  |  skybrary-pd-nightingale-nursing-001</p><pre class="body">Notes on Nursing: What It Is, and What It Is Not (excerpts)
+
+IMPORTANT: Historical educational text only. Not modern clinical guidance or medical advice.
+
+I. Ventilation and Warming
+
+The very first canon of nursing, the first and the last thing upon which a nurse&#x27;s attention must be fixed, the first essential to a patient, without which all the rest you can do for him is as nothing, with which I had almost said you may leave all the rest alone, is this: TO KEEP THE AIR HE BREATHES AS PURE AS THE EXTERNAL AIR, WITHOUT CHILLING HIM. Yet what is so little attended to? Even where it is thought of at all, the most extraordinary misconceptions reign about it. Even in admitting air into the patient&#x27;s room or ward, few people ever think where that air comes from. It may come from a corridor into which other wards are ventilated, from a hall always unaired, always full of the fumes of gas, dinner, of various kinds of mustiness; from an underground kitchen, sink, washhouse, water-closet, or even, as I myself have had sorrowful experience, from open sewers loaded with filth; and with this the patient&#x27;s room or ward is aired, as it is called - poisoned, it should rather be said.
+
+II. Health of Houses
+
+There are five essential points in securing the health of houses:  - 
+1. Pure air.
+2. Pure water.
+3. Efficient drainage.
+4. Cleanliness.
+5. Light.
+
+Without these, no house can be healthy. And it will be unhealthy just in proportion as they are deficient.
+
+III. Cleanliness
+
+It cannot be necessary to tell a nurse that she should be clean, or that she should keep her patient clean, seeing that the greater part of nursing consists in preserving cleanliness. The greater part of nursing consists in preserving cleanliness.
+
+[Public domain - Florence Nightingale, Notes on Nursing (1860) excerpts. Skybrary health education pack. Historical hygiene literacy - not modern clinical protocol or medical advice.]</pre></article>
+<article class="work" id="work16" hidden><h1>Psalm 23 (King James Version)</h1><p class="meta">Biblical text (KJV public domain)  |  public domain sample  |  skybrary-pd-psalm23-001</p><pre class="body">Psalm 23
+King James Version (public domain)
+
+The LORD is my shepherd; I shall not want.
+
+He maketh me to lie down in green pastures: he leadeth me beside the still waters.
+
+He restoreth my soul: he leadeth me in the paths of righteousness for his name&#x27;s sake.
+
+Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.
+
+Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.
+
+Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever.
+
+[Public domain KJV text. Skybrary heritage / literacy pack. Not a complete religious corpus.]</pre></article>
+<article class="work" id="work17" hidden><h1>The Celebrated Jumping Frog - opening (Mark Twain)</h1><p class="meta">Mark Twain (Samuel L. Clemens)  |  public domain sample  |  skybrary-pd-twain-jumping-001</p><pre class="body">The Celebrated Jumping Frog of Calaveras County (opening)
+
+In compliance with the request of a friend of mine, who wrote me from the East, I called on good-natured, garrulous old Simon Wheeler, and inquired after my friend&#x27;s friend, Leonidas W. Smiley, as requested to do, and I hereunto append the result. I have a lurking suspicion that Leonidas W. Smiley is a myth; that my friend never knew such a personage; and that he only conjectured that if I asked old Wheeler about him, it would remind him of his infamous Jim Smiley, and he would go to work and bore me to death with some exasperating reminiscence of him as long and as tedious as it should be useless to me. If that was the design, it succeeded.
+
+I found Simon Wheeler dozing comfortably by the bar-room stove of the dilapidated tavern in the decayed mining camp of Angel&#x27;s, and I noticed that he was fat and bald-headed, and had an expression of winning gentleness and simplicity upon his tranquil countenance. He roused up, and gave me good-day. I told him a friend of mine had commissioned me to make some inquiries about a cherished companion of his boyhood named Leonidas W. Smiley - Rev. Leonidas W. Smiley, a young minister of the Gospel, who he had heard was at one time a resident of Angel&#x27;s Camp. I added that if Mr. Wheeler could tell me any thing about this Rev. Leonidas W. Smiley, I would feel under many obligations to him.
+
+Simon Wheeler backed me into a corner and blockaded me there with his chair, and then sat down and reeled off the monotonous narrative which follows this paragraph. He never smiled, he never frowned, he never changed his voice from the gentle-flowing key to which he tuned his initial sentence, he never betrayed the slightest suspicion of enthusiasm; but all through the interminable narrative there ran a vein of impressive earnestness and sincerity, which showed me plainly that, so far from his imagining that there was anything ridiculous or funny about his story, he regarded it as a really important matter, and admired its two heroes as men of transcendent genius in finesse.
+
+[Public domain - Mark Twain. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work18" hidden><h1>The Raven (Edgar Allan Poe)</h1><p class="meta">Edgar Allan Poe  |  public domain sample  |  skybrary-pd-poe-raven-001</p><pre class="body">The Raven
+Edgar Allan Poe (1845)
+
+Once upon a midnight dreary, while I pondered, weak and weary,
+Over many a quaint and curious volume of forgotten lore -
+While I nodded, nearly napping, suddenly there came a tapping,
+As of some one gently rapping, rapping at my chamber door.
+&#x27;Tis some visitor,&#x27; I muttered, &#x27;tapping at my chamber door -
+Only this and nothing more.&#x27;
+
+Ah, distinctly I remember it was in the bleak December;
+And each separate dying ember wrought its ghost upon the floor.
+Eagerly I wished the morrow; - vainly I had sought to borrow
+From my books surcease of sorrow - sorrow for the lost Lenore -
+For the rare and radiant maiden whom the angels name Lenore -
+Nameless here for evermore.
+
+And the silken, sad, uncertain rustling of each purple curtain
+Thrilled me - filled me with fantastic terrors never felt before;
+So that now, to still the beating of my heart, I stood repeating
+&#x27;Tis some visitor entreating entrance at my chamber door -
+Some late visitor entreating entrance at my chamber door; -
+This it is and nothing more.&#x27;
+
+Presently my soul grew stronger; hesitating then no longer,
+&#x27;Sir,&#x27; said I, &#x27;or Madam, truly your forgiveness I implore;
+But the fact is I was napping, and so gently you came rapping,
+And so faintly you came tapping, tapping at my chamber door,
+That I scarce was sure I heard you&#x27; - here I opened wide the door; -
+Darkness there and nothing more.
+
+Deep into that darkness peering, long I stood there wondering, fearing,
+Doubting, dreaming dreams no mortal ever dared to dream before;
+But the silence was unbroken, and the stillness gave no token,
+And the only word there spoken was the whispered word, &#x27;Lenore?&#x27;
+This I whispered, and an echo murmured back the word, &#x27;Lenore!&#x27; -
+Merely this and nothing more.
+
+Back into the chamber turning, all my soul within me burning,
+Soon again I heard a tapping somewhat louder than before.
+&#x27;Surely,&#x27; said I, &#x27;surely that is something at my window lattice;
+Let me see, then, what thereat is, and this mystery explore -
+Let my heart be still a moment and this mystery explore; -
+&#x27;Tis the wind and nothing more!&#x27;
+
+Open here I flung the shutter, when, with many a flirt and flutter,
+In there stepped a stately Raven of the saintly days of yore;
+Not the least obeisance made he; not a minute stopped or stayed he;
+But, with mien of lord or lady, perched above my chamber door -
+Perched upon a bust of Pallas just above my chamber door -
+Perched, and sat, and nothing more.
+
+Then this ebony bird beguiling my sad fancy into smiling,
+By the grave and stern decorum of the countenance it wore,
+&#x27;Though thy crest be shorn and shaven, thou,&#x27; I said, &#x27;art sure no craven,
+Ghastly grim and ancient Raven wandering from the Nightly shore -
+Tell me what thy lordly name is on the Night&#x27;s Plutonian shore!&#x27;
+Quoth the Raven &#x27;Nevermore.&#x27;
+
+Much I marvelled this ungainly fowl to hear discourse so plainly,
+Though its answer little meaning - little relevancy bore;
+For we cannot help agreeing that no living human being
+Ever yet was blessed with seeing bird above his chamber door -
+Bird or beast upon the sculptured bust above his chamber door,
+With such name as &#x27;Nevermore.&#x27;
+
+But the Raven, sitting lonely on the placid bust, spoke only
+That one word, as if his soul in that one word he did outpour.
+Nothing farther then he uttered - not a feather then he fluttered -
+Till I scarcely more than muttered &#x27;Other friends have flown before -
+On the morrow he will leave me, as my Hopes have flown before.&#x27;
+Then the bird said &#x27;Nevermore.&#x27;
+
+Startled at the stillness broken by reply so aptly spoken,
+&#x27;Doubtless,&#x27; said I, &#x27;what it utters is its only stock and store
+Caught from some unhappy master whom unmerciful Disaster
+Followed fast and followed faster till his songs one burden bore -
+Till the dirges of his Hope that melancholy burden bore
+Of &#x27;Never - nevermore&#x27;.&#x27;
+
+But the Raven still beguiling all my fancy into smiling,
+Straight I wheeled a cushioned seat in front of bird, and bust and door;
+Then, upon the velvet sinking, I betook myself to linking
+Fancy unto fancy, thinking what this ominous bird of yore -
+What this grim, ungainly, ghastly, gaunt, and ominous bird of yore
+Meant in croaking &#x27;Nevermore.&#x27;
+
+This I sat engaged in guessing, but no syllable expressing
+To the fowl whose fiery eyes now burned into my bosom&#x27;s core;
+This and more I sat divining, with my head at ease reclining
+On the cushion&#x27;s velvet lining that the lamp-light gloated o&#x27;er,
+But whose velvet-violet lining with the lamp-light gloating o&#x27;er,
+She shall press, ah, nevermore!
+
+Then, methought, the air grew denser, perfumed from an unseen censer
+Swung by Seraphim whose foot-falls tinkled on the tufted floor.
+&#x27;Wretch,&#x27; I cried, &#x27;thy God hath lent thee - by these angels he hath sent thee
+Respite - respite and nepenthe from thy memories of Lenore;
+Quaff, oh quaff this kind nepenthe and forget this lost Lenore!&#x27;
+Quoth the Raven &#x27;Nevermore.&#x27;
+
+&#x27;Prophet!&#x27; said I, &#x27;thing of evil! - prophet still, if bird or devil! -
+Whether Tempter sent, or whether tempest tossed thee here ashore,
+Desolate yet all undaunted, on this desert land enchanted -
+On this home by Horror haunted - tell me truly, I implore -
+Is there - is there balm in Gilead? - tell me - tell me, I implore!&#x27;
+Quoth the Raven &#x27;Nevermore.&#x27;
+
+&#x27;Prophet!&#x27; said I, &#x27;thing of evil! - prophet still, if bird or devil!
+By that Heaven that bends above us - by that God we both adore -
+Tell this soul with sorrow laden if, within the distant Aidenn,
+It shall clasp a sainted maiden whom the angels name Lenore -
+Clasp a rare and radiant maiden whom the angels name Lenore.&#x27;
+Quoth the Raven &#x27;Nevermore.&#x27;
+
+&#x27;Be that word our sign of parting, bird or fiend!&#x27; I shrieked, upstarting -
+&#x27;Get thee back into the tempest and the Night&#x27;s Plutonian shore!
+Leave no black plume as a token of that lie thy soul hath spoken!
+Leave my loneliness unbroken! - quit the bust above my door!
+Take thy beak from out my heart, and take thy form from off my door!&#x27;
+Quoth the Raven &#x27;Nevermore.&#x27;
+
+And the Raven, never flitting, still is sitting, still is sitting
+On the pallid bust of Pallas just above my chamber door;
+And his eyes have all the seeming of a demon&#x27;s that is dreaming,
+And the lamp-light o&#x27;er him streaming throws his shadow on the floor;
+And my soul from out that shadow that lies floating on the floor
+Shall be lifted - nevermore!
+
+[Public domain - Edgar Allan Poe, The Raven (full). Skybrary literacy pack.]</pre></article>
+<article class="work" id="work19" hidden><h1>Alice&#x27;s Adventures in Wonderland - Chapter I (Lewis Carroll)</h1><p class="meta">Lewis Carroll (Charles Lutwidge Dodgson)  |  public domain sample  |  skybrary-pd-carroll-alice-001</p><pre class="body">Chapter I - Down the Rabbit-Hole
+
+Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, &#x27;and what is the use of a book,&#x27; thought Alice &#x27;without pictures or conversations?&#x27;
+
+So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.
+
+There was nothing so very remarkable in that; nor did Alice think it so very much out of the way to hear the Rabbit say to itself, &#x27;Oh dear! Oh dear! I shall be late!&#x27; (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually took a watch out of its waistcoat-pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge.
+
+In another moment down went Alice after it, never once considering how in the world she was to get out again.
+
+The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well.
+
+Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next. First, she tried to look down and make out what she was coming to, but it was too dark to see anything; then she looked at the sides of the well, and noticed that they were filled with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs. She took down a jar from one of the shelves as she passed; it was labelled &#x27;ORANGE MARMALADE&#x27;, but to her great disappointment it was empty: she did not like to drop the jar for fear of killing somebody underneath, so managed to put it into one of the cupboards as she fell past it.
+
+&#x27;Well!&#x27; thought Alice to herself, &#x27;after such a fall as this, I shall think nothing of tumbling down stairs! How brave they&#x27;ll all think me at home! Why, I wouldn&#x27;t say anything about it, even if I fell off the top of the house!&#x27; (Which was very likely true.)
+
+Down, down, down. Would the fall never come to an end?
+
+[Public domain - Alice&#x27;s Adventures in Wonderland, Chapter I (abridged for kit size). Skybrary literacy pack.]</pre></article>
+<article class="work" id="work20" hidden><h1>Moby-Dick - Opening (Herman Melville)</h1><p class="meta">Herman Melville  |  public domain sample  |  skybrary-pd-melville-moby-001</p><pre class="body">Chapter 1 - Loomings
+
+Call me Ishmael. Some years ago - never mind how long precisely - having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people&#x27;s hats off - then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.
+
+There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs - commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.
+
+Circumambulate the city of a dreamy Sabbath afternoon. Go from Corlears Hook to Coenties Slip, and from thence, by Whitehall, northward. What do you see? - Posted like silent sentinels all around the town, stand thousands upon thousands of mortal men fixed in ocean reveries. Some leaning against the spiles; some seated upon the pier-heads; some looking over the bulwarks of ships from China; some high aloft in the rigging, as if striving to get a still better seaward peep. But these are all landsmen; of week days pent up in lath and plaster - tied to counters, nailed to benches, clinched to desks. How then is this? Are the green fields gone? What do they here?
+
+But look! here come more crowds, pacing straight for the water, and seemingly bound for a dive. Strange! Nothing will content them but the extremest limit of the land; loitering under the shady lee of yonder warehouses will not suffice. No. They must get just as nigh the water as they possibly can without falling in. And there they stand - miles of them - leagues. Inlanders all, they come from lanes and alleys, streets and avenues - north, east, south, and west. Yet here they all unite. Tell me, does the magnetic virtue of the needles of the compasses of all those ships attract them thither?
+
+[Public domain - Moby-Dick, Chapter 1 excerpt. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work21" hidden><h1>Frankenstein - Letter I (Mary Shelley)</h1><p class="meta">Mary Wollstonecraft Shelley  |  public domain sample  |  skybrary-pd-shelley-frank-001</p><pre class="body">Letter 1
+To Mrs. Saville, England
+
+St. Petersburgh, Dec. 11th, 17-
+
+You will rejoice to hear that no disaster has accompanied the commencement of an enterprise which you have regarded with such evil forebodings. I arrived here yesterday, and my first task is to assure my dear sister of my welfare and increasing confidence in the success of my undertaking.
+
+I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight. Do you understand this feeling? This breeze, which has travelled from the regions towards which I am advancing, gives me a foretaste of those icy climes. Inspirited by this wind of promise, my daydreams become more fervent and vivid. I try in vain to be persuaded that the pole is the seat of frost and desolation; it ever presents itself to my imagination as the region of beauty and delight. There, Margaret, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour. There - for with your leave, my sister, I will put some trust in preceding navigators - there snow and frost are banished; and, sailing over a calm sea, we may be wafted to a land surpassing in wonders and in beauty every region hitherto discovered on the habitable globe. Its productions and features may be without example, as the phenomena of the heavenly bodies undoubtedly are in those undiscovered solitudes. What may not be expected in a country of eternal light? I may there discover the wondrous power which attracts the needle and may regulate a thousand celestial observations that require only this voyage to render their seeming eccentricities consistent for ever. I shall satiate my ardent curiosity with the sight of a part of the world never before visited, and may tread a land never before imprinted by the foot of man. These are my enticements, and they are sufficient to conquer all fear of danger or death and to induce me to commence this laborious voyage with the joy a child feels when he embarks in a little boat, with his holiday mates, on an expedition of discovery up his native river. But supposing all these conjectures to be false, you cannot contest the inestimable benefit which I shall confer on all mankind, to the last generation, by discovering a passage near the pole to those countries, to reach which at present so many months are requisite; or by ascertaining the secret of the magnet, which, if at all possible, can only be effected by an undertaking such as mine.
+
+These reflections have dispelled the agitation with which I began my letter, and I feel my heart glow with an enthusiasm which elevates me to heaven, for nothing contributes so much to tranquillise the mind as a steady purpose - a point on which the soul may fix its intellectual eye. This expedition has been the favourite dream of my early years.
+
+[Public domain - Frankenstein, Letter I. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work22" hidden><h1>A Study in Scarlet - Opening (Arthur Conan Doyle)</h1><p class="meta">Arthur Conan Doyle  |  public domain sample  |  skybrary-pd-doyle-study-001</p><pre class="body">Part I
+Chapter I - Mr. Sherlock Holmes
+
+In the year 1878 I took my degree of Doctor of Medicine of the University of London, and proceeded to Netley to go through the course prescribed for surgeons in the army. Having completed my studies there, I was duly attached to the Fifth Northumberland Fusiliers as Assistant Surgeon. The regiment was stationed in India at the time, and before I could join it, the second Afghan war had broken out. On landing at Bombay, I learned that my corps had advanced through the passes, and was already deep in the enemy&#x27;s country. I followed, however, with many other officers who were in the same situation as myself, and succeeded in reaching Candahar in safety, where I found my regiment, and at once entered upon my new duties.
+
+The campaign brought honours and promotion to many, but for me it had nothing but misfortune and disaster. I was removed from my brigade and attached to the Berkshires, with whom I served at the fatal battle of Maiwand. There I was struck on the shoulder by a Jezail bullet, which shattered the bone and grazed the subclavian artery. I should have fallen into the hands of the murderous Ghazis had it not been for the devotion and courage shown by Murray, my orderly, who threw me across a pack-horse, and succeeded in bringing me safely to the British lines.
+
+Worn with pain, and weak from the prolonged hardships which I had undergone, I was removed, with a great train of wounded sufferers, to the base hospital at Peshawar. Here I rallied, and had already improved so far as to be able to walk about the wards, and even to bask a little upon the verandah, when I was struck down by enteric fever, that curse of our Indian possessions. For months my life was despaired of, and when at last I came to myself and became convalescent, I was so weak and emaciated that a medical board determined that not a day should be lost in sending me back to England. I was dispatched, accordingly, in the troopship Orontes, and landed a month later on Portsmouth jetty, with my health irretrievably ruined, but with permission from a paternal government to spend the next nine months in attempting to improve it.
+
+I had neither kith nor kin in England, and was therefore as free as air - or as free as an income of eleven shillings and sixpence a day will permit a man to be. Under such circumstances, I naturally gravitated to London, that great cesspool into which all the loungers and idlers of the Empire are irresistibly drained. There I stayed for some time at a private hotel in the Strand, leading a comfortless, meaningless existence, and spending such money as I had, considerably more freely than I ought. So alarming did the state of my finances become, that I soon realized that I must either leave the metropolis and rusticate somewhere in the country, or that I must make a complete alteration in my style of living. Choosing the latter alternative, I began by making up my mind to leave the hotel, and to take up my quarters in some less pretentious and less expensive domicile.
+
+On the very day that I had come to this conclusion, I was standing at the Criterion Bar, when some one tapped me on the shoulder, and turning round I recognized young Stamford, who had been a dresser under me at Barts. The sight of a friendly face in the great wilderness of London is a pleasant thing indeed to a lonely man. In old days Stamford had never been a particular crony of mine, but now I hailed him with enthusiasm, and he, in his turn, appeared to be delighted to see me. In the exuberance of my joy, I asked him to lunch with me at the Holborn, and we started off together in a hansom.
+
+&#x27;Whatever have you been doing with yourself, Watson?&#x27; he asked in undisguised wonder, as we rattled through the crowded London streets. &#x27;You are as thin as a lath and as brown as a nut.&#x27;
+
+[Public domain - A Study in Scarlet, Chapter I excerpt. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work23" hidden><h1>The Time Machine - Chapter I opening (H. G. Wells)</h1><p class="meta">H. G. Wells  |  public domain sample  |  skybrary-pd-wells-time-001</p><pre class="body">Chapter I
+
+The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us. His grey eyes shone and twinkled, and his usually pale face was flushed and animated. The fire burned brightly, and the soft radiance of the incandescent lights in the lilies of silver caught the bubbles that flashed and passed in our glasses. Our chairs, being his patents, embraced and caressed us rather than submitted to be sat upon, and there was that luxurious after-dinner atmosphere when thought roams gracefully free of the trammels of precision. And he put it to us in this way - marking the points with a lean forefinger - as we sat and lazily admired his earnestness over this new paradox (as we thought it) and his fecundity.
+
+&#x27;You must follow me carefully. I shall have to controvert one or two ideas that are almost universally accepted. The geometry, for instance, they taught you at school is founded on a misconception.&#x27;
+
+&#x27;Is not that rather a large thing to expect us to begin upon?&#x27; said Filby, an argumentative person with red hair.
+
+&#x27;I do not mean to ask you to accept anything without reasonable ground for it. You will soon admit as much as I need from you. You know of course that a mathematical line, a line of thickness nil, has no real existence. They taught you that? Neither has a mathematical plane. These things are mere abstractions.&#x27;
+
+&#x27;That is all right,&#x27; said the Psychologist.
+
+&#x27;Nor, having only length, breadth, and thickness, can a cube have a real existence.&#x27;
+
+&#x27;There I object,&#x27; said Filby. &#x27;Of course a solid body may exist. All real things - &#x27;
+
+&#x27;So most people think. But wait a moment. Can an instantaneous cube exist?&#x27;
+
+&#x27;Don&#x27;t follow you,&#x27; said Filby.
+
+&#x27;Can a cube that does not last for any time at all, have a real existence?&#x27;
+
+Filby became pensive. &#x27;Clearly,&#x27; the Time Traveller proceeded, &#x27;any real body must have extension in four directions: it must have Length, Breadth, Thickness, and - Duration. But through a natural infirmity of the flesh, which I will explain to you in a moment, we incline to overlook this fact. There are really four dimensions, three which we call the three planes of Space, and a fourth, Time. There is, however, a tendency to draw an unreal distinction between the former three dimensions and the latter, because it happens that our consciousness moves intermittently in one direction along the latter from the beginning to the end of our lives.&#x27;
+
+&#x27;That,&#x27; said a very young man, making spasmodic efforts to relight his cigar over the lamp; &#x27;that ... very clear indeed.&#x27;
+
+[Public domain - The Time Machine, Chapter I excerpt. Skybrary STEM literacy pack.]</pre></article>
+<article class="work" id="work24" hidden><h1>Treasure Island - Chapter I (Robert Louis Stevenson)</h1><p class="meta">Robert Louis Stevenson  |  public domain sample  |  skybrary-pd-stevenson-treasure-001</p><pre class="body">Part One - The Old Buccaneer
+Chapter I - The Old Sea-dog at the Admiral Benbow
+
+Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17- and go back to the time when my father kept the Admiral Benbow inn and the brown old seaman with the sabre cut first took up his lodging under our roof.
+
+I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow - a tall, strong, heavy, nut-brown man, his tarry pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white. I remember him looking round the cover and whistling to himself as he did so, and then breaking out in that old sea-song that he sang so often afterwards:
+
+&#x27;Fifteen men on the dead man&#x27;s chest -
+Yo-ho-ho, and a bottle of rum!&#x27;
+
+in the high, old tottering voice that seemed to have been tuned and broken at the capstan bars. Then he rapped on the door with a bit of stick like a handspike that he carried, and when my father appeared, called roughly for a glass of rum. This, when it was brought to him, he drank slowly, like a connoisseur, lingering on the taste and still looking about him at the cliffs and up at our signboard.
+
+&#x27;This is a handy cove,&#x27; says he at length; &#x27;and a pleasant sittyated grog-shop. Much company, mate?&#x27;
+
+My father told him no, very little company, the more was the pity.
+
+&#x27;Well, then,&#x27; said he, &#x27;this is the berth for me. Here you, matey,&#x27; he cried to the man who trundled the barrow; &#x27;bring up alongside and help up my chest. I&#x27;ll stay here a bit,&#x27; he continued. &#x27;I&#x27;m a plain man; rum and bacon and eggs is what I want, and that head up there for to watch ships off. What you mought call me? You mought call me captain. Oh, I see what you&#x27;re at - there&#x27;; and put that down,&#x27; says he, speaking his orders somewhat short and dry-like to me. &#x27;I&#x27;ll give you a silver fourpenny on the first of every month if you keep my old spy-glass till then and let me know the moment any seafaring man goes by. You will do that, and you may call me captain.&#x27;
+
+[Public domain - Treasure Island, Chapter I excerpt. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work25" hidden><h1>Rapunzel (Brothers Grimm, public-domain English)</h1><p class="meta">Jacob Grimm, Wilhelm Grimm  |  public domain sample  |  skybrary-pd-grimm-rapunzel-001</p><pre class="body">Rapunzel
+From Household Tales (public-domain English retelling)
+
+There were once a man and a woman who had long in vain wished for a child. At length the woman hoped that God was about to grant her desire. These people had a little window at the back of their house from which a splendid garden could be seen, which was full of the most beautiful flowers and herbs. It was, however, surrounded by a high wall, and no one dared to go into it because it belonged to an enchantress, who had great power and was dreaded by all the world.
+
+One day the woman was standing by this window and looking down into the garden, when she saw a bed which was planted with the most beautiful rampion (rapunzel), and it looked so fresh and green that she longed for it, and had the greatest desire to eat some. This desire increased every day, and as she knew that she could not get any of it, she quite pined away, and began to look pale and miserable.
+
+Then her husband was alarmed, and asked: &#x27;What ails you, dear wife?&#x27;
+
+&#x27;Ah,&#x27; she replied, &#x27;if I can&#x27;t eat some of the rampion, which is in the garden behind our house, I shall die.&#x27; The man, who loved her, thought: &#x27;Sooner than let your wife die, bring her some of the rampion yourself, let it cost what it will.&#x27;
+
+At twilight, he clambered down over the wall into the garden of the enchantress, hastily clutched a handful of rampion, and took it to his wife. She at once made herself a salad of it, and ate it greedily. It tasted so good to her - so very good, that the next day she longed for it three times as much as before. If he was to have any rest, her husband must once more descend into the garden. In the gloom of evening therefore, he let himself down again; but when he had clambered down the wall he was terribly afraid, for he saw the enchantress standing before him.
+
+&#x27;How can you dare,&#x27; said she with angry look, &#x27;descend into my garden and steal my rampion like a thief? You shall suffer for it!&#x27;
+
+&#x27;Ah,&#x27; answered he, &#x27;let mercy take the place of justice, I only made up my mind to do it out of necessity. My wife saw your rampion from the window, and felt such a longing for it that she would have died if she had not got some to eat.&#x27; Then the enchantress allowed her anger to be softened, and said to him: &#x27;If the case be as you say, I will allow you to take away with you as much rampion as you will, only I make one condition, you must give me the child which your wife will bring into the world; it shall be well treated, and I will care for it like a mother.&#x27; The man in his terror consented to everything, and when the woman was brought to bed, the enchantress appeared at once, gave the child the name of Rapunzel, and took it away with her.
+
+Rapunzel grew into the most beautiful child under the sun. When she was twelve years old, the enchantress shut her into a tower, which lay in a forest, and had neither stairs nor door, but quite at the top was a little window. When the enchantress wanted to go in, she placed herself beneath it and cried:
+
+&#x27;Rapunzel, Rapunzel,
+Let down your hair to me.&#x27;
+
+Rapunzel had magnificent long hair, fine as spun gold, and when she heard the voice of the enchantress she unfastened her braided tresses, wound them round one of the hooks of the window above, and then the hair fell twenty ells down, and the enchantress climbed up by it.
+
+After a year or two, it came to pass that the king&#x27;s son rode through the forest and passed by the tower. Then he heard a song, which was so charming that he stood still and listened. This was Rapunzel, who in her solitude passed her time in letting her sweet voice resound. The king&#x27;s son wanted to climb up to her, and looked for the door of the tower, but none was to be found. He rode home, but the singing had so deeply touched his heart, that every day he went out into the forest and listened to it. Once when he was thus standing behind a tree, he saw that an enchantress came there, and he heard how she cried:
+
+&#x27;Rapunzel, Rapunzel,
+Let down your hair.&#x27;
+
+Then Rapunzel let down the braids of her hair, and the enchantress climbed up to her. &#x27;If that is the ladder by which one mounts, I too will try my fortune,&#x27; said he, and the next day when it began to grow dark, he went to the tower and cried:
+
+&#x27;Rapunzel, Rapunzel,
+Let down your hair.&#x27;
+
+Immediately the hair fell down and the king&#x27;s son climbed up.
+
+[Public domain Grimm tale (curated). Skybrary literacy pack. Not a complete folklore archive.]</pre></article>
+<article class="work" id="work26" hidden><h1>The Ugly Duckling (Hans Christian Andersen, PD English)</h1><p class="meta">Hans Christian Andersen  |  public domain sample  |  skybrary-pd-andersen-duckling-001</p><pre class="body">The Ugly Duckling
+Hans Christian Andersen (public-domain English retelling)
+
+It was lovely summer weather in the country, and the golden corn, the green oats, and the haystacks piled up in the meadows looked beautiful. The stork walking about on his long red legs chattered in the Egyptian language, which he had learnt from his mother. The corn-fields and meadows were surrounded by large forests, in the midst of which were deep pools. It was, indeed, delightful to walk about in the country. In a sunny spot stood a pleasant old farm-house close by a deep river, and from the house down to the water side grew great burdock leaves, so high, that under the tallest of them a little child could stand upright. The spot was as wild as the centre of a thick wood. In this snug retreat sat a duck on her nest, watching for her young brood to hatch; she was beginning to get tired of her task, for the little ones were a long time coming out of their shells, and she seldom had any visitors. The other ducks liked much better to swim about in the river than to climb the slippery banks, and sit under a burdock leaf, to have a gossip with her.
+
+At length one shell cracked, and then another, and from each egg came a living creature that lifted its head and cried, &#x27;Peep, peep.&#x27; &#x27;Quack, quack,&#x27; said the mother, and then they all quacked as well as they could, and looked about them on every side at the large green leaves. Their mother allowed them to look as much as they liked, because green is good for the eyes. &#x27;How large the world is,&#x27; said the young ducks, when they found how much more room they now had than while they were inside the egg-shell.
+
+One egg remained unhatched. At last it cracked, and out came a large, ugly grey bird. The duck looked at him in surprise. &#x27;He is not at all like the others,&#x27; she said. &#x27;Can he be a turkey chick? We shall soon find out when we go to the water. He must go in if I have to push him.&#x27;
+
+The next day was bright and fine, and the mother duck took her whole family down to the water. Splash! she went into the water. &#x27;Quack, quack,&#x27; she said, and one after another the little ducklings jumped in. The water closed over their heads, but they came up again in an instant, and swam about quite prettily with their legs paddling under them as easily as possible, and the ugly grey duckling was also in the water swimming with them.
+
+&#x27;Oh,&#x27; said the mother, &#x27;that is not a turkey; how well he uses his legs, and how upright he holds himself! He is my own child, and he is not so very ugly after all if you look at him properly. Quack, quack! come with me now, I will take you into grand society, and introduce you to the farmyard, but you must keep close to me or you may be trodden upon; and, above all, beware of the cat.&#x27;
+
+In the farmyard the ducklings were treated roughly, and the ugly one was pecked and pushed and made fun of by the ducks and the chickens. &#x27;He is too big,&#x27; they all said, and the turkey-cock, who fancied himself an emperor, puffed himself out like a ship in full sail and flew at the duckling. The poor little thing did not know where to go, and was quite miserable because he was so ugly and laughed at by the whole farmyard.
+
+So it went on from day to day. The duckling grew larger, winter came, and he suffered cold and hunger. When spring returned, he found himself in a beautiful garden where three glorious white swans came out of the thicket. He swam toward them, saying, &#x27;I will go to them though they kill me.&#x27; But when he bent his head to the water, he saw not a dark grey bird, but a graceful swan reflected there. The other swans swam round him and stroked him with their beaks.
+
+He felt quite glad that he had suffered so much, for now he could appreciate his happiness. And he rustled his feathers, curved his slender neck, and cried joyfully, from the depths of his heart, &#x27;I never dreamed of such happiness as this, while I was an ugly duckling.&#x27;
+
+[Public domain Andersen tale (curated). Skybrary literacy pack.]</pre></article>
+<article class="work" id="work27" hidden><h1>O Captain! My Captain! (Walt Whitman)</h1><p class="meta">Walt Whitman  |  public domain sample  |  skybrary-pd-whitman-captain-001</p><pre class="body">O Captain! My Captain!
+Walt Whitman
+
+O Captain! my Captain! our fearful trip is done,
+The ship has weather&#x27;d every rack, the prize we sought is won,
+The port is near, the bells I hear, the people all exulting,
+While follow eyes the steady keel, the vessel grim and daring;
+But O heart! heart! heart!
+O the bleeding drops of red,
+Where on the deck my Captain lies,
+Fallen cold and dead.
+
+O Captain! my Captain! rise up and hear the bells;
+Rise up - for you the flag is flung - for you the bugle trills,
+For you bouquets and ribbon&#x27;d wreaths - for you the shores a-crowding,
+For you they call, the swaying mass, their eager faces turning;
+Here Captain! dear father!
+This arm beneath your head!
+It is some dream that on the deck,
+You&#x27;ve fallen cold and dead.
+
+My Captain does not answer, his lips are pale and still,
+My father does not feel my arm, he has no pulse nor will,
+The ship is anchor&#x27;d safe and sound, its voyage closed and done,
+From fearful trip the victor ship comes in with object won;
+Exult O shores, and ring O bells!
+But I with mournful tread,
+Walk the deck my Captain lies,
+Fallen cold and dead.
+
+[Public domain - Walt Whitman. Skybrary literacy / history pack.]</pre></article>
+<article class="work" id="work28" hidden><h1>Hope is the thing with feathers (Emily Dickinson)</h1><p class="meta">Emily Dickinson  |  public domain sample  |  skybrary-pd-dickinson-hope-001</p><pre class="body">Hope is the thing with feathers
+Emily Dickinson
+
+Hope is the thing with feathers
+That perches in the soul,
+And sings the tune without the words,
+And never stops at all,
+
+And sweetest in the gale is heard;
+And sore must be the storm
+That could abash the little bird
+That kept so many warm.
+
+I&#x27;ve heard it in the chillest land,
+And on the strangest sea;
+Yet, never, in extremity,
+It asked a crumb of me.
+
+[Public domain - Emily Dickinson. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work29" hidden><h1>The Federalist No. 1 (Alexander Hamilton)</h1><p class="meta">Alexander Hamilton  |  public domain sample  |  skybrary-pd-federalist-1-001</p><pre class="body">The Federalist No. 1
+General Introduction
+For the Independent Journal
+Author: Alexander Hamilton
+
+To the People of the State of New York:
+
+After an unequivocal experience of the inefficiency of the subsisting federal government, you are called upon to deliberate on a new Constitution for the United States of America. The subject speaks its own importance; comprehending in its consequences nothing less than the existence of the UNION, the safety and welfare of the parts of which it is composed, the fate of an empire in many respects the most interesting in the world. It has been frequently remarked that it seems to have been reserved to the people of this country, by their conduct and example, to decide the important question, whether societies of men are really capable or not of establishing good government from reflection and choice, or whether they are forever destined to depend for their political constitutions on accident and force. If there be any truth in the remark, the crisis at which we are arrived may with propriety be regarded as the era in which that decision is to be made; and a wrong election of the part we shall act may, in this view, deserve to be considered as the general misfortune of mankind.
+
+This idea will add the inducements of philanthropy to those of patriotism, to heighten the solicitude which all considerate and good men must feel for the event. Happy will it be if our choice should be directed by a judicious estimate of our true interests, unperplexed and unbiased by considerations not connected with the public good. But this is a thing more ardently to be wished than seriously to be expected. The plan offered to our deliberations affects too many particular interests, innovates upon too many local institutions, not to involve in its discussion a variety of objects foreign to its merits, and of views, passions and prejudices little favorable to the discovery of truth.
+
+Among the most formidable of the obstacles which the new Constitution will have to encounter may readily be distinguished the obvious interest of a certain class of men in every State to resist all changes which may hazard a diminution of the power, emolument, and consequence of the offices they hold under the State establishments; and the perverted ambition of another class of men, who will either hope to aggrandize themselves by the confusions of their country, or will flatter themselves with fairer prospects of elevation from the subdivision of the empire into several partial confederacies than from its union under one government.
+
+It is not, however, my design to dwell upon observations of this nature. I am well aware that it would be disingenuous to resolve indiscriminately the opposition of any set of men (merely because their situations might subject them to suspicion) into interested or ambitious views. Candor will oblige us to admit that even such men may be actuated by upright intentions; and it cannot be doubted that much of the opposition which has made its appearance, or may hereafter make its appearance, will spring from sources, blameless at least, if not respectable - the honest errors of minds led astray by preconceived jealousies and fears.
+
+[Public domain - The Federalist No. 1 (excerpt). Skybrary civics pack.]</pre></article>
+<article class="work" id="work30" hidden><h1>United States Constitution - Preamble and Article I (excerpts)</h1><p class="meta">Constitutional Convention (U.S., 1787)  |  public domain sample  |  skybrary-pd-constitution-us-001</p><pre class="body">The Constitution of the United States
+
+Preamble
+
+We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.
+
+Article. I.
+
+Section. 1.
+All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives.
+
+Section. 2.
+The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature.
+
+No Person shall be a Representative who shall not have attained to the Age of twenty five Years, and been seven Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State in which he shall be chosen.
+
+Section. 3.
+The Senate of the United States shall be composed of two Senators from each State, chosen by the Legislature thereof, for six Years; and each Senator shall have one Vote.
+
+Immediately after they shall be assembled in Consequence of the first Election, they shall be divided as equally as may be into three Classes. The Seats of the Senators of the first Class shall be vacated at the Expiration of the second Year, of the second Class at the Expiration of the fourth Year, and of the third Class at the Expiration of the sixth Year, so that one third may be chosen every second Year.
+
+No Person shall be a Senator who shall not have attained to the Age of thirty Years, and been nine Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State for which he shall be chosen.
+
+The Vice President of the United States shall be President of the Senate, but shall have no Vote, unless they be equally divided.
+
+Section. 7.
+All Bills for raising Revenue shall originate in the House of Representatives; but the Senate may propose or concur with Amendments as on other Bills.
+
+Every Bill which shall have passed the House of Representatives and the Senate, shall, before it become a Law, be presented to the President of the United States; If he approve he shall sign it, but if not he shall return it, with his Objections to that House in which it shall have originated, who shall enter the Objections at large on their Journal, and proceed to reconsider it.
+
+Section. 8.
+The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and provide for the common Defence and general Welfare of the United States; but all Duties, Imposts and Excises shall be uniform throughout the United States;
+
+To borrow Money on the credit of the United States;
+
+To regulate Commerce with foreign Nations, and among the several States, and with the Indian Tribes;
+
+To establish an uniform Rule of Naturalization, and uniform Laws on the subject of Bankruptcies throughout the United States;
+
+To coin Money, regulate the Value thereof, and of foreign Coin, and fix the Standard of Weights and Measures;
+
+To promote the Progress of Science and useful Arts, by securing for limited Times to Authors and Inventors the exclusive Right to their respective Writings and Discoveries;
+
+To constitute Tribunals inferior to the supreme Court;
+
+To declare War, grant Letters of Marque and Reprisal, and make Rules concerning Captures on Land and Water;
+
+To raise and support Armies, but no Appropriation of Money to that Use shall be for a longer Term than two Years;
+
+To provide and maintain a Navy;
+
+To make Rules for the Government and Regulation of the land and naval Forces;
+
+To provide for calling forth the Militia to execute the Laws of the Union, suppress Insurrections and repel Invasions;
+
+To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States, or in any Department or Officer thereof.
+
+[U.S. public domain - Constitution excerpts. Skybrary civics pack. Not a complete legal code.]</pre></article>
+<article class="work" id="work31" hidden><h1>Declaration of the Rights of Man and of the Citizen (1789)</h1><p class="meta">National Assembly of France (1789)  |  public domain sample  |  skybrary-pd-rights-man-fr-001</p><pre class="body">Declaration of the Rights of Man and of the Citizen
+Approved by the National Assembly of France, August 26, 1789
+
+The representatives of the French people, organized as a National Assembly, believing that the ignorance, neglect, or contempt of the rights of man are the sole cause of public calamities and of the corruption of governments, have determined to set forth in a solemn declaration the natural, unalienable, and sacred rights of man, in order that this declaration, being constantly before all the members of the Social body, shall remind them continually of their rights and duties; in order that the acts of the legislative power, as well as those of the executive power, may be compared at any moment with the objects and purposes of all political institutions and may thus be more respected, and, lastly, in order that the grievances of the citizens, based hereafter upon simple and incontestable principles, shall tend to the maintenance of the constitution and redound to the happiness of all.
+
+Therefore the National Assembly recognizes and proclaims, in the presence and under the auspices of the Supreme Being, the following rights of man and of the citizen:
+
+Articles:
+
+1. Men are born and remain free and equal in rights. Social distinctions may be founded only upon the general good.
+
+2. The aim of all political association is the preservation of the natural and imprescriptible rights of man. These rights are liberty, property, security, and resistance to oppression.
+
+3. The principle of all sovereignty resides essentially in the nation. No body nor individual may exercise any authority which does not proceed directly from the nation.
+
+4. Liberty consists in the freedom to do everything which injures no one else; hence the exercise of the natural rights of each man has no limits except those which assure to the other members of the society the enjoyment of the same rights. These limits can only be determined by law.
+
+5. Law can only prohibit such actions as are hurtful to society. Nothing may be prevented which is not forbidden by law, and no one may be forced to do anything not provided for by law.
+
+6. Law is the expression of the general will. Every citizen has a right to participate personally, or through his representative, in its foundation. It must be the same for all, whether it protects or punishes. All citizens, being equal in the eyes of the law, are equally eligible to all dignities and to all public positions and occupations, according to their abilities, and without distinction except that of their virtues and talents.
+
+7. No person shall be accused, arrested, or imprisoned except in the cases and according to the forms prescribed by law. Any one soliciting, transmitting, executing, or causing to be executed, any arbitrary order, shall be punished. But any citizen summoned or arrested in virtue of the law shall submit without delay, as resistance constitutes an offense.
+
+10. No one shall be disquieted on account of his opinions, including his religious views, provided their manifestation does not disturb the public order established by law.
+
+11. The free communication of ideas and opinions is one of the most precious of the rights of man. Every citizen may, accordingly, speak, write, and print with freedom, but shall be responsible for such abuses of this freedom as shall be defined by law.
+
+17. Since property is an inviolable and sacred right, no one shall be deprived thereof except where public necessity, legally determined, shall clearly demand it, and then only on condition that the owner shall have been previously and equitably indemnified.
+
+[Public domain historical text (English). Skybrary civics pack.]</pre></article>
+<article class="work" id="work32" hidden><h1>Magna Carta (1215) - selected clauses (PD English)</h1><p class="meta">English barons and King John (1215)  |  public domain sample  |  skybrary-pd-magna-carta-001</p><pre class="body">Magna Carta (1215) - Selected Clauses
+Public-domain English rendering for educational use
+
+John, by the grace of God King of England, Lord of Ireland, Duke of Normandy and Aquitaine, and Count of Anjou, to his archbishops, bishops, abbots, earls, barons, justices, foresters, sheriffs, stewards, servants, and to all his officials and loyal subjects, Greeting.
+
+Know that before God, for the health of our soul and those of our ancestors and heirs, to the honour of God, the exaltation of the holy Church, and the better ordering of our kingdom, at the advice of our reverend fathers ... and of our barons ...
+
+Clause 1.
+First, that we have granted to God, and by this present charter have confirmed for us and our heirs in perpetuity, that the English Church shall be free, and shall have its rights undiminished, and its liberties unimpaired.
+
+Clause 12.
+No scutage or aid may be levied in our kingdom without its general consent, unless it is for the ransom of our person, to make our eldest son a knight, and (once) to marry our eldest daughter. For these purposes only a reasonable aid may be levied.
+
+Clause 20.
+For a trivial offence, a free man shall be fined only in proportion to the degree of his offence, and for a serious offence correspondingly, but not so heavily as to deprive him of his livelihood. In the same way, a merchant shall be spared his merchandise, and a husbandman the implements of his husbandry, if they fall upon the mercy of a royal court. None of these fines shall be imposed except by the assessment on oath of reputable men of the neighbourhood.
+
+Clause 39.
+No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled, or deprived of his standing in any way, nor will we proceed with force against him, or send others to do so, except by the lawful judgment of his equals or by the law of the land.
+
+Clause 40.
+To no one will we sell, to no one deny or delay right or justice.
+
+Clause 61 (closing idea).
+Since we have granted all these things for God, for the better ordering of our kingdom, and to allay the discord that has arisen between us and our barons, and since we desire that they shall be enjoyed in their entirety, with lasting strength, for ever, we give and grant to the barons the following security...
+
+[Public domain historical charter excerpts. Skybrary civics / history pack. Not a complete medieval law corpus.]</pre></article>
+<article class="work" id="work33" hidden><h1>The Analects - selected sayings (Confucius, Legge PD)</h1><p class="meta">Confucius (tradition), James Legge (translator)  |  public domain sample  |  skybrary-pd-confucius-analects-001</p><pre class="body">The Analects of Confucius
+Selected sayings (James Legge translation, public domain)
+
+Book I
+
+1. The Master said, &#x27;Is it not pleasant to learn with a constant perseverance and application?
+
+&#x27;Is it not delightful to have friends coming from distant quarters?
+
+&#x27;Is he not a man of complete virtue, who feels no discomposure though men may take no note of him?&#x27;
+
+2. The philosopher Yu said, &#x27;They are few who, being filial and fraternal, are fond of offending against their superiors. There have been none, who, not liking to offend against their superiors, have been fond of stirring up confusion.
+
+&#x27;The superior man bends his attention to what is radical. That being established, all practical courses naturally grow up. Filial piety and fraternal submission! - are they not the root of all benevolent actions?&#x27;
+
+4. The philosopher Tsang said, &#x27;I daily examine myself on three points: - whether, in transacting business for others, I may have been not faithful; - whether, in intercourse with friends, I may have been not sincere; - whether I may have not mastered and practised the instructions of my teacher.&#x27;
+
+Book II
+
+1. The Master said, &#x27;He who exercises government by means of his virtue may be compared to the north polar star, which keeps its place and all the stars turn towards it.&#x27;
+
+3. The Master said, &#x27;If the people be led by laws, and uniformity sought to be given them by punishments, they will try to avoid the punishment, but have no sense of shame.
+
+&#x27;If they be led by virtue, and uniformity sought to be given them by the rules of propriety, they will have the sense of shame, and moreover will become good.&#x27;
+
+15. The Master said, &#x27;Learning without thought is labour lost; thought without learning is perilous.&#x27;
+
+Book IV
+
+5. The Master said, &#x27;Riches and honours are what men desire. If they cannot be obtained in the proper way, they should not be held. Poverty and meanness are what men dislike. If they cannot be avoided in the proper way, they should not be avoided.
+
+&#x27;If a superior man abandon virtue, how can he fulfil the requirements of that name?
+
+&#x27;The superior man does not, even for the space of a single meal, act contrary to virtue. In moments of haste, he cleaves to it. In seasons of danger, he cleaves to it.&#x27;
+
+Book VII
+
+8. The Master said, &#x27;I do not open up the truth to one who is not eager to get knowledge, nor help out any one who is not anxious to explain himself. When I have presented one corner of a subject to any one, and he cannot from it learn the other three, I do not repeat my lesson.&#x27;
+
+Book XII
+
+2. Chung-kung asked about perfect virtue. The Master said, &#x27;It is, when you go abroad, to behave to every one as if you were receiving a great guest; to employ the people as if you were assisting at a great sacrifice; not to do to others as you would not wish done to yourself; to have no murmuring against you in the country, and none in the family.&#x27;
+
+[Public domain Legge translation excerpts. Skybrary heritage pack. Not a complete Confucian corpus.]</pre></article>
+<article class="work" id="work34" hidden><h1>The Dhammapada - selected verses (Max Muller PD)</h1><p class="meta">Buddhist tradition, F. Max Muller (translator)  |  public domain sample  |  skybrary-pd-dhammapada-001</p><pre class="body">The Dhammapada
+Selected verses (F. Max Muller translation, public domain)
+
+Chapter I - The Twin-Verses
+
+1. All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts. If a man speaks or acts with an evil thought, pain follows him, as the wheel follows the foot of the ox that draws the carriage.
+
+2. All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts. If a man speaks or acts with a pure thought, happiness follows him, like a shadow that never leaves him.
+
+5. For hatred does not cease by hatred at any time: hatred ceases by love, this is an old rule.
+
+Chapter II - On Earnestness
+
+21. Earnestness is the path of immortality (Nirvana), thoughtlessness the path of death. Those who are in earnest do not die, those who are thoughtless are as if dead already.
+
+Chapter V - The Fool
+
+60. Long is the night to him who is awake; long is a mile to him who is tired; long is life to the foolish who do not know the true law.
+
+Chapter VI - The Wise Man
+
+76. If you see an intelligent man who tells you where true treasures are to be found, who shows what is to be avoided, and administers reproofs, follow that wise man; it will be better, not worse, for those who follow him.
+
+Chapter XI - Old Age
+
+146. How is there laughter, how is there joy, as this world is always burning? Why do you not seek a light, ye who are surrounded by darkness?
+
+Chapter XV - Happiness
+
+197. Let us live happily then, not hating those who hate us! among men who hate us let us dwell free from hatred!
+
+201. Victory breeds hatred, for the conquered is unhappy. He who has given up both victory and defeat, he, the contented, is happy.
+
+Chapter XX - The Way
+
+273. The best of ways is the eightfold; the best of truths the four words; the best of virtues passionlessness; the best of men he who has eyes to see.
+
+276. You yourself must make an effort. The Tathagatas (Buddhas) are only preachers. The thoughtful who enter the way are freed from the bondage of Mara.
+
+[Public domain Muller translation excerpts. Skybrary heritage pack. Not a complete canon.]</pre></article>
+<article class="work" id="work35" hidden><h1>The Chemical History of a Candle - Lecture I excerpt (Faraday)</h1><p class="meta">Michael Faraday  |  public domain sample  |  skybrary-pd-faraday-candle-001</p><pre class="body">The Chemical History of a Candle
+Lecture I - A Candle: The Flame - Its Sources - Structure - Mobility - Brightness
+Michael Faraday
+
+I purpose, in return for the honour you do us by coming to see what are our proceedings here, to bring before you, in the course of these lectures, the Chemical History of a Candle. I have taken this subject on a former occasion; and were it left to my own will, I should prefer to repeat it almost every year - so abundant is the interest that attaches itself to the subject, so wonderful are the varieties of outlet which it offers into the various departments of philosophy. There is not a law under which any part of this universe is governed which does not come into play, and is not touched upon, in these phenomena. There is no better, there is no more open door by which you can enter into the study of natural philosophy, than by considering the physical phenomena of a candle. I trust, therefore, I shall not disappoint you in choosing this for my subject rather than any newer topic, which could not be better, were it even so good.
+
+And, before proceeding, let me say this also - that though our subject be so great, and our intention that of treating it honestly, seriously, and philosophically, yet I mean to pass away from all those who are seniors amongst us. I claim the privilege of speaking to juveniles as a juvenile myself. I have done so on former occasions - and, if you please, I shall do so again. And though I stand here with the knowledge of having the words I utter given to the world, yet that shall not deter me from speaking in the same familiar way to those whom I esteem nearest to me on this occasion.
+
+And now, my boys and girls, I must first tell you of what candles are made. Some are great curiosities. I have here some bits of timber, branches of trees particularly famous for their burning. And here you see a piece of that very curious substance taken out of some of the bogs in Ireland, called candle-wood, a hard, strong, excellent wood, evidently fitted for good work as a resister of force, and yet so full of material fit for burning that if you cut a slice of it, you may light it as easily as a piece of wax, and yet it is wood. But we have the real candle here. Here is a candle manufactured by a process which has only been known for a few years - that of pressing together the materials of which the candle is made. Here is a better candle of the old sort. It is made of tallow, and you will see that it burns with a bright flame, but it also produces a good deal of smoke. Now I have a still better candle, and that is made of wax. You see that it burns still more beautifully than the last.
+
+And now let us look a little more carefully at what happens when we light a candle. You see there is a beautiful cup formed around the wick, in which is contained the melted fuel; and you see the flame, which is the seat of the chemical action that produces the light and heat.
+
+[Public domain - Faraday Christmas Lectures excerpt. Skybrary STEM pack.]</pre></article>
+<article class="work" id="work36" hidden><h1>Apology of Socrates - opening (Plato, Jowett PD)</h1><p class="meta">Plato, Benjamin Jowett (translator)  |  public domain sample  |  skybrary-pd-plato-apology-001</p><pre class="body">Apology
+Plato (Benjamin Jowett translation, public domain)
+
+How you, O Athenians, have been affected by my accusers, I cannot tell; but I know that they almost made me forget who I was - so persuasively did they speak; and yet they have hardly uttered a word of truth. But of the many falsehoods told by them, there was one which quite amazed me; - I mean when they said that you should be upon your guard and not allow yourselves to be deceived by the force of my eloquence. To say this, when they were certain to be detected as soon as I opened my lips and proved myself to be anything but a great speaker, did indeed appear to me most shameless - unless by the force of eloquence they mean the force of truth; for if such is their meaning, I admit that I am eloquent. But in how different a way from theirs! Well, as I was saying, they have scarcely spoken the truth at all; but from me you shall hear the whole truth: not, however, delivered after their manner in a set oration duly ornamented with words and phrases. No, by heaven! but I shall use the words and arguments which occur to me at the moment; for I am confident in the justice of my cause: at my time of life I ought not to be appearing before you, O men of Athens, in the character of a juvenile orator - let no one expect it of me. And I must beg of you to grant me a favour: - If I defend myself in my accustomed manner, and you hear me using the words which I have been in the habit of using in the agora, at the tables of the money-changers, or anywhere else, I would ask you not to be surprised, and not to interrupt me on this account. For I am more than seventy years of age, and appearing now for the first time in a court of law, I am quite a stranger to the language of the place; and therefore I would have you regard me as if I were really a stranger, whom you would excuse if he spoke in his native tongue, and after the fashion of his country: - Am I making an unfair request of you? Never mind the manner, which may or may not be good; but think only of the truth of my words, and give heed to that: let the speaker speak truly and the judge decide justly.
+
+And first, I have to reply to the older charges and to my first accusers, and then I will go on to the later ones. For of old I have had many accusers, who have accused me falsely to you during many years; and I am more afraid of them than of Anytus and his associates, who are dangerous, too, in their own way. But far more dangerous are the others, who began when you were children, and took possession of your minds with their falsehoods, telling of one Socrates, a wise man, who speculated about the heaven above, and searched into the earth beneath, and made the worse appear the better cause. The disseminators of this tale are the accusers whom I dread; for their hearers are apt to fancy that such enquirers do not believe in the existence of the gods.
+
+[Public domain Jowett translation excerpt. Skybrary philosophy / civics pack.]</pre></article>
+<article class="work" id="work37" hidden><h1>Walden - Economy excerpt (Henry David Thoreau)</h1><p class="meta">Henry David Thoreau  |  public domain sample  |  skybrary-pd-thoreau-walden-001</p><pre class="body">Walden
+Economy (excerpt)
+Henry David Thoreau
+
+When I wrote the following pages, or rather the bulk of them, I lived alone, in the woods, a mile from any neighbor, in a house which I had built myself, on the shore of Walden Pond, in Concord, Massachusetts, and earned my living by the labor of my hands only. I lived there two years and two months. At present I am a sojourner in civilized life again.
+
+I should not obtrude my affairs so much on the notice of my readers if very particular inquiries had not been made by my townsmen concerning my mode of life, which some would call impertinent, though they do not appear to me at all impertinent, but, considering the circumstances, very natural and pertinent. Some have asked what I got to eat; if I did not feel lonesome; if I was not afraid; and the like. Others have been curious to learn what portion of my income I devoted to charitable purposes; and some, who have large families, how many poor children I maintained. I will therefore ask those of my readers who feel no particular interest in me to pardon me if I undertake to answer some of these questions in this book. In most books, the I, or first person, is omitted; in this it will be retained; that, in respect to egotism, is the main difference. We commonly do not remember that it is, after all, always the first person that is speaking. I should not talk so much about myself if there were anybody else whom I knew as well. Unfortunately, I am confined to this theme by the narrowness of my experience. Moreover, I, on my side, require of every writer, first or last, a simple and sincere account of his own life, and not merely what he has heard of other men&#x27;s lives; some such account as he would send to his kindred from a distant land; for if he has lived sincerely, it must have been in a distant land to me. Perhaps these pages are more particularly addressed to poor students. As for the rest of my readers, they will accept such portions as apply to them. I trust that none will stretch the seams in putting on the coat, for it may do good service to him whom it fits.
+
+I see young men, my townsmen, whose misfortune it is to have inherited farms, houses, barns, cattle, and farming tools; for these are more easily acquired than got rid of. Better if they had been born in the open pasture and suckled by a wolf, that they might have seen with clearer eyes what field they were called to labor in. Who made them serfs of the soil? Why should they eat their sixty acres, when man is condemned to eat only his peck of dirt? Why should they begin digging their graves as soon as they are born?
+
+The mass of men lead lives of quiet desperation. What is called resignation is confirmed desperation. From the desperate city you go into the desperate country, and have to console yourself with the bravery of minks and muskrats. A stereotyped but unconscious despair is concealed even under what are called the games and amusements of mankind. There is no play in them, for this comes after work. But it is a characteristic of wisdom not to do desperate things.
+
+[Public domain - Walden, Economy excerpt. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work38" hidden><h1>Narrative of the Life of Frederick Douglass - Chapter I</h1><p class="meta">Frederick Douglass  |  public domain sample  |  skybrary-pd-douglass-narrative-001</p><pre class="body">Narrative of the Life of Frederick Douglass, an American Slave
+Chapter I
+
+I was born in Tuckahoe, near Hillsborough, and about twelve miles from Easton, in Talbot county, Maryland. I have no accurate knowledge of my age, never having seen any authentic record containing it. By far the larger part of the slaves know as little of their ages as horses know of theirs, and it is the wish of most masters within my knowledge to keep their slaves thus ignorant. I do not remember to have ever met a slave who could tell of his birthday. They seldom come nearer to it than planting-time, harvest-time, cherry-time, spring-time, or fall-time. A want of information concerning my own was a source of unhappiness to me even during childhood. The white children could tell their ages. I could not tell why I ought to be deprived of the same privilege. I was not allowed to make any inquiries of my master concerning it. He deemed all such inquiries on the part of a slave improper and impertinent, and evidence of a restless spirit. The nearest estimate I can give makes me now between twenty-seven and twenty-eight years of age. I come to this, from hearing my master say, some time during 1835, I was about seventeen years old.
+
+My mother was named Harriet Bailey. She was the daughter of Isaac and Betsey Bailey, both colored, and quite dark. My mother was of a darker complexion than either my grandmother or grandfather.
+
+My father was a white man. He was admitted to be such by all I ever heard speak of my parentage. The opinion was also whispered that my master was my father; but of the correctness of this opinion, I know nothing; the means of knowing was withheld from me. My mother and I were separated when I was but an infant - before I knew her as my mother. It is a common custom, in the part of Maryland from which I ran away, to part children from their mothers at a very early age. Frequently, before the child has reached its twelfth month, its mother is taken from it, and hired out on some farm a considerable distance off, and the child is placed under the care of an old woman, too old for field labor. For what this separation is done, I do not know, unless it be to hinder the development of the child&#x27;s affection toward its mother, and to blunt and destroy the natural affection of the mother for the child. This is the inevitable result.
+
+I never saw my mother, to know her as such, more than four or five times in my life; and each of these times was very short in duration, and at night. She was hired by a Mr. Stewart, who lived about twelve miles from my home. She made her journeys to see me in the night, travelling the whole distance on foot, after the performance of her day&#x27;s work. She was a field hand, and a whipping is the penalty of not being in the field at sunrise, unless a slave has special permission from his or her master to the contrary - a permission which they seldom get, and one that gives to him that gives it the proud name of being a kind master. I do not recollect of ever seeing my mother by the light of day. She was with me in the night. She would lie down with me, and get me to sleep, but long before I waked she was gone. Very little communication ever took place between us. Death soon ended what little we could have while she lived, and with it her hardships and suffering. She died when I was about seven years old, on one of my master&#x27;s farms, near Lee&#x27;s Mill. I was not allowed to be present during her illness, at her death, or burial. She was gone long before I knew any thing about it. Never having enjoyed, to any considerable extent, her soothing presence, her tender and watchful care, I received the tidings of her death with much the same emotions I should have probably felt at the death of a stranger.
+
+[Public domain - Narrative of Frederick Douglass, Chapter I. Skybrary history / literacy pack.]</pre></article>
+<article class="work" id="work39" hidden><h1>Washington&#x27;s Farewell Address (1796) - excerpts</h1><p class="meta">George Washington  |  public domain sample  |  skybrary-pd-washington-farewell-001</p><pre class="body">Washington&#x27;s Farewell Address (1796)
+Excerpts for educational use (public domain)
+
+Friends and Fellow-Citizens:
+
+The period for a new election of a citizen to administer the executive government of the United States being not far distant, and the time actually arrived when your thoughts must be employed in designating the person who is to be clothed with that important trust, it appears to me proper, especially as it may conduce to a more distinct expression of the public voice, that I should now apprise you of the resolution I have formed, to decline being considered among the number of those out of whom a choice is to be made.
+
+I beg you, at the same time, to do me the justice to be assured that this resolution has not been taken without a strict regard to all the considerations appertaining to the relation which binds a dutiful citizen to his country; and that in withdrawing the tender of service, which silence in my situation might imply, I am influenced by no diminution of zeal for your future interest, no deficiency of grateful respect for your past kindness, but am supported by a full conviction that the step is compatible with both.
+
+The unity of government which constitutes you one people is also now dear to you. It is justly so, for it is a main pillar in the edifice of your real independence, the support of your tranquility at home, your peace abroad; of your safety; of your prosperity; of that very liberty which you so highly prize. But as it is easy to foresee that, from different causes and from different quarters, much pains will be taken, many artifices employed to weaken in your minds the conviction of this truth; as this is the point in your political fortress against which the batteries of internal and external enemies will be most constantly and actively (though often covertly and insidiously) directed, it is of infinite moment that you should properly estimate the immense value of your national union to your collective and individual happiness; that you should cherish a cordial, habitual, and immovable attachment to it; accustoming yourselves to think and speak of it as of the palladium of your political safety and prosperity; watching for its preservation with jealous anxiety; discountenancing whatever may suggest even a suspicion that it can in any event be abandoned; and indignantly frowning upon the first dawning of every attempt to alienate any portion of our country from the rest, or to enfeeble the sacred ties which now link together the various parts.
+
+Of all the dispositions and habits which lead to political prosperity, religion and morality are indispensable supports. In vain would that man claim the tribute of patriotism, who should labor to subvert these great pillars of human happiness, these firmest props of the duties of men and citizens. The mere politician, equally with the pious man, ought to respect and to cherish them. A volume could not trace all their connections with private and public felicity. Let it simply be asked: Where is the security for property, for reputation, for life, if the sense of religious obligation desert the oaths which are the instruments of investigation in courts of justice?
+
+Promote then, as an object of primary importance, institutions for the general diffusion of knowledge. In proportion as the structure of a government gives force to public opinion, it is essential that public opinion should be enlightened.
+
+[Public domain - Washington Farewell Address excerpts. Skybrary civics pack.]</pre></article>
+<article class="work" id="work40" hidden><h1>Twenty Thousand Leagues Under the Seas - Chapter I (Verne)</h1><p class="meta">Jules Verne  |  public domain sample  |  skybrary-pd-verne-20000-001</p><pre class="body">Twenty Thousand Leagues Under the Seas
+Part One
+Chapter I - A Shifting Reef
+
+The year 1866 was signalised by a remarkable incident, a mysterious and puzzling phenomenon, which doubtless no one has yet forgotten. Not to mention rumours which agitated the maritime population and excited the public mind, even in the interior of continents, seafaring men were particularly excited. Merchants, common sailors, captains of vessels, skippers, both of Europe and America, naval officers of all countries, and the Governments of several States on the two continents, were deeply interested in the matter.
+
+For some time past vessels had been met by &#x27;an enormous thing,&#x27; a long object, spindle-shaped, occasionally phosphorescent, and infinitely larger and more rapid in its movements than a whale.
+
+The facts relating to this apparition (entered in various log-books) agreed in most respects as to the shape of the object or creature in question, the untiring rapidity of its movements, its surprising power of locomotion, and the peculiar life with which it seemed endowed. If it was a whale, it surpassed in size all those hitherto classified in science. Taking into consideration the mean of observations made at divers times - rejecting the timid estimate of those who assigned to this object a length of two hundred feet, equally with the exaggerated opinions which set it down as a mile in width and three in length - we might fairly conclude that this mysterious being surpassed greatly all dimensions admitted by the learned ones of the day, if it existed at all. And that it did exist was an undeniable fact; and, with that tendency which disposes the human mind in favour of the marvellous, we can understand the excitement produced in the entire world by this supernatural apparition. As to classing it in the list of fables, the idea was out of the question.
+
+On the 20th of July, 1866, the steamer Governor Higginson, of the Calcutta and Burnach Steam Navigation Company, had met this moving mass five miles off the east coast of Australia. Captain Baker thought at first that he was in the presence of an unknown sandbank; he even prepared to determine its exact position when two columns of water, projected by the mysterious object, shot with a hissing noise a hundred and fifty feet up into the air. Now, unless the sandbank had been submitted to the intermittent eruption of a geyser, the Governor Higginson had to do neither more nor less than with an aquatic mammal, unknown till then, which threw up from its blow-holes columns of water mixed with air and vapour.
+
+Similar facts were observed on the 23rd of July in the same year, in the Pacific Ocean, by the Columbus, of the West India and Pacific Steam Navigation Company. But this extraordinary creature could transport itself from one place to another with surprising velocity; as, in an interval of three days, the Governor Higginson and the Columbus had observed it at two different points of the chart, separated by a distance of more than seven hundred nautical leagues.
+
+[Public domain - Twenty Thousand Leagues Under the Seas, Chapter I excerpt. Skybrary literacy pack.]</pre></article>
+<article class="work" id="work41" hidden><h1>A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)</h1><p class="meta">Mary Wollstonecraft  |  public domain sample  |  skybrary-pd-wollstonecraft-vindication-001</p><pre class="body">A Vindication of the Rights of Woman
+Introduction (excerpt)
+Mary Wollstonecraft (1792)
+
+After considering the historic page, and viewing the living world with anxious solicitude, the most melancholy emotions of sorrowful indignation have depressed my spirits, and I have sighed when obliged to confess that either nature has made a great difference between man and man, or that the civilization which has hitherto taken place in the world has been very partial. I have turned over various books written on the subject of education, and patiently observed the conduct of parents and the management of schools; but what has been the result? - a profound conviction that the neglected education of my fellow-creatures is the grand source of the misery I deplore; and that women, in particular, are rendered weak and wretched by a variety of concurring causes, originating from one hasty conclusion. The conduct and manners of women, in fact, evidently prove that their minds are not in a healthy state; for, like the flowers which are planted in too rich a soil, strength and usefulness are sacrificed to beauty; and the flaunting leaves, after having pleased a fastidious eye, fade, disregarded on the stalk, long before the season when they ought to have arrived at maturity. One cause of this barren blooming I attribute to a false system of education, gathered from the books written on this subject by men who, considering females rather as women than human creatures, have been more anxious to make them alluring mistresses than affectionate wives and rational mothers; and the understanding of the sex has been so bubbled by this specious homage, that the civilized women of the present century, with a few exceptions, are only anxious to inspire love, when they ought to cherish a nobler ambition, and by their abilities and virtues exact respect.
+
+In a treatise, therefore, on female rights and manners, the works which have been particularly written for their improvement must not be overlooked; especially when it is asserted, in direct terms, that the minds of women are enfeebled by false refinement; that the books of instruction, written by men of genius, have had the same tendency as more frivolous productions; and that, in the true style of Mahometanism, they are treated as a kind of subordinate beings, and not as a part of the human species, when improveable reason is allowed to be the dignified distinction which raises men above the brute creation, and puts a natural sceptre in a feeble hand.
+
+Yet, because I am a woman, I would not lead my readers to suppose that I mean violently to agitate the contested question respecting the quality or inferiority of the sex; but as the subject lies in my way, and I cannot pass it over without subjecting the main tendency of my reasoning to misconstruction, I shall stop a moment to deliver, in a few words, my opinion. In the government of the physical world it is observable that the female in point of strength is, in general, inferior to the male. This is the law of nature; and it does not appear to be suspended or abrogated in favour of woman. A degree of physical superiority cannot, therefore, be denied - and it is a noble prerogative! But not content with this natural pre-eminence, men endeavour to sink us still lower, merely to render us alluring objects for a moment; and women, intoxicated by the adoration which men, under the influence of their senses, pay them, do not seek to obtain a durable interest in their hearts, or to become the friends of the fellow creatures who find amusement in their society.
+
+[Public domain - Wollstonecraft, Vindication intro excerpt. Skybrary civics / history pack.]</pre></article>
+<article class="work" id="work42" hidden><h1>The Tortoise and the Hare (Aesop)</h1><p class="meta">Aesop (traditional)  |  public domain sample  |  skybrary-pd-aesop-tortoise-001</p><pre class="body">The Tortoise and the Hare
+Aesop (traditional public-domain fable)
+
+A Hare one day ridiculed the short feet and slow pace of the Tortoise, who replied, laughing: &#x27;Though you be swift as the wind, I will beat you in a race.&#x27; The Hare, believing her assertion to be simply impossible, assented to the proposal; and they agreed that the Fox should choose the course and fix the goal. On the day appointed for the race the two started together. The Tortoise never for a moment stopped, but went on with a slow but steady pace straight to the end of the course. The Hare, lying down by the wayside, fell fast asleep. At last waking up, and moving as fast as he could, he saw the Tortoise had reached the goal, and was comfortably dozing after her fatigue.
+
+Slow but steady wins the race.
+
+[Public domain traditional fable - curated sample for Skybrary literacy pack.]</pre></article>
+<article class="work" id="work43" hidden><h1>If - (Rudyard Kipling)</h1><p class="meta">Rudyard Kipling  |  public domain sample  |  skybrary-pd-kipling-if-001</p><pre class="body">If -
+Rudyard Kipling (1910)
+
+If you can keep your head when all about you
+Are losing theirs and blaming it on you,
+If you can trust yourself when all men doubt you,
+But make allowance for their doubting too;
+If you can wait and not be tired by waiting,
+Or being lied about, don&#x27;t deal in lies,
+Or being hated, don&#x27;t give way to hating,
+And yet don&#x27;t look too good, nor talk too wise:
+
+If you can dream - and not make dreams your master;
+If you can think - and not make thoughts your aim;
+If you can meet with Triumph and Disaster
+And treat those two impostors just the same;
+If you can bear to hear the truth you&#x27;ve spoken
+Twisted by knaves to make a trap for fools,
+Or watch the things you gave your life to, broken,
+And stoop and build &#x27;em up with worn-out tools:
+
+If you can make one heap of all your winnings
+And risk it on one turn of pitch-and-toss,
+And lose, and start again at your beginnings
+And never breathe a word about your loss;
+If you can force your heart and nerve and sinew
+To serve your turn long after they are gone,
+And so hold on when there is nothing in you
+Except the Will which says to them: &#x27;Hold on!&#x27;
+
+If you can talk with crowds and keep your virtue,
+Or walk with Kings - nor lose the common touch,
+If neither foes nor loving friends can hurt you,
+If all men count with you, but none too much;
+If you can fill the unforgiving minute
+With sixty seconds&#x27; worth of distance run,
+Yours is the Earth and everything that&#x27;s in it,
+And - which is more - you&#x27;ll be a Man, my son!
+
+[Public domain in the United States (published 1910). Skybrary literacy pack. Confirm local copyright status before redistribute outside the U.S.]</pre></article>
+<article class="work" id="work44" hidden><h1>La Cigale et la Fourmi (La Fontaine)</h1><p class="meta">Jean de La Fontaine  |  public domain sample  |  skybrary-pd-lafontaine-fr-001</p><pre class="body">La Cigale et la Fourmi
+Jean de La Fontaine
+
+La Cigale, ayant chante tout l&#x27;ete,
+Se trouva fort depourvue
+Quand la bise fut venue:
+Pas un seul petit morceau
+De mouche ou de vermisseau.
+Elle alla crier famine
+Chez la Fourmi sa voisine,
+La priant de lui preter
+Quelque grain pour subsister
+Jusqu&#x27;a la saison nouvelle.
+Je vous paierai, lui dit-elle,
+Avant l&#x27;Aout, foi d&#x27;animal,
+Interet et principal.
+La Fourmi n&#x27;est pas preteuse:
+C&#x27;est la son moindre defaut.
+Que faisiez-vous au temps chaud?
+Dit-elle a cette emprunteuse.
+Nuit et jour a tout venant
+Je chantais, ne vous deplaise.
+Vous chantiez? j&#x27;en suis fort aise.
+Eh bien! dansez maintenant.
+
+[Public domain French - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work45" hidden><h1>Don Quixote - opening (Cervantes)</h1><p class="meta">Miguel de Cervantes  |  public domain sample  |  skybrary-pd-quijote-es-001</p><pre class="body">Don Quijote de la Mancha (comienzo)
+Miguel de Cervantes Saavedra
+
+En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivia un hidalgo de los de lanza en astillero, adarga antigua, rocin flaco y galgo corredor. Una olla de algo mas vaca que carnero, salpicon las mas noches, duelos y quebrantos los sabados, lentejas los viernes, algun palomino de anadidura los domingos, consumian las tres partes de su hacienda.
+
+El resto della concluian sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los dias de entresemana se honraba con su vellori de lo mas fino. Tenia en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que asi ensillaba el rocin como tomaba la podadera.
+
+Frisaba la edad de nuestro hidalgo con los cincuenta anos; era de complexion recia, seco de carnes, enjuto de rostro, gran madrugador y amigo de la caza.
+
+[Public domain Spanish - Skybrary multilingual pack. Excerpt only.]</pre></article>
+<article class="work" id="work46" hidden><h1>Inferno Canto I opening (Dante)</h1><p class="meta">Dante Alighieri  |  public domain sample  |  skybrary-pd-dante-it-001</p><pre class="body">La Divina Commedia - Inferno, Canto I (inizio)
+Dante Alighieri
+
+Nel mezzo del cammin di nostra vita
+mi ritrovai per una selva oscura,
+che la diritta via era smarrita.
+
+Ahi quanto a dir qual era e cosa dura
+esta selva selvaggia e aspra e forte
+che nel pensier rinova la paura!
+
+Tant&#x27; e amara che poco e piu morte;
+ma per trattar del ben ch&#x27;i&#x27; vi trovai,
+diro de l&#x27;altre cose ch&#x27;i&#x27; v&#x27;ho scorte.
+
+Io non so ben ridir com&#x27; i&#x27; v&#x27;intrai,
+tant&#x27; era pien di sonno a quel punto
+che la verace via abbandonai.
+
+[Public domain Italian - Skybrary multilingual pack. Excerpt only.]</pre></article>
+<article class="work" id="work47" hidden><h1>Erlkoenig (Goethe)</h1><p class="meta">Johann Wolfgang von Goethe  |  public domain sample  |  skybrary-pd-goethe-de-001</p><pre class="body">Erlkoenig
+Johann Wolfgang von Goethe
+
+Wer reitet so spaet durch Nacht und Wind?
+Es ist der Vater mit seinem Kind;
+Er hat den Knaben wohl in dem Arm,
+Er fasst ihn sicher, er haelt ihn warm.
+
+Mein Sohn, was birgst du so bang dein Gesicht? -
+Siehst, Vater, du den Erlkoenig nicht?
+Den Erlenkoenig mit Kron und Schweif? -
+Mein Sohn, es ist ein Nebelstreif. -
+
+Du liebes Kind, komm, geh mit mir!
+Gar schoene Spiele spiel&#x27; ich mit dir;
+Manch&#x27; bunte Blumen sind an dem Strand,
+Meine Mutter hat manch guelden Gewand. -
+
+Mein Vater, mein Vater, und hoerest du nicht,
+Was Erlenkoenig mir leise verspricht? -
+Sei ruhig, bleibe ruhig, mein Kind;
+In duerren Blaettern saeuselt der Wind. -
+
+Willst, feiner Knabe, du mit mir gehn?
+Meine Toechter sollen dich warten schoen;
+Meine Toechter fuehren den naechtlichen Reihn,
+Und wiegen und tanzen und singen dich ein. -
+
+Mein Vater, mein Vater, und siehst du nicht dort
+Erlkoenigs Toechter am duestern Ort? -
+Mein Sohn, mein Sohn, ich seh es genau:
+Es scheinen die alten Weiden so grau. -
+
+Ich liebe dich, mich reizt deine schoene Gestalt;
+Und bist du nicht willig, so brauch ich Gewalt. -
+Mein Vater, mein Vater, jetzt fasst er mich an!
+Erlkoenig hat mir ein Leids getan! -
+
+Dem Vater grauset&#x27;s, er reitet geschwind,
+Er haelt in Armen das aechzende Kind,
+Erreicht den Hof mit Muehe und Not;
+In seinen Armen das Kind war tot.
+
+[Public domain German - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work48" hidden><h1>Os Lusiadas - opening stanza (Camoes)</h1><p class="meta">Luis de Camoes  |  public domain sample  |  skybrary-pd-camoes-pt-001</p><pre class="body">Os Lusiadas (inicio)
+Luis de Camoes
+
+As armas e os baroes assinalados,
+Que da ocidental praia Lusitana,
+Por mares nunca de antes navegados,
+Passaram ainda alem da Taprobana,
+Em perigos e guerras esforcados,
+Mais do que prometia a forca humana,
+E entre gente remota edificaram
+Novo Reino, que tanto sublimaram;
+
+E tambem as memorias gloriosas
+Daqueles Reis, que foram dilatando
+A Fe, o Imperio, e as terras viciosas
+De Africa e de Asia andaram devastando;
+E aqueles, que por obras valerosas
+Se vao da lei da morte libertando;
+Cantando espalharei por toda parte,
+Se a tanto me ajudar o engenho e arte.
+
+[Public domain Portuguese - Skybrary multilingual pack. Excerpt only.]</pre></article>
+<article class="work" id="work49" hidden><h1>Gaudeamus igitur (traditional Latin)</h1><p class="meta">Traditional (Latin academic song)  |  public domain sample  |  skybrary-pd-gaudeamus-la-001</p><pre class="body">Gaudeamus igitur
+Traditional Latin academic song
+
+Gaudeamus igitur
+Iuvenes dum sumus.
+Post iucundam iuventutem
+Post molestam senectutem
+Nos habebit humus.
+
+Ubi sunt qui ante nos
+In mundo fuere?
+Vadite ad superos
+Transite in inferos
+Hos si vis videre.
+
+Vita nostra brevis est
+Brevi finietur.
+Venit mors velociter
+Rapit nos atrociter
+Nemini parcetur.
+
+Vivat academia!
+Vivant professores!
+Vivat membrum quodlibet;
+Vivant membra quaelibet;
+Semper sint in flore.
+
+[Public domain traditional Latin - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work50" hidden><h1>Ya vas lyubil (Pushkin)</h1><p class="meta">Alexander Pushkin  |  public domain sample  |  skybrary-pd-pushkin-ru-001</p><pre class="body">Ya vas lyubil (I loved you)
+Alexander Pushkin (public domain)
+
+Transliterated Russian (for ASCII-safe offline kits):
+
+Ya vas lyubil: lyubov&#x27; eshche, byt&#x27; mozhet,
+V dushe moyei ugasla ne sovsem;
+No pust&#x27; ona vas bol&#x27;she ne trevozhit;
+Ya ne khochu pechalit&#x27; vas nichem.
+
+Ya vas lyubil bezmolvno, beznadezhno,
+To robost&#x27;yu, to revnost&#x27;yu tomim;
+Ya vas lyubil tak iskrenno, tak nezhno,
+Kak dai vam bog lyubimoi byt&#x27; drugim.
+
+Note: Cyrillic original is public domain (Pushkin d. 1837). This kit ships an ASCII transliteration so every SkyCache node can render it without font gaps. Operators may replace with full Cyrillic locally.
+
+[Public domain Russian (transliteration) - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work51" hidden><h1>Analects - selected sayings (traditional)</h1><p class="meta">Confucian tradition (public domain English)  |  public domain sample  |  skybrary-pd-confucius-zh-001</p><pre class="body">The Analects - selected sayings (public domain English)
+Confucian tradition
+
+The Master said, To learn and at due times to repeat what one has learnt, is that not after all a pleasure? That friends should come to one from afar, is this not after all delightful? To remain unsoured even though one&#x27;s merits are unrecognized by others, is that not after all what is expected of a gentleman?
+
+The Master said, He who by reanimating the Old can gain knowledge of the New is fit to be a teacher.
+
+The Master said, When you see someone of worth, think of how you may emulate. When you see someone unworthy, examine your own character.
+
+Tzu-kung asked about the true gentleman. The Master said, He does not preach what he practises till he has practised what he preaches.
+
+Pinyin titles (ASCII): Lunyu xuan. Full Classical Chinese editions may be added by operators under local open-content rules.
+
+[Public domain English tradition - Skybrary multilingual pack. Not a complete Analects.]</pre></article>
+<article class="work" id="work52" hidden><h1>Kalila and Dimna - the crow and the snake (traditional)</h1><p class="meta">Traditional (Kalila and Dimna tradition)  |  public domain sample  |  skybrary-pd-kalila-ar-001</p><pre class="body">Kalila and Dimna - The Crow and the Snake (traditional retelling)
+
+A crow nested in a tree near a black snake that ate her young. In grief she asked a jackal for counsel. The jackal said: do not fight the snake with force; use craft. Scatter jewels from a nearby palace path so servants follow the trail into the snake&#x27;s hole. When they dig for treasure, they will kill the snake.
+
+The crow did so. The servants found the snake, slew it, and the crow&#x27;s nest was safe again.
+
+Moral (traditional): wisdom and patience outmatch raw strength.
+
+Note: Arabic script editions may be added by operators under local open-content rules. This kit ships an English PD-style retelling so every node can render it without font gaps.
+
+[Traditional public-domain fable tradition - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work53" hidden><h1>Swahili proverbs (traditional selection)</h1><p class="meta">Traditional East African proverbs  |  public domain sample  |  skybrary-pd-swahili-proverbs-001</p><pre class="body">Methali za Kiswahili / Swahili proverbs (traditional)
+
+Haraka haraka haina baraka.
+  - Haste has no blessing. (Slow careful work beats rush.)
+
+Unity is strength: kidole kimoja hakivunji chawa.
+  - One finger cannot kill a louse. (Cooperate.)
+
+Asiyefunzwa na mamaye hufunzwa na ulimwengu.
+  - Who is not taught by their mother is taught by the world.
+
+Mwenye njaa hana miiko.
+  - The hungry person has no taboos. (Need changes rules carefully.)
+
+Bandu bandu humaliza gogo.
+  - Chip by chip finishes the log. (Steady progress.)
+
+Usisahau mizizi yako.
+  - Do not forget your roots.
+
+[Traditional proverbs - public domain oral tradition, curated for Skybrary.]</pre></article>
+<article class="work" id="work54" hidden><h1>Kabir - selected dohas (public domain tradition)</h1><p class="meta">Kabir (traditional public-domain verses)  |  public domain sample  |  skybrary-pd-kabir-hi-001</p><pre class="body">Kabir - selected dohas (public domain tradition)
+ASCII transliteration for offline kits
+
+Bura jo dekhan main chala, bura na milya koi;
+Jo dil khoja apna, to mujhse bura na koi.
+  - I set out to find the wicked; found none outside.
+    Searching my own heart, none was worse than I.
+
+Pothi padh padh jag mua, pandit bhaya na koi;
+Dhai akshar prem ka, padhe so pandit hoi.
+  - Reading stacks of books makes no sage;
+    two-and-a-half letters of love make the wise.
+
+Jaise til mein tel hai, jyon chakmak mein aag;
+Tera sain tujh mein base, jaag sake to jaag.
+  - Oil is in the sesame; fire is in the flint;
+    the beloved dwells in you - awaken if you can.
+
+Note: Devanagari originals are public domain (Kabir tradition). Operators may replace transliteration with full script locally.
+
+[Public domain tradition - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work55" hidden><h1>Matsuo Basho - selected haiku (romaji)</h1><p class="meta">Matsuo Basho  |  public domain sample  |  skybrary-pd-basho-ja-001</p><pre class="body">Matsuo Basho - selected haiku (public domain)
+Romaji + English gloss
+
+Furu ike ya / kawazu tobikomu / mizu no oto
+  - Old pond - / a frog jumps in / water&#x27;s sound
+
+Natsu-gusa ya / tsuwamono-domo ga / yume no ato
+  - Summer grasses - / all that remains / of warriors&#x27; dreams
+
+Shizukasa ya / iwa ni shimi-iru / semi no koe
+  - Stillness - / sinking into the rocks / cicada cry
+
+Aki fukaki / tonari wa nani o / suru hito zo
+  - Autumn deepens - / what does my neighbor / do for a living?
+
+Note: Japanese originals are public domain (Basho d. 1694). This kit ships romaji so every node can render without CJK fonts. Operators may install full Japanese text locally.
+
+[Public domain Japanese poetry - Skybrary multilingual pack.]</pre></article>
+<article class="work" id="work56" hidden><h1>Yoruba proverbs (traditional selection)</h1><p class="meta">Traditional Yoruba proverbs  |  public domain sample  |  skybrary-pd-yoruba-proverbs-001</p><pre class="body">Yoruba proverbs / Owe (traditional selection)
+
+Ile la ti n ko eso r&#x27;ode.
+  - Charity begins at home. (Character starts in the household.)
+
+Bi a ba n gun&#x27;yan, bi a ba n se&#x27;be, ise ti a ba fi&#x27;wo le a ma dun ni.
+  - Whatever work you put your hand to, do it well.
+
+Oju l&#x27;oro wa.
+  - The face carries the message. (Presence and respect matter.)
+
+Agba ki i wa loja, k&#x27;ori omo titun wo.
+  - When elders are in the market, a child&#x27;s head is not left crooked.
+    (Community protects the young.)
+
+Igi kan ko le da igbo se.
+  - One tree does not make a forest. (Need many people.)
+
+[Traditional proverbs - public domain oral tradition, curated for Skybrary.]</pre></article>
+<article class="work" id="work57" hidden><h1>Tagore - Gitanjali selections (public domain EN)</h1><p class="meta">Rabindranath Tagore  |  public domain sample  |  skybrary-pd-tagore-bn-001</p><pre class="body">Gitanjali - selected poems (public domain English)
+Rabindranath Tagore
+
+Thou hast made me endless, such is thy pleasure. This frail vessel thou emptiest again and again, and fillest it ever with fresh life.
+
+This little flute of a reed thou hast carried over hills and dales, and hast breathed through it melodies eternally new.
+
+At the immortal touch of thy hands my little heart loses its limits in joy and gives birth to utterance ineffable.
+
+Thy infinite gifts come to me only on these very small hands of mine. Ages pass, and still thou pourest, and still there is room to fill.
+
+Where the mind is without fear and the head is held high;
+Where knowledge is free;
+Where the world has not been broken up into fragments by narrow domestic walls;
+Where words come out from the depth of truth;
+Where tireless striving stretches its arms towards perfection;
+Where the clear stream of reason has not lost its way into the dreary desert sand of dead habit;
+Where the mind is led forward by thee into ever-widening thought and action -
+Into that heaven of freedom, my Father, let my country awake.
+
+[Public domain English (Tagore / Macmillan era PD) - Skybrary multilingual pack.]</pre></article>
+<footer>
+  SkyCache zero-network kit (skycache-zero-network-kit-v1). Legal: receive-only satellite in the full product;
+  this kit is local files only. https://github.com/Pitchfork-and-Torch/SkyCache
+</footer>
+<script>
+(function () {
+  var works = [{id:"skybrary-pd-aesop-001",title:"The Fox and the Grapes (Aesop)",creators:"Aesop (traditional)"},{id:"skybrary-pd-gettysburg-001",title:"Gettysburg Address (Abraham Lincoln)",creators:"Abraham Lincoln"},{id:"skybrary-pd-hippocratic-001",title:"Hippocratic Oath (public domain translation excerpt)",creators:"Hippocratic tradition (public domain English excerpt)"},{id:"skybrary-pd-declaration-001",title:"United States Declaration of Independence (1776)",creators:"Continental Congress (U.S.)"},{id:"skybrary-pd-bill-of-rights-001",title:"United States Bill of Rights (Amendments I - X)",creators:"U.S. Congress (1789)"},{id:"skybrary-pd-shakespeare-sonnet18-001",title:"Sonnet 18 - Shall I compare thee to a summer's day? (Shakespeare)",creators:"William Shakespeare"},{id:"skybrary-pd-austen-pride-001",title:"Pride and Prejudice - Opening chapter (Jane Austen)",creators:"Jane Austen"},{id:"skybrary-pd-dickens-carol-001",title:"A Christmas Carol - Stave One opening (Charles Dickens)",creators:"Charles Dickens"},{id:"skybrary-pd-euclid-001",title:"Euclid's Elements - Book I Definitions (public domain)",creators:"Euclid, Thomas L. Heath (translator, public domain)"},{id:"skybrary-pd-darwin-origin-001",title:"On the Origin of Species - Chapter I excerpt (Darwin)",creators:"Charles Darwin"},{id:"skybrary-pd-sunzi-artofwar-001",title:"The Art of War - Lionel Giles translation excerpts",creators:"Sun Tzu, Lionel Giles (translator)"},{id:"skybrary-pd-firstaid-historical-001",title:"Historical first-aid principles (public-domain educational summary)",creators:"Public-domain first-aid handbooks (curated summary)"},{id:"skybrary-pd-emerson-self-001",title:"Self-Reliance - excerpt (Ralph Waldo Emerson)",creators:"Ralph Waldo Emerson"},{id:"skybrary-pd-franklin-wealth-001",title:"The Way to Wealth - excerpt (Benjamin Franklin)",creators:"Benjamin Franklin"},{id:"skybrary-pd-newton-rules-001",title:"Newton - Rules of Reasoning in Philosophy (Principia excerpt)",creators:"Isaac Newton"},{id:"skybrary-pd-nightingale-nursing-001",title:"Notes on Nursing - ventilation & cleanliness excerpts (Nightingale)",creators:"Florence Nightingale"},{id:"skybrary-pd-psalm23-001",title:"Psalm 23 (King James Version)",creators:"Biblical text (KJV public domain)"},{id:"skybrary-pd-twain-jumping-001",title:"The Celebrated Jumping Frog - opening (Mark Twain)",creators:"Mark Twain (Samuel L. Clemens)"},{id:"skybrary-pd-poe-raven-001",title:"The Raven (Edgar Allan Poe)",creators:"Edgar Allan Poe"},{id:"skybrary-pd-carroll-alice-001",title:"Alice's Adventures in Wonderland - Chapter I (Lewis Carroll)",creators:"Lewis Carroll (Charles Lutwidge Dodgson)"},{id:"skybrary-pd-melville-moby-001",title:"Moby-Dick - Opening (Herman Melville)",creators:"Herman Melville"},{id:"skybrary-pd-shelley-frank-001",title:"Frankenstein - Letter I (Mary Shelley)",creators:"Mary Wollstonecraft Shelley"},{id:"skybrary-pd-doyle-study-001",title:"A Study in Scarlet - Opening (Arthur Conan Doyle)",creators:"Arthur Conan Doyle"},{id:"skybrary-pd-wells-time-001",title:"The Time Machine - Chapter I opening (H. G. Wells)",creators:"H. G. Wells"},{id:"skybrary-pd-stevenson-treasure-001",title:"Treasure Island - Chapter I (Robert Louis Stevenson)",creators:"Robert Louis Stevenson"},{id:"skybrary-pd-grimm-rapunzel-001",title:"Rapunzel (Brothers Grimm, public-domain English)",creators:"Jacob Grimm, Wilhelm Grimm"},{id:"skybrary-pd-andersen-duckling-001",title:"The Ugly Duckling (Hans Christian Andersen, PD English)",creators:"Hans Christian Andersen"},{id:"skybrary-pd-whitman-captain-001",title:"O Captain! My Captain! (Walt Whitman)",creators:"Walt Whitman"},{id:"skybrary-pd-dickinson-hope-001",title:"Hope is the thing with feathers (Emily Dickinson)",creators:"Emily Dickinson"},{id:"skybrary-pd-federalist-1-001",title:"The Federalist No. 1 (Alexander Hamilton)",creators:"Alexander Hamilton"},{id:"skybrary-pd-constitution-us-001",title:"United States Constitution - Preamble and Article I (excerpts)",creators:"Constitutional Convention (U.S., 1787)"},{id:"skybrary-pd-rights-man-fr-001",title:"Declaration of the Rights of Man and of the Citizen (1789)",creators:"National Assembly of France (1789)"},{id:"skybrary-pd-magna-carta-001",title:"Magna Carta (1215) - selected clauses (PD English)",creators:"English barons and King John (1215)"},{id:"skybrary-pd-confucius-analects-001",title:"The Analects - selected sayings (Confucius, Legge PD)",creators:"Confucius (tradition), James Legge (translator)"},{id:"skybrary-pd-dhammapada-001",title:"The Dhammapada - selected verses (Max Muller PD)",creators:"Buddhist tradition, F. Max Muller (translator)"},{id:"skybrary-pd-faraday-candle-001",title:"The Chemical History of a Candle - Lecture I excerpt (Faraday)",creators:"Michael Faraday"},{id:"skybrary-pd-plato-apology-001",title:"Apology of Socrates - opening (Plato, Jowett PD)",creators:"Plato, Benjamin Jowett (translator)"},{id:"skybrary-pd-thoreau-walden-001",title:"Walden - Economy excerpt (Henry David Thoreau)",creators:"Henry David Thoreau"},{id:"skybrary-pd-douglass-narrative-001",title:"Narrative of the Life of Frederick Douglass - Chapter I",creators:"Frederick Douglass"},{id:"skybrary-pd-washington-farewell-001",title:"Washington's Farewell Address (1796) - excerpts",creators:"George Washington"},{id:"skybrary-pd-verne-20000-001",title:"Twenty Thousand Leagues Under the Seas - Chapter I (Verne)",creators:"Jules Verne"},{id:"skybrary-pd-wollstonecraft-vindication-001",title:"A Vindication of the Rights of Woman - intro excerpt (Wollstonecraft)",creators:"Mary Wollstonecraft"},{id:"skybrary-pd-aesop-tortoise-001",title:"The Tortoise and the Hare (Aesop)",creators:"Aesop (traditional)"},{id:"skybrary-pd-kipling-if-001",title:"If - (Rudyard Kipling)",creators:"Rudyard Kipling"},{id:"skybrary-pd-lafontaine-fr-001",title:"La Cigale et la Fourmi (La Fontaine)",creators:"Jean de La Fontaine"},{id:"skybrary-pd-quijote-es-001",title:"Don Quixote - opening (Cervantes)",creators:"Miguel de Cervantes"},{id:"skybrary-pd-dante-it-001",title:"Inferno Canto I opening (Dante)",creators:"Dante Alighieri"},{id:"skybrary-pd-goethe-de-001",title:"Erlkoenig (Goethe)",creators:"Johann Wolfgang von Goethe"},{id:"skybrary-pd-camoes-pt-001",title:"Os Lusiadas - opening stanza (Camoes)",creators:"Luis de Camoes"},{id:"skybrary-pd-gaudeamus-la-001",title:"Gaudeamus igitur (traditional Latin)",creators:"Traditional (Latin academic song)"},{id:"skybrary-pd-pushkin-ru-001",title:"Ya vas lyubil (Pushkin)",creators:"Alexander Pushkin"},{id:"skybrary-pd-confucius-zh-001",title:"Analects - selected sayings (traditional)",creators:"Confucian tradition (public domain English)"},{id:"skybrary-pd-kalila-ar-001",title:"Kalila and Dimna - the crow and the snake (traditional)",creators:"Traditional (Kalila and Dimna tradition)"},{id:"skybrary-pd-swahili-proverbs-001",title:"Swahili proverbs (traditional selection)",creators:"Traditional East African proverbs"},{id:"skybrary-pd-kabir-hi-001",title:"Kabir - selected dohas (public domain tradition)",creators:"Kabir (traditional public-domain verses)"},{id:"skybrary-pd-basho-ja-001",title:"Matsuo Basho - selected haiku (romaji)",creators:"Matsuo Basho"},{id:"skybrary-pd-yoruba-proverbs-001",title:"Yoruba proverbs (traditional selection)",creators:"Traditional Yoruba proverbs"},{id:"skybrary-pd-tagore-bn-001",title:"Tagore - Gitanjali selections (public domain EN)",creators:"Rabindranath Tagore"}];
+  var fs = 1.2;
+  var current = -1;
+  function $(id) { return document.getElementById(id); }
+  function showList() {
+    current = -1;
+    $("toolbar").hidden = true;
+    works.forEach(function (_, i) {
+      var el = $("work" + i);
+      if (el) el.hidden = true;
+      var b = $("nav" + i);
+      if (b) b.classList.remove("active");
+    });
+    $("nav").hidden = false;
+    window.scrollTo(0, 0);
+  }
+  function showWork(i) {
+    if (i < 0 || i >= works.length) return;
+    current = i;
+    $("nav").hidden = true;
+    $("toolbar").hidden = false;
+    works.forEach(function (_, j) {
+      var el = $("work" + j);
+      if (el) el.hidden = j !== i;
+    });
+    window.scrollTo(0, 0);
+  }
+  function applyFs() {
+    document.documentElement.style.setProperty("--fs", fs + "rem");
+  }
+  works.forEach(function (_, i) {
+    var b = $("nav" + i);
+    if (b) b.addEventListener("click", function () { showWork(i); });
+  });
+  $("btnBack").addEventListener("click", showList);
+  $("btnSmaller").addEventListener("click", function () {
+    fs = Math.max(0.9, fs - 0.125); applyFs();
+  });
+  $("btnLarger").addEventListener("click", function () {
+    fs = Math.min(2.0, fs + 0.125); applyFs();
+  });
+  applyFs();
+})();
+</script>
+</body>
+</html>
