@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-gaudeamus-la-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Gaudeamus igitur (traditional Latin)",
+    "la": "Gaudeamus igitur"
+  },
+  "summary": {
+    "en": "Traditional public-domain Latin academic song (selected verses)."
+  },
+  "languages": [
+    "la"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 1907,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-gaudeamus-la-001",
+        "title": {
+          "en": "Gaudeamus igitur (traditional Latin)",
+          "la": "Gaudeamus igitur"
+        },
+        "creators": [
+          "Traditional (Latin academic song)"
+        ],
+        "languages": [
+          "la"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 3,
+        "summary": {
+          "en": "Traditional public-domain Latin academic song (selected verses)."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-gaudeamus-la-001-txt",
+        "work_id": "skybrary-pd-gaudeamus-la-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 522,
+        "sha256": "f0d6f7715b2a9f66cd428c7488529f2fac9b0a7e5ea8b542d1fefcea96175adc",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "f0d6f7715b2a9f66cd428c7488529f2fac9b0a7e5ea8b542d1fefcea96175adc"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1385,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 522,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": false,
+  "icon": "education"
+}
