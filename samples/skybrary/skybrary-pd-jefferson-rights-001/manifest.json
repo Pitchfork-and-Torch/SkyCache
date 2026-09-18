@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-jefferson-rights-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Rights literacy: Declaration of Independence (US, public domain)"
+  },
+  "summary": {
+    "en": "Opening of the US Declaration for civics literacy packs."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2637,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-jefferson-rights-001",
+        "title": {
+          "en": "Rights literacy: Declaration of Independence (US, public domain)"
+        },
+        "creators": [
+          "United States Continental Congress (1776)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "civics",
+          "history_pd",
+          "heritage",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Opening of the US Declaration for civics literacy packs."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-jefferson-rights-001-txt",
+        "work_id": "skybrary-pd-jefferson-rights-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 855,
+        "sha256": "ac299eb9c74b64482f4fa4139a3bcd6bc397144aa161d8ec10c6a51bd619b848",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "ac299eb9c74b64482f4fa4139a3bcd6bc397144aa161d8ec10c6a51bd619b848"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1782,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 855,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "civics",
+    "history_pd",
+    "heritage",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
