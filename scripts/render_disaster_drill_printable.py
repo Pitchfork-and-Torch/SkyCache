@@ -51,10 +51,9 @@ def md_to_html(md: str) -> str:
     return "\n".join(out)
 
 
-def main() -> None:
-    md = MD.read_text(encoding="utf-8")
+def render_page(md: str) -> str:
     body = md_to_html(md)
-    page = f"""<!DOCTYPE html>
+    return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -86,15 +85,40 @@ li.chk {{ list-style: none; margin-left: 0; }}
 </body>
 </html>
 """
-    dests = [
-        ROOT / "docs" / "disaster-drill-printable.html",
-        Path.home() / "skycache-web" / "public" / "downloads" / "disaster-drill-printable.html",
-    ]
+
+
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+
+    ap = argparse.ArgumentParser(
+        description="Render docs/disaster-drill.md to partner-printable HTML"
+    )
+    ap.add_argument(
+        "--out",
+        type=Path,
+        default=ROOT / "docs" / "disaster-drill-printable.html",
+        help="In-repo (or other) destination HTML path",
+    )
+    ap.add_argument(
+        "--also-web",
+        type=Path,
+        default=None,
+        help="Optional extra copy (e.g. skycache-web public/downloads path). "
+        "Not written unless this flag is set.",
+    )
+    args = ap.parse_args(argv)
+
+    page = render_page(MD.read_text(encoding="utf-8"))
+    dests = [args.out]
+    if args.also_web is not None:
+        dests.append(args.also_web)
     for d in dests:
+        d = Path(d)
         d.parent.mkdir(parents=True, exist_ok=True)
         d.write_text(page, encoding="utf-8")
         print("wrote", d, d.stat().st_size)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
