@@ -1,0 +1,90 @@
+{
+  "id": "skybrary-pd-plato-apology-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Apology of Socrates - opening (Plato, Jowett PD)"
+  },
+  "summary": {
+    "en": "Public-domain Jowett translation excerpt for philosophy and civics literacy."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 6854,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-plato-apology-001",
+        "title": {
+          "en": "Apology of Socrates - opening (Plato, Jowett PD)"
+        },
+        "creators": [
+          "Plato",
+          "Benjamin Jowett (translator)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "history_pd",
+          "literacy",
+          "civics"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain Jowett translation excerpt for philosophy and civics literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-plato-apology-001-txt",
+        "work_id": "skybrary-pd-plato-apology-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2981,
+        "sha256": "ea1c66c44c7abeeb43f42f5c3e7975d18aac2bbac22b769d47a609c8adc2c7ce",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "ea1c66c44c7abeeb43f42f5c3e7975d18aac2bbac22b769d47a609c8adc2c7ce"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3873,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2981,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "history_pd",
+    "literacy",
+    "civics",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
