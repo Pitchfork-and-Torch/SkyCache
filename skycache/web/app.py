@@ -1260,10 +1260,14 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
         body = payload or {}
         out = body.get("out")
+        # Honor limit=0 (do not coerce via `or 50`).
+        _lim = body.get("limit", 50)
+        if _lim is None:
+            _lim = 50
         return dtn_export(
             data_dir=settings.data_dir,
             out_dir=Path(out) if out else settings.nexus_dir / "mule",
-            limit=int(body.get("limit") or 50),
+            limit=int(_lim),
         )
 
     @app.post("/api/dtn/import-mule")

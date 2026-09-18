@@ -444,7 +444,11 @@ def cmd_dtn(args: argparse.Namespace) -> int:
         return 0 if rep.get("ok") else 1
     if sub == "export":
         out = Path(args.out) if getattr(args, "out", None) else data_dir / "nexus" / "mule"
-        rep = dtn_export(data_dir=data_dir, out_dir=out, limit=int(getattr(args, "limit", 50) or 50))
+        # Honor --limit 0 (do not coerce via `or 50`).
+        _lim = getattr(args, "limit", 50)
+        if _lim is None:
+            _lim = 50
+        rep = dtn_export(data_dir=data_dir, out_dir=out, limit=int(_lim))
         print(json.dumps(rep, indent=2))
         return 0 if rep.get("ok") else 1
     if sub == "import":
