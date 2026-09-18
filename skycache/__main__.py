@@ -360,7 +360,8 @@ def cmd_gateway(args: argparse.Namespace) -> int:
         print(json.dumps({"presets": list_presets(), "banner": HONEST}, indent=2))
         return 0
     if sub == "receipts" or getattr(args, "receipts", False):
-        lim = int(getattr(args, "limit", 50) or 50)
+        # Honor --limit 0 (do not coerce via `or 50`).
+        lim = int(getattr(args, "limit", 50))
         print(json.dumps(gateway_receipts(data_dir=data_dir, limit=lim), indent=2))
         return 0
     if sub == "pull-preset":

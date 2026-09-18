@@ -122,7 +122,10 @@ class PullReceiptLog:
 
     def list_recent(self, limit: int = 50) -> list[dict[str, Any]]:
         entries = self._load()
-        return entries[-max(1, limit) :]
+        # Honor limit=0 (empty recent). max(1, limit) used to force one receipt.
+        if limit <= 0:
+            return []
+        return entries[-limit:]
 
     def summary(self) -> dict[str, Any]:
         entries = self._load()

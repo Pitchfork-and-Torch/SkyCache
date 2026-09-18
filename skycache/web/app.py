@@ -1224,7 +1224,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     async def gateway_api_receipts(limit: int = 50) -> dict[str, Any]:
         from skycache.nexus.gateway_ops import gateway_receipts
 
-        return gateway_receipts(data_dir=settings.data_dir, limit=int(limit or 50))
+        # Honor limit=0 (do not coerce via `or 50`).
+        return gateway_receipts(data_dir=settings.data_dir, limit=int(limit))
 
     @app.get("/api/capabilities/status")
     async def capabilities_ops_api_status() -> dict[str, Any]:
