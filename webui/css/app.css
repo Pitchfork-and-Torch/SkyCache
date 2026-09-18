@@ -1,0 +1,502 @@
+:root {
+  --bg: #0b1220;
+  --card: #121a2b;
+  --card-hover: #1a2540;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --radius: 16px;
+  --touch: 52px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100%;
+}
+body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 5rem;
+}
+
+header.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 18, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1e293b;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.brand .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+}
+.badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.chip {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #1e293b;
+  color: var(--muted);
+  border: 1px solid #334155;
+}
+.chip.ok { color: var(--ok); border-color: #065f46; }
+.chip.warn { color: var(--warn); border-color: #854d0e; }
+
+.legal-banner {
+  margin: 0.75rem 1rem 0;
+  padding: 0.65rem 0.8rem;
+  background: #1c1917;
+  border: 1px solid #44403c;
+  border-radius: 12px;
+  color: #d6d3d1;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.lang-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem 0;
+}
+.lang-row button {
+  min-height: 40px;
+  min-width: 44px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+.lang-row button.active {
+  background: #0369a1;
+  border-color: #38bdf8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+}
+@media (min-width: 560px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.cat-card, .item-card {
+  background: var(--card);
+  border: 1px solid #1e293b;
+  border-radius: var(--radius);
+  min-height: 110px;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+.cat-card:hover, .item-card:hover,
+.cat-card:focus-visible, .item-card:focus-visible {
+  background: var(--card-hover);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.cat-card:active, .item-card:active { transform: scale(0.98); }
+.cat-card .emoji { font-size: 2rem; line-height: 1; }
+.cat-card .label { font-weight: 700; font-size: 1.05rem; }
+.cat-card .count { color: var(--muted); font-size: 0.85rem; }
+
+.section-title {
+  padding: 0 1rem;
+  margin: 0.25rem 0 0;
+  font-size: 1.1rem;
+}
+.list { padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.65rem; }
+.item-card { min-height: var(--touch); width: 100%; }
+.item-card h3 { margin: 0; font-size: 1.05rem; }
+.item-card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.meta { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
+.meta .chip.stale { color: var(--warn); }
+.meta .chip.passport {
+  color: var(--accent);
+  border-color: #0e7490;
+  cursor: pointer;
+  font-weight: 600;
+}
+.meta .chip.passport.yes { color: var(--ok); border-color: #065f46; }
+.meta .chip.passport.no { color: var(--danger); border-color: #7f1d1d; }
+.meta .chip.passport.review { color: var(--warn); border-color: #854d0e; }
+
+.passport-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(2, 6, 23, 0.72);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+.passport-sheet-inner {
+  width: 100%;
+  max-width: 720px;
+  max-height: min(80vh, 560px);
+  overflow: auto;
+  background: var(--card);
+  border-top: 1px solid #334155;
+  border-radius: 16px 16px 0 0;
+  padding: 1rem 1rem 5.5rem;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.45);
+}
+.passport-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.passport-sheet-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.passport-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.passport-body .row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.4rem;
+  align-items: start;
+}
+.passport-body .row .k { color: var(--muted); font-size: 0.8rem; }
+.passport-body .row .v { word-break: break-word; }
+.passport-body .hash {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  color: #a5b4fc;
+}
+.passport-body .note {
+  margin: 0.25rem 0 0;
+  padding: 0.55rem 0.7rem;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+.toolbar button, .btn {
+  min-height: var(--touch);
+  padding: 0 1rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.primary { background: #0369a1; border-color: #38bdf8; }
+.btn.danger { background: #7f1d1d; border-color: #f87171; }
+
+footer.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(11, 18, 32, 0.95);
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+footer.app-footer a, footer.app-footer button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+footer.app-footer a.active, footer.app-footer button.active { color: var(--accent); }
+
+.hidden { display: none !important; }
+.admin-grid {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+.stat {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid #1e293b;
+}
+.stat h3 { margin: 0 0 0.35rem; font-size: 0.9rem; color: var(--muted); }
+.stat .value { font-size: 1.4rem; font-weight: 700; }
+.bar {
+  height: 10px;
+  background: #1e293b;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #eab308, #ef4444);
+}
+
+.tts-btn { font-size: 0.85rem; }
+
+/* - -  In-PWA Skybrary reader (Wave 1.A2) - -  */
+body.reader-mode #searchBox {
+  display: none;
+}
+body.reader-mode {
+  max-width: 48rem;
+}
+.reader-toolbar {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: rgba(11, 18, 32, 0.94);
+  backdrop-filter: blur(6px);
+}
+.reader-toolbar .btn {
+  min-height: 44px;
+  padding: 0 0.75rem;
+  font-size: 0.95rem;
+}
+.reader-legal {
+  margin: 0.5rem 1rem 0;
+  padding: 0.5rem 0.7rem;
+  background: #1c1917;
+  border: 1px solid #44403c;
+  border-radius: 10px;
+  color: #d6d3d1;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.reader-title {
+  margin: 0.85rem 1rem 0.25rem;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: #5eead4;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.reader-meta {
+  margin: 0 1rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.reader-progress-wrap {
+  height: 3px;
+  background: #1e293b;
+  margin: 0 1rem 0.75rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.reader-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.12s linear;
+}
+.reader-page-wrap {
+  margin: 0 1rem 0.5rem;
+}
+.reader-body {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.1rem;
+  background: var(--card);
+  border: 1px solid #1e293b;
+  border-radius: var(--radius);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: var(--reader-fs, 1.25rem);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: var(--text);
+  min-height: 12rem;
+}
+/* CSS multi-column paginated "book" mode (EPUB/HTML + long text) */
+.reader-page-wrap.paginate-on {
+  overflow: hidden;
+  height: min(70vh, 36rem);
+  border-radius: var(--radius);
+  border: 1px solid #1e293b;
+  background: var(--card);
+}
+.reader-page-wrap.paginate-on .reader-body {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  height: 100%;
+  min-height: 100%;
+  column-width: min(100%, 36rem);
+  column-gap: 2rem;
+  column-fill: auto;
+  overflow: hidden;
+  white-space: normal;
+  /* page turn via scrollLeft on the wrap */
+}
+.reader-page-wrap.paginate-on {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.reader-page-wrap.paginate-on .reader-body {
+  width: max-content;
+  max-width: none;
+  padding: 1.1rem 1.25rem;
+  /* each "page" is one viewport width of columns */
+  columns: min(100vw - 2rem, 36rem) 1;
+  column-gap: 1.5rem;
+  height: min(70vh, 36rem);
+}
+.reader-page-ind {
+  margin: 0 1rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+.reader-body.reader-html {
+  white-space: normal;
+}
+.reader-body.reader-html p { margin: 0 0 0.9em; }
+.reader-body.reader-html h1,
+.reader-body.reader-html h2,
+.reader-body.reader-html h3 {
+  color: #5eead4;
+  font-size: 1.15em;
+  margin: 1em 0 0.4em;
+}
+.reader-footer-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem 2rem;
+}
+.reader-footer-bar a.btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Phone-offline demo CTA (no cell plan; local hub Wi-Fi only) */
+.phone-demo-card {
+  margin: 0.75rem 1rem 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #0c4a6e 0%, #121a2b 70%);
+  border: 1px solid #0e7490;
+}
+.phone-demo-card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  color: #5eead4;
+}
+.phone-demo-card p {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.phone-demo-status {
+  color: #7dd3fc !important;
+  font-size: 0.85rem !important;
+}
+.phone-demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+}
+.phone-demo-actions .btn {
+  min-height: var(--touch);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-demo-actions a.btn.primary {
+  flex: 1 1 12rem;
+}
+
+.reader-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem 0.25rem;
+}
+.reader-chapters .chip {
+  cursor: pointer;
+  border: 1px solid var(--border, #334155);
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 2.25rem;
+}
+.reader-chapters .chip.active {
+  border-color: #2dd4bf;
+  color: #5eead4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
