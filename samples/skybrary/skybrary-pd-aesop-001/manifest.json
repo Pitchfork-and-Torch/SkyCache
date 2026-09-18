@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-aesop-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "The Fox and the Grapes (Aesop)"
+  },
+  "summary": {
+    "en": "Traditional public-domain fable for literacy demos (curated short sample)."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2343,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-aesop-001",
+        "title": {
+          "en": "The Fox and the Grapes (Aesop)"
+        },
+        "creators": [
+          "Aesop (traditional)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "fable"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Traditional public-domain fable for literacy demos (curated short sample)."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-aesop-001-txt",
+        "work_id": "skybrary-pd-aesop-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 753,
+        "sha256": "4f5e2cdf91c3c78af78eafe66d051eb42796e7b41a7631b07b29166a1d46e6ee",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "4f5e2cdf91c3c78af78eafe66d051eb42796e7b41a7631b07b29166a1d46e6ee"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1590,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 753,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "fable",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-pushkin-ru-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Ya vas lyubil (Pushkin)",
+    "ru": "Ya vas lyubil"
+  },
+  "summary": {
+    "en": "Public-domain Russian short poem (transliteration + note) for literacy demos."
+  },
+  "languages": [
+    "ru"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2219,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-pushkin-ru-001",
+        "title": {
+          "en": "Ya vas lyubil (Pushkin)",
+          "ru": "Ya vas lyubil"
+        },
+        "creators": [
+          "Alexander Pushkin"
+        ],
+        "languages": [
+          "ru"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "poetry",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain Russian short poem (transliteration + note) for literacy demos."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-pushkin-ru-001-txt",
+        "work_id": "skybrary-pd-pushkin-ru-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 699,
+        "sha256": "a76ec836b823a70f6ff4d465730401083d9d41411f55733a8f8a6a388cdcfda9",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "a76ec836b823a70f6ff4d465730401083d9d41411f55733a8f8a6a388cdcfda9"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1520,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 699,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "poetry",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

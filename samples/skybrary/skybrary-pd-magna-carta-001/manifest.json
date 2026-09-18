@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-magna-carta-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Magna Carta (1215) - selected clauses (PD English)"
+  },
+  "summary": {
+    "en": "Selected public-domain English clauses of Magna Carta for civics history."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 5717,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-magna-carta-001",
+        "title": {
+          "en": "Magna Carta (1215) - selected clauses (PD English)"
+        },
+        "creators": [
+          "English barons and King John (1215)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "civics",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Selected public-domain English clauses of Magna Carta for civics history."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-magna-carta-001-txt",
+        "work_id": "skybrary-pd-magna-carta-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2412,
+        "sha256": "585a0fb165812d7b8ea67a74aa8757eae100a6a68078de16c2156aee456ddc5e",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "585a0fb165812d7b8ea67a74aa8757eae100a6a68078de16c2156aee456ddc5e"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3305,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2412,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "civics",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

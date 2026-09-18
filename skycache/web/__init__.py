@@ -1,0 +1,3 @@
+from skycache.web.app import create_app
+
+__all__ = ["create_app"]

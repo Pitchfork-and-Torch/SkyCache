@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="stylesheet" href="/static/css/app.css" />
+  <title>SkyCache Admin</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">SC</div>
+      <div>SkyCache Admin</div>
+    </div>
+    <a class="btn" href="/">Portal</a>
+  </header>
+
+  <div class="legal-banner">
+    Nexus operator view. Store-and-forward + community mesh - not free commercial broadband.
+    Check local spectrum / Wi-Fi laws. Default PIN is for lab only - change it.
+  </div>
+
+  <div class="list" style="padding-top:1rem">
+    <label for="pin">Admin PIN</label>
+    <input id="pin" type="password" inputmode="numeric" value="2468"
+      style="min-height:48px;padding:0.6rem;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#f1f5f9;width:100%" />
+    <button type="button" class="btn primary" id="loadBtn">Refresh status</button>
+    <button type="button" class="btn" id="disasterOn">Disaster mode ON</button>
+    <button type="button" class="btn" id="disasterOff">Disaster OFF</button>
+    <button type="button" class="btn" id="gatewayPull">Gateway pull</button>
+    <button type="button" class="btn" id="capsBtn">Legal capabilities</button>
+    <button type="button" class="btn primary" id="handoffBtn">Export handoff bundle</button>
+    <button type="button" class="btn" id="powerSheetBtn">Power maintainer sheet</button>
+    <button type="button" class="btn" id="licenseExportBtn">License inventory (print/PDF)</button>
+    <button type="button" class="btn" id="receiptsBtn">Gateway receipts</button>
+    <p id="err" style="color:#f87171"></p>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Gateway ethics (v0.8)</h2>
+    <p style="color:#94a3b8;font-size:0.9rem;margin:0 0 0.75rem">
+      Daily fair-share quota + open-mirror presets. Open content only - no commercial decrypt.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.75rem">
+      <label for="quotaMb" style="color:#e2e8f0">Daily quota MB</label>
+      <input id="quotaMb" type="number" min="0" max="100000" value="500"
+        style="width:7rem;min-height:44px;padding:0.5rem;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#f1f5f9" />
+      <button type="button" class="btn primary" id="quotaBtn">Set quota</button>
+    </div>
+    <pre id="gatewayEthics" style="background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.8rem;max-height:12rem"></pre>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Phone / USB handoff</h2>
+    <p style="color:#94a3b8;font-size:0.9rem;margin:0 0 0.75rem">
+      One-button file mule for open packages + DTN outbox. Copy to phone/USB - not a live Bluetooth stack.
+    </p>
+    <div id="handoffResult" style="display:none;background:#121a2b;padding:1rem;border-radius:12px">
+      <p style="margin:0 0 0.5rem;color:#e2e8f0"><strong>Bundle path (USB / SD)</strong></p>
+      <code id="handoffPath" style="display:block;word-break:break-all;color:#38bdf8;font-size:0.85rem;margin-bottom:0.75rem"></code>
+      <p style="margin:0 0 0.5rem;color:#e2e8f0"><strong>Copy to phone (same Wi-Fi)</strong></p>
+      <code id="handoffUrl" style="display:block;word-break:break-all;color:#a7f3d0;font-size:0.85rem;margin-bottom:0.5rem"></code>
+      <code id="handoffUrlPath" style="display:block;word-break:break-all;color:#94a3b8;font-size:0.8rem;margin-bottom:0.75rem"></code>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.75rem">
+        <button type="button" class="btn" id="handoffCopyPath">Copy path</button>
+        <button type="button" class="btn" id="handoffCopyUrl">Copy URL</button>
+        <a class="btn" id="handoffOpen" href="#" target="_blank" rel="noopener">Open in browser</a>
+      </div>
+      <p id="handoffMeta" style="color:#94a3b8;font-size:0.85rem;margin:0 0 0.75rem"></p>
+      <div id="handoffQrWrap" style="text-align:center;padding:0.5rem 0">
+        <canvas id="handoffQr" width="200" height="200"
+          style="background:#fff;border-radius:8px;display:none;image-rendering:pixelated;max-width:100%"></canvas>
+        <p id="handoffQrHint" style="color:#64748b;font-size:0.8rem;margin:0.5rem 0 0"></p>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Legal capability matrix</h2>
+    <pre id="caps" style="background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.8rem;max-height:16rem"></pre>
+  </div>
+
+  <div class="admin-grid" id="stats"></div>
+  <div class="list">
+    <h2 class="section-title">Mesh topology</h2>
+    <pre id="mesh" style="background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.85rem"></pre>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Gateway / DTN / fabric / traffic</h2>
+    <pre id="nexus" style="background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.85rem"></pre>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Power map  |  licenses  |  ratings</h2>
+    <pre id="ops" style="background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.85rem"></pre>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Plugins</h2>
+    <pre id="plugins" style="background:#121a2b;padding:1rem;border-radius:12px;overflow:auto;color:#94a3b8;font-size:0.85rem"></pre>
+  </div>
+
+  <script>
+    function pinHeaders() {
+      return { 'X-Admin-Pin': document.getElementById('pin').value, 'Content-Type': 'application/json' };
+    }
+    async function load() {
+      const err = document.getElementById('err');
+      err.textContent = '';
+      try {
+        const res = await fetch('/api/admin/status', { headers: pinHeaders() });
+        if (!res.ok) throw new Error(await res.text());
+        const s = await res.json();
+        const freePct = s.disk.total ? Math.round((s.disk.free / s.disk.total) * 100) : 0;
+        const peers = (s.mesh && s.mesh.peers) ? s.mesh.peers.length : 0;
+        document.getElementById('stats').innerHTML = `
+          <div class="stat"><h3>Power</h3><div class="value">${s.power.percent ?? ' - '}%  |  ${s.power.mode}</div>
+            <div class="bar"><span style="width:${s.power.percent ?? 0}%"></span></div></div>
+          <div class="stat"><h3>Storage free</h3><div class="value">${freePct}%</div>
+            <div class="bar"><span style="width:${freePct}%;background:#38bdf8"></span></div>
+            <p style="color:#94a3b8;font-size:0.85rem">${s.packages} packages  |  ${(s.content_bytes/1e6).toFixed(1)} MB content</p></div>
+          <div class="stat"><h3>Signal</h3><div class="value">${s.signal.quality ?? ' - '}</div>
+            <p style="color:#94a3b8">${s.signal.message || ''}</p></div>
+          <div class="stat"><h3>Nexus node</h3><div class="value">${s.node_id || ' - '}</div>
+            <p style="color:#94a3b8">SSID ${s.hotspot_ssid}  |  mesh peers ${peers}  |  disaster ${s.disaster_mode ? 'ON' : 'off'}</p></div>
+          <div class="stat"><h3>Gateway</h3><div class="value">${(s.gateway && s.gateway.present) ? s.gateway.kind : 'none'}</div>
+            <p style="color:#94a3b8">quota left ${(s.gateway && s.gateway.remaining_quota != null) ? Math.round(s.gateway.remaining_quota/1e6) + ' MB' : ' - '}</p></div>
+          <div class="stat"><h3>Legal</h3><p style="color:#d6d3d1">${s.legal}</p></div>
+        `;
+        document.getElementById('mesh').textContent = JSON.stringify(s.mesh, null, 2);
+        document.getElementById('nexus').textContent = JSON.stringify({
+          fabric: s.fabric,
+          nexus_dtn: s.nexus_dtn,
+          gateway: s.gateway,
+          traffic: s.traffic,
+          control_plane: s.control_plane,
+          spectrum: s.spectrum,
+        }, null, 2);
+        try {
+          const pg = await fetch('/api/power/guidance');
+          if (pg.ok) {
+            const g = await pg.json();
+            const ecoH = g.hours_until_eco && g.hours_until_eco.hours;
+            const tip = (g.tips && g.tips[0]) || (g.hours_until_eco && g.hours_until_eco.message) || '';
+            document.getElementById('gatewayEthics').textContent = JSON.stringify({
+              power_guidance: {
+                percent: g.percent,
+                mode: g.mode,
+                hours_until_eco: ecoH,
+                tip,
+              },
+              gateway_quota_mb: s.gateway && s.gateway.daily_quota_mb,
+              remaining_quota_mb: s.gateway && s.gateway.remaining_quota_mb,
+              open_mirror_presets: (s.gateway && s.gateway.open_mirror_presets) || [],
+              receipts_count: (s.gateway && s.gateway.receipts && s.gateway.receipts.count) || 0,
+            }, null, 2);
+            if (s.gateway && s.gateway.daily_quota_mb != null) {
+              document.getElementById('quotaMb').value = Math.round(s.gateway.daily_quota_mb);
+            }
+          }
+        } catch (_) { /* optional */ }
+        document.getElementById('ops').textContent = JSON.stringify({
+          power_map: s.power_map,
+          licenses: s.licenses && {
+            package_count: s.licenses.package_count,
+            by_license: s.licenses.by_license,
+            unknown_or_blank: s.licenses.unknown_or_blank,
+          },
+          top_rated: s.top_rated,
+          boards_recent: s.boards_recent,
+        }, null, 2);
+        document.getElementById('plugins').textContent = JSON.stringify(s.plugins, null, 2);
+      } catch (e) {
+        err.textContent = String(e.message || e);
+      }
+    }
+    async function setDisaster(enabled) {
+      const err = document.getElementById('err');
+      try {
+        const res = await fetch('/api/admin/disaster', {
+          method: 'POST', headers: pinHeaders(), body: JSON.stringify({ enabled }),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        await load();
+      } catch (e) { err.textContent = String(e.message || e); }
+    }
+    async function gatewayPull() {
+      const err = document.getElementById('err');
+      try {
+        const res = await fetch('/api/admin/gateway/pull', { method: 'POST', headers: pinHeaders() });
+        if (!res.ok) throw new Error(await res.text());
+        await load();
+      } catch (e) { err.textContent = String(e.message || e); }
+    }
+    async function exportHandoff() {
+      const err = document.getElementById('err');
+      const box = document.getElementById('handoffResult');
+      err.textContent = '';
+      try {
+        const res = await fetch('/api/admin/handoff', {
+          method: 'POST',
+          headers: pinHeaders(),
+          body: JSON.stringify({}),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        const j = await res.json();
+        const absUrl = new URL(j.url_path || '/', window.location.origin).href;
+        document.getElementById('handoffPath').textContent = j.path || '';
+        document.getElementById('handoffUrl').textContent = absUrl;
+        document.getElementById('handoffUrlPath').textContent = j.url_path || '';
+        document.getElementById('handoffMeta').textContent = (j.package_count != null)
+          ? j.package_count + ' package(s): ' + ((j.packages || []).join(', ') || ' - ')
+          : '';
+        document.getElementById('handoffOpen').href = j.url_path || '#';
+        box.style.display = 'block';
+        drawHandoffQr(absUrl);
+      } catch (e) {
+        err.textContent = String(e.message || e);
+        box.style.display = 'none';
+      }
+    }
+    async function copyText(elId) {
+      const t = document.getElementById(elId).textContent || '';
+      try {
+        await navigator.clipboard.writeText(t);
+      } catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = t;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+    }
+    /**
+     * Optional offline QR for the handoff URL.
+     * Byte-mode QR with Reed-Solomon (public-domain style encoder, small payloads only).
+     * Path/URL copy always works even if QR cannot be drawn.
+     */
+    function drawHandoffQr(text) {
+      const canvas = document.getElementById('handoffQr');
+      const hint = document.getElementById('handoffQrHint');
+      try {
+        const mods = qrByteMatrix(text);
+        if (!mods) {
+          canvas.style.display = 'none';
+          hint.textContent = 'URL path shown above - copy to phone (USB or browser). QR skipped for long URLs.';
+          return;
+        }
+        const n = mods.length;
+        const quiet = 4;
+        const scale = Math.max(3, Math.floor(180 / (n + quiet * 2)));
+        const dim = (n + quiet * 2) * scale;
+        canvas.width = dim;
+        canvas.height = dim;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, dim, dim);
+        ctx.fillStyle = '#000000';
+        for (let y = 0; y < n; y++) {
+          for (let x = 0; x < n; x++) {
+            if (mods[y][x]) {
+              ctx.fillRect((x + quiet) * scale, (y + quiet) * scale, scale, scale);
+            }
+          }
+        }
+        canvas.style.display = 'inline-block';
+        hint.textContent = 'Optional QR: scan on phone (same Wi-Fi) to open the handoff folder.';
+      } catch (_) {
+        canvas.style.display = 'none';
+        hint.textContent = 'Copy the URL path above onto the phone.';
+      }
+    }
+    /* Minimal QR (byte mode). Good enough for short local hub URLs. */
+    function qrByteMatrix(text) {
+      const data = [];
+      for (let i = 0; i < text.length; i++) {
+        const c = text.charCodeAt(i);
+        if (c > 255) return null;
+        data.push(c);
+      }
+      // Version / capacity for ECC level M (data codewords before ECC)
+      // v2=28 data cw need ecc 16; keep simple single-block versions:
+      const plans = [
+        { v: 2, dataCw: 28, eccCw: 16 },
+        { v: 3, dataCw: 44, eccCw: 26 },
+        { v: 4, dataCw: 64, eccCw: 36 },
+        { v: 5, dataCw: 86, eccCw: 48 },
+      ];
+      // estimate needed codewords: mode(1/2) + len + data + terminator pad
+      const need = 1 + 1 + data.length + 2;
+      let plan = null;
+      for (const p of plans) {
+        if (need <= p.dataCw) { plan = p; break; }
+      }
+      if (!plan) return null;
+      return qrEncodeMatrix(data, plan.v, plan.dataCw, plan.eccCw);
+    }
+    function qrEncodeMatrix(data, version, dataCw, eccCw) {
+      const size = 17 + 4 * version;
+      const grid = Array.from({ length: size }, () => Array(size).fill(null));
+      function mark(x, y, v) {
+        if (x >= 0 && y >= 0 && x < size && y < size) grid[y][x] = !!v;
+      }
+      function finder(ox, oy) {
+        for (let y = -1; y <= 7; y++) {
+          for (let x = -1; x <= 7; x++) {
+            const xx = ox + x, yy = oy + y;
+            if (xx < 0 || yy < 0 || xx >= size || yy >= size) continue;
+            const border = x === -1 || y === -1 || x === 7 || y === 7;
+            const ring = x === 0 || y === 0 || x === 6 || y === 6;
+            const core = x >= 2 && x <= 4 && y >= 2 && y <= 4;
+            if (border) mark(xx, yy, false);
+            else mark(xx, yy, ring || core);
+          }
+        }
+      }
+      finder(0, 0);
+      finder(size - 7, 0);
+      finder(0, size - 7);
+      for (let i = 8; i < size - 8; i++) {
+        if (grid[6][i] === null) mark(i, 6, i % 2 === 0);
+        if (grid[i][6] === null) mark(6, i, i % 2 === 0);
+      }
+      mark(8, size - 8, true);
+      // alignment pattern for v2+
+      if (version >= 2) {
+        const positions = alignmentPositions(version);
+        for (const ay of positions) {
+          for (const ax of positions) {
+            if ((ax === 6 && ay === 6) || (ax === 6 && ay === size - 7) || (ax === size - 7 && ay === 6)) continue;
+            for (let dy = -2; dy <= 2; dy++) {
+              for (let dx = -2; dx <= 2; dx++) {
+                const dark = Math.max(Math.abs(dx), Math.abs(dy)) !== 1;
+                mark(ax + dx, ay + dy, dark);
+              }
+            }
+          }
+        }
+      }
+      // bit stream
+      const bits = [];
+      function put(val, len) {
+        for (let i = len - 1; i >= 0; i--) bits.push((val >>> i) & 1);
+      }
+      put(0b0100, 4);
+      put(data.length, 8);
+      for (const b of data) put(b, 8);
+      put(0, 4);
+      while (bits.length % 8) bits.push(0);
+      const codewords = [];
+      for (let i = 0; i < bits.length; i += 8) {
+        let v = 0;
+        for (let j = 0; j < 8; j++) v = (v << 1) | (bits[i + j] || 0);
+        codewords.push(v);
+      }
+      const pads = [0xec, 0x11];
+      let pi = 0;
+      while (codewords.length < dataCw) {
+        codewords.push(pads[pi & 1]);
+        pi++;
+      }
+      const ecc = rsBlock(codewords.slice(0, dataCw), eccCw);
+      const all = codewords.slice(0, dataCw).concat(ecc);
+      let bi = 0;
+      const total = all.length * 8;
+      function nextBit() {
+        if (bi >= total) return 0;
+        const i = bi++;
+        return (all[i >> 3] >>> (7 - (i & 7))) & 1;
+      }
+      let up = true;
+      for (let x = size - 1; x > 0; x -= 2) {
+        if (x === 6) x--;
+        for (let i = 0; i < size; i++) {
+          const y = up ? size - 1 - i : i;
+          for (let k = 0; k < 2; k++) {
+            const xx = x - k;
+            if (grid[y][xx] !== null) continue;
+            let dark = nextBit() === 1;
+            if (((xx + y) & 1) === 0) dark = !dark; // mask 0
+            grid[y][xx] = dark;
+          }
+        }
+        up = !up;
+      }
+      // format info: ECC M (01) + mask 0 (000) -> BCH known value 0x5412 XOR is built-in in table
+      // Correct format bits for ECC-M mask0: 0b101010000010010
+      const fmt = 0b101010000010010;
+      const coordsA = [[0,8],[1,8],[2,8],[3,8],[4,8],[5,8],[7,8],[8,8],[8,7],[8,5],[8,4],[8,3],[8,2],[8,1],[8,0]];
+      const coordsB = [[8,size-1],[8,size-2],[8,size-3],[8,size-4],[8,size-5],[8,size-6],[8,size-7],
+        [size-8,8],[size-7,8],[size-6,8],[size-5,8],[size-4,8],[size-3,8],[size-2,8],[size-1,8]];
+      for (let i = 0; i < 15; i++) {
+        const bit = ((fmt >> (14 - i)) & 1) === 1;
+        mark(coordsA[i][0], coordsA[i][1], bit);
+        mark(coordsB[i][0], coordsB[i][1], bit);
+      }
+      for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+          if (grid[y][x] === null) grid[y][x] = false;
+        }
+      }
+      return grid;
+    }
+    function alignmentPositions(version) {
+      // subset table
+      const table = {
+        2: [6, 18],
+        3: [6, 22],
+        4: [6, 26],
+        5: [6, 30],
+      };
+      return table[version] || [6];
+    }
+    function rsBlock(data, eccLen) {
+      const exp = new Array(512);
+      const log = new Array(256);
+      let x = 1;
+      for (let i = 0; i < 255; i++) {
+        exp[i] = x;
+        log[x] = i;
+        x <<= 1;
+        if (x & 0x100) x ^= 0x11d;
+      }
+      for (let i = 255; i < 512; i++) exp[i] = exp[i - 255];
+      function mul(a, b) { return (a && b) ? exp[log[a] + log[b]] : 0; }
+      let gen = [1];
+      for (let i = 0; i < eccLen; i++) {
+        const g = new Array(gen.length + 1).fill(0);
+        for (let j = 0; j < gen.length; j++) {
+          g[j] ^= gen[j];
+          g[j + 1] ^= mul(gen[j], exp[i]);
+        }
+        gen = g;
+      }
+      const out = new Array(eccLen).fill(0);
+      for (let i = 0; i < data.length; i++) {
+        const factor = data[i] ^ out[0];
+        out.shift();
+        out.push(0);
+        if (!factor) continue;
+        for (let j = 0; j < eccLen; j++) {
+          out[j] ^= mul(gen[j + 1] || 0, factor);
+        }
+      }
+      return out;
+    }
+    document.getElementById('loadBtn').addEventListener('click', load);
+    document.getElementById('disasterOn').addEventListener('click', () => setDisaster(true));
+    document.getElementById('disasterOff').addEventListener('click', () => setDisaster(false));
+    document.getElementById('gatewayPull').addEventListener('click', gatewayPull);
+    document.getElementById('handoffBtn').addEventListener('click', exportHandoff);
+    document.getElementById('handoffCopyPath').addEventListener('click', () => copyText('handoffPath'));
+    document.getElementById('handoffCopyUrl').addEventListener('click', () => copyText('handoffUrl'));
+    document.getElementById('powerSheetBtn').addEventListener('click', () => {
+      window.open('/api/power/maintainer-sheet', '_blank', 'noopener');
+    });
+    document.getElementById('licenseExportBtn').addEventListener('click', () => {
+      window.open('/api/licenses/export', '_blank', 'noopener');
+    });
+    document.getElementById('receiptsBtn').addEventListener('click', async () => {
+      const err = document.getElementById('err');
+      try {
+        const res = await fetch('/api/nexus/gateway/receipts');
+        if (!res.ok) throw new Error(await res.text());
+        document.getElementById('gatewayEthics').textContent = JSON.stringify(await res.json(), null, 2);
+      } catch (e) { err.textContent = String(e); }
+    });
+    document.getElementById('quotaBtn').addEventListener('click', async () => {
+      const err = document.getElementById('err');
+      err.textContent = '';
+      try {
+        const mb = parseInt(document.getElementById('quotaMb').value, 10);
+        const res = await fetch('/api/admin/gateway/quota', {
+          method: 'POST',
+          headers: pinHeaders(),
+          body: JSON.stringify({ daily_quota_mb: mb }),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        const j = await res.json();
+        document.getElementById('gatewayEthics').textContent = JSON.stringify(j, null, 2);
+      } catch (e) { err.textContent = String(e); }
+    });
+    document.getElementById('capsBtn').addEventListener('click', async () => {
+      try {
+        const r = await fetch('/api/capabilities');
+        document.getElementById('caps').textContent = JSON.stringify(await r.json(), null, 2);
+      } catch (e) { document.getElementById('err').textContent = String(e); }
+    });
+    fetch('/api/capabilities').then(r => r.json()).then(j => {
+      document.getElementById('caps').textContent = JSON.stringify(j, null, 2);
+    }).catch(() => {});
+    load();
+  </script>
+</body>
+</html>

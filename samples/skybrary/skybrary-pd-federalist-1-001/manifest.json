@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-federalist-1-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "The Federalist No. 1 (Alexander Hamilton)"
+  },
+  "summary": {
+    "en": "Public-domain founding essay introducing the Federalist Papers."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 7418,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-federalist-1-001",
+        "title": {
+          "en": "The Federalist No. 1 (Alexander Hamilton)"
+        },
+        "creators": [
+          "Alexander Hamilton"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "civics",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain founding essay introducing the Federalist Papers."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-federalist-1-001-txt",
+        "work_id": "skybrary-pd-federalist-1-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 3280,
+        "sha256": "082b17293d92ae34ae0a038375c949282c87f0e8c51951c056d0b03be3141626",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "082b17293d92ae34ae0a038375c949282c87f0e8c51951c056d0b03be3141626"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 4138,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 3280,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "civics",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
