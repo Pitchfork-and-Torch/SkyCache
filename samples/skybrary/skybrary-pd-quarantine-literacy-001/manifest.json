@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-quarantine-literacy-001",
+  "kind": "skybrary_text",
+  "priority_class": "emergency",
+  "title": {
+    "en": "Quarantine and isolation literacy (historical public-health summary)"
+  },
+  "summary": {
+    "en": "Historical community literacy on separating the sick - not a modern outbreak playbook."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2994,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-quarantine-literacy-001",
+        "title": {
+          "en": "Quarantine and isolation literacy (historical public-health summary)"
+        },
+        "creators": [
+          "Public-domain epidemic response literature (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "emergency",
+          "safety",
+          "history_pd"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Historical community literacy on separating the sick - not a modern outbreak playbook."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-quarantine-literacy-001-txt",
+        "work_id": "skybrary-pd-quarantine-literacy-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 1024,
+        "sha256": "a530f39f574925fa819f6e5bbf47e25653f595a6eb9ac518c8e65b7708f20e71",
+        "priority_class": "emergency",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "a530f39f574925fa819f6e5bbf47e25653f595a6eb9ac518c8e65b7708f20e71"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1970,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 1024,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "emergency",
+    "safety",
+    "history_pd",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}
