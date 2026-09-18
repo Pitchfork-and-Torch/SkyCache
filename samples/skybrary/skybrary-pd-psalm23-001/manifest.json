@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-psalm23-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Psalm 23 (King James Version)"
+  },
+  "summary": {
+    "en": "Public-domain KJV psalm often used in literacy and cultural heritage reading."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2329,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-psalm23-001",
+        "title": {
+          "en": "Psalm 23 (King James Version)"
+        },
+        "creators": [
+          "Biblical text (KJV public domain)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "heritage"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain KJV psalm often used in literacy and cultural heritage reading."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-psalm23-001-txt",
+        "work_id": "skybrary-pd-psalm23-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 740,
+        "sha256": "d82cfa4c10e6cf82a8df271fee0e1c7ca60ce9fa61d18e5f0d6a4808cac13268",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "d82cfa4c10e6cf82a8df271fee0e1c7ca60ce9fa61d18e5f0d6a4808cac13268"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1589,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 740,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "heritage",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-mental-rest-literacy-001",
+  "kind": "skybrary_text",
+  "priority_class": "health",
+  "title": {
+    "en": "Rest, grief, and helper stress literacy (historical community summary)"
+  },
+  "summary": {
+    "en": "Community dignity literacy for helpers after crisis - not psychotherapy."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2492,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-mental-rest-literacy-001",
+        "title": {
+          "en": "Rest, grief, and helper stress literacy (historical community summary)"
+        },
+        "creators": [
+          "Public-domain nursing and disaster community notes (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "emergency",
+          "safety"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Community dignity literacy for helpers after crisis - not psychotherapy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-mental-rest-literacy-001-txt",
+        "work_id": "skybrary-pd-mental-rest-literacy-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 767,
+        "sha256": "4327990606a91fe247ff51fd2ef6290d3872b995edb13b96b54bb0e4da3bfc34",
+        "priority_class": "health",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "4327990606a91fe247ff51fd2ef6290d3872b995edb13b96b54bb0e4da3bfc34"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1725,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 767,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "emergency",
+    "safety",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}
