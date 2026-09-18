@@ -1,0 +1,85 @@
+{
+  "id": "skybrary-pd-dickens-carol-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "A Christmas Carol - Stave One opening (Charles Dickens)"
+  },
+  "summary": {
+    "en": "Public-domain novel opening for literacy kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 6699,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-dickens-carol-001",
+        "title": {
+          "en": "A Christmas Carol - Stave One opening (Charles Dickens)"
+        },
+        "creators": [
+          "Charles Dickens"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain novel opening for literacy kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-dickens-carol-001-txt",
+        "work_id": "skybrary-pd-dickens-carol-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2908,
+        "sha256": "778fe29aa9ee33d5c1abbd0e274cd3587df1f7f3a75ed264f07e9dcd59894bf6",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "778fe29aa9ee33d5c1abbd0e274cd3587df1f7f3a75ed264f07e9dcd59894bf6"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3791,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2908,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

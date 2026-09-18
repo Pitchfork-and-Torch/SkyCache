@@ -1,0 +1,2 @@
+The local fixture fox text for Gutenberg catalog adapter tests.
+This is a tiny public-domain style sample for offline CI only.
