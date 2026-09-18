@@ -55,12 +55,15 @@ def list_field_log(data_dir: Path, *, limit: int = 50) -> list[dict[str, Any]]:
     path = log_path(data_dir)
     if not path.is_file():
         return []
+    # Honor limit=0 (empty list). max(1, limit) used to force one row.
+    if int(limit) <= 0:
+        return []
     rows: list[dict[str, Any]] = []
     try:
         lines = path.read_text(encoding="utf-8-sig").splitlines()
     except OSError:
         return []
-    for line in lines[-max(1, int(limit)) :]:
+    for line in lines[-int(limit) :]:
         line = line.strip()
         if not line:
             continue
