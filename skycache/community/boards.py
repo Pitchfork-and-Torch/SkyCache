@@ -100,7 +100,8 @@ class BoardStore:
         return self._row(row) if row else None
 
     def list_posts(self, board: str | None = None, limit: int = 50) -> list[dict[str, Any]]:
-        limit = max(1, min(int(limit), 200))
+        # Honor limit=0 (empty list). max(1, limit) used to force one post.
+        limit = max(0, min(int(limit), 200))
         if board:
             rows = self._conn.execute(
                 """
