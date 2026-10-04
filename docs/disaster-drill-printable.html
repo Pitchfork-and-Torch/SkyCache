@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SkyCache disaster mode drill playbook</title>
+<meta name="description" content="Partner printable: SkyCache disaster mode drill. Local mesh and mule - not free commercial broadband."/>
+<style>
+body { font-family: system-ui, Segoe UI, sans-serif; max-width: 44rem; margin: 0 auto; padding: 1.5rem; line-height: 1.5; }
+h1 { font-size: 1.6rem; }
+h2 { margin-top: 1.6rem; border-top: 1px solid #8883; padding-top: 0.8rem; }
+pre, pre.tbl { background: #1113; padding: 0.75rem; overflow-x: auto; font-size: 0.85rem; }
+blockquote { border-left: 4px solid #0d9488; margin: 1rem 0; padding: 0.25rem 0.75rem; }
+li.chk { list-style: none; margin-left: 0; }
+.banner { background: #0f766e22; border: 1px solid #0d9488; padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1.25rem; }
+@media print {
+  body { max-width: none; font-size: 11pt; }
+  .noprint { display: none; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<p class="noprint"><a href="https://skycache.jonbailey.xyz/disaster/">Disaster page</a>
+ · <a href="https://skycache.jonbailey.xyz/partners/">Partners</a>
+ · <a href="#" onclick="window.print();return false;">Print</a></p>
+<div class="banner"><strong>Partner printable drill</strong> - SkyCache disaster mode elevates emergency/health on local mesh + mule. Not free Starlink. Not medical advice. Not a complete archive.</div>
+<h1>Disaster mode drill playbook</h1>
+
+<p><strong>Audience:</strong> Local maintainers, NGO field leads, civil protection partners.  </p>
+<p><strong>Goal:</strong> Prove that a SkyCache Nexus fabric can <strong>elevate emergency/health content</strong>, <strong>move it by mule</strong>, and <strong>restore a second node</strong> - without claiming free commercial broadband or illegal RF.</p>
+
+<p><strong>Honest model (say this first):</strong></p>
+
+<blockquote>Disaster mode prioritizes **emergency and health** packages on the **local mesh** and store-and-forward path. It is **not** free Starlink, unlimited cellular, or satellite uplink. Mesh RF stays on **unlicensed Wi-Fi / regional ISM** only (operator verifies national rules).</blockquote>
+
+<p>Related: [<code>mesh-deployment.md</code>](mesh-deployment.md)  |  [<code>mesh-field-checklist.md</code>](mesh-field-checklist.md)  |  [<code>village-nexus-playbook.md</code>](village-nexus-playbook.md)  |  [<code>legal-ethics.md</code>](legal-ethics.md)</p>
+
+<hr/>
+
+<h2>What disaster mode actually does</h2>
+
+<pre class="tbl">| On | Off / never |</pre>
+<pre class="tbl">|----|-------------|</pre>
+<pre class="tbl">| Elevates **emergency** and **health** replication first | Does **not** open the public internet |</pre>
+<pre class="tbl">| Enqueues a coordination message on the DTN queue | Does **not** enable satellite TX |</pre>
+<pre class="tbl">| Floods high-priority packages across mesh peers (or sim) | Does **not** decrypt commercial services |</pre>
+<pre class="tbl">| Works with USB/phone **handoff mule** when mesh is down | Does **not** replace professional emergency services |</pre>
+
+<p>Admin toggle: <code>/admin</code> -&gt; <strong>Disaster mode ON/OFF</strong> (<code>POST /api/admin/disaster</code> with admin PIN).  </p>
+<p>Lab sim: <code>python -m skycache nexus sim --nodes 3 --disaster</code></p>
+
+<hr/>
+
+<h2>Prerequisites (before any drill)</h2>
+
+<p>1. <strong>Legal RF mode</strong> set and documented:</p>
+<p>   ```bash</p>
+<p>   export SKYCACHE_LEGAL_RF_MODE=ism_mesh   # typical village mesh</p>
+<p>   # or receive_only if radios are off and you only test USB mule</p>
+<p>   skycache capabilities</p>
+<p>   skycache nexus doctor</p>
+<p>   ```</p>
+<p>2. At least <strong>one healthy node</strong> with samples or real open packs:</p>
+<p>   ```bash</p>
+<p>   skycache init --load-samples</p>
+<p>   skycache status</p>
+<p>   ```</p>
+<p>3. Admin PIN <strong>changed</strong> from default; written in the site logbook (not on public posters).</p>
+<p>4. Optional second node (hardware or laptop with separate <code>data/</code> dir) for restore.</p>
+<p>5. USB stick or phone storage for handoff (FAT32/exFAT is fine for package folders).</p>
+<p>6. Paper logbook: date, operators, legal mode, pass/fail per step.</p>
+
+<p><strong>Never during a drill:</strong> jamming, pirate cellular BTS, commercial decrypt keywords, satellite uplink, or promising &quot;free internet restored.&quot;</p>
+
+<hr/>
+
+<h2>Lab path (no radios) - 15 minutes</h2>
+
+<p>Use this on a laptop before any partner field drill.</p>
+
+<pre><code>
+# From the SkyCache repo / install root
+python -m skycache nexus sim --nodes 3 --disaster
+python -m pytest tests/test_nexus.py -q
+</code></pre>
+
+<p><strong>Pass criteria:</strong></p>
+
+<li class="chk">&#9744; Command exits 0  </li>
+<li class="chk">&#9744; Package counts converge (e.g. multiple nodes share packages after gossip rounds)  </li>
+<li class="chk">&#9744; Stderr shows disaster mode enabled when `--disaster` is passed  </li>
+<li class="chk">&#9744; `skycache nexus doctor` still reports legal rails intact  </li>
+
+<p>Optional helper: <code>deploy/disaster-drill-sim.sh</code> (runs the sim + reminds operators to turn disaster <strong>off</strong> after real drills).</p>
+
+<hr/>
+
+<h2>Field path - full scripted drill</h2>
+
+<p>Run as a <strong>tabletop + hands-on</strong> exercise with two operators (Node A lead, Node B / mule runner). Time box: <strong>45 - 90 minutes</strong>.</p>
+
+<h3>Step 0 - Brief partners (5 min)</h3>
+
+<p>Read aloud:</p>
+
+<p>1. We serve <strong>local knowledge</strong> (checklists, health, maps, education) over community Wi-Fi.  </p>
+<p>2. Disaster mode <strong>prioritizes life-safety packs</strong>; it does not create internet.  </p>
+<p>3. If mesh fails, we use <strong>USB or phone handoff</strong> (data mule).  </p>
+<p>4. All content must be <strong>open / authorized</strong>; no pirate streams.  </p>
+<p>5. After the drill, disaster mode goes <strong>OFF</strong> unless a real emergency continues.</p>
+
+<h3>Step 1 - Baseline on Node A</h3>
+
+<pre><code>
+export SKYCACHE_NODE_ID=clinic-west   # or school-hub, etc.
+export SKYCACHE_LEGAL_RF_MODE=ism_mesh
+export SKYCACHE_MESH_MODE=batman      # or sim if radios not ready
+skycache nexus doctor
+skycache mesh status --compliance
+skycache status
+</code></pre>
+
+<p>Phone test: join SSID -&gt; open portal -&gt; confirm Emergency / Health categories visible.</p>
+
+<p><strong>Pass:</strong> doctor OK, portal loads, at least one emergency-class package present (e.g. sample <code>emergency-checklist-001</code>).</p>
+
+<h3>Step 2 - Disaster mode ON</h3>
+
+<p><strong>UI:</strong> Admin (<code>/admin</code>) -&gt; enter PIN -&gt; <strong>Disaster mode ON</strong>.</p>
+
+<p><strong>API (optional):</strong></p>
+
+<pre><code>
+curl -s -X POST &quot;http://127.0.0.1:8080/api/admin/disaster&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-Admin-Pin: YOUR_PIN&quot; \
+  -d &#x27;{&quot;enabled&quot;: true}&#x27;
+</code></pre>
+
+<p><strong>Pass:</strong></p>
+
+<li class="chk">&#9744; Admin shows disaster ON  </li>
+<li class="chk">&#9744; Portal / nexus status reflects disaster (banner or mesh status)  </li>
+<li class="chk">&#9744; Operators understand this is **priority flood**, not internet  </li>
+
+<h3>Step 3 - Emergency flood (mesh or sim)</h3>
+
+<p><strong>With mesh peers up:</strong> wait one fabric gossip cycle (or trigger peer activity). Emergency/health packages should be requested/replicated before general/entertainment.</p>
+
+<p><strong>Without second radio peer:</strong> still exercise prioritization by confirming the node <strong>has</strong> emergency packs ready for mule (next step). Optionally run:</p>
+
+<pre><code>
+python -m skycache nexus sim --nodes 3 --disaster
+</code></pre>
+
+<p>on a laptop as the &quot;virtual flood&quot; demo for partners.</p>
+
+<p><strong>Pass:</strong></p>
+
+<li class="chk">&#9744; Emergency/health packages present on Node A  </li>
+<li class="chk">&#9744; DTN / nexus status shows activity or elevated disaster flag  </li>
+<li class="chk">&#9744; No attempt to enable forbidden RF modes  </li>
+
+<h3>Step 4 - Mule / handoff export (Node A -&gt; USB or phone)</h3>
+
+<p>Export a handoff bundle (packages + DTN mule JSON):</p>
+
+<pre><code>
+# Prefer emergency packs first when naming ids
+skycache handoff --out /media/usb/handoff \
+  --packages emergency-checklist-001,health-ors-001 \
+  --limit 20
+
+# Or default: first N packages under data/content
+skycache handoff --out /media/usb/handoff --limit 20
+</code></pre>
+
+<p>Safely eject the USB. Optionally copy the <code>skycache-handoff-*</code> folder to a phone over USB file transfer (user-consented; not &quot;tethering the village to 4G&quot;).</p>
+
+<p><strong>Pass:</strong></p>
+
+<li class="chk">&#9744; Bundle folder exists with `handoff.json` and `packages/`  </li>
+<li class="chk">&#9744; `handoff.json` lists copied package ids  </li>
+<li class="chk">&#9744; Legal note in meta understood by operators  </li>
+
+<h3>Step 5 - Second node restore (Node B)</h3>
+
+<p>On Node B (fresh or intentionally empty content):</p>
+
+<pre><code>
+export SKYCACHE_NODE_ID=school-east
+export SKYCACHE_LEGAL_RF_MODE=ism_mesh
+skycache init   # if not already
+# Copy package dirs from the handoff stick into drop or ingest path:
+skycache ingest /media/usb/handoff/skycache-handoff-*/packages/emergency-checklist-001
+# Or bulk: point ingest at the packages folder / each package dir
+skycache ingest /media/usb/handoff/skycache-handoff-XXXX/packages
+skycache watch --once   # if using drop/incoming workflow
+skycache verify data/content
+skycache status
+</code></pre>
+
+<p>Start portal if needed: <code>skycache serve --host 0.0.0.0 --port 8080</code>.</p>
+
+<p>Phone on Node B SSID: open emergency checklist and health sheet offline.</p>
+
+<p><strong>Pass:</strong></p>
+
+<li class="chk">&#9744; Package ids appear in Node B catalog  </li>
+<li class="chk">&#9744; Portal serves emergency content without uplink  </li>
+<li class="chk">&#9744; `skycache verify` reports OK (or documented bit-rot follow-up)  </li>
+
+<h3>Step 6 - Mesh rejoin (if two radios available)</h3>
+
+<p>1. Bring both nodes onto the same unlicensed mesh (see [<code>mesh-deployment.md</code>](mesh-deployment.md)).  </p>
+<p>2. Confirm peers: <code>skycache mesh status</code> on each.  </p>
+<p>3. Leave disaster ON only for the exercise window; confirm additional missing emergency packs prefer flood order.  </p>
+<p>4. Document peer count and battery % in logbook.</p>
+
+<p><strong>Pass:</strong> both nodes list each other (or sim peers); content stays available if one radio drops (mule already proved).</p>
+
+<h3>Step 7 - Disaster mode OFF + debrief</h3>
+
+<pre><code>
+# Admin UI: Disaster OFF
+# or:
+curl -s -X POST &quot;http://127.0.0.1:8080/api/admin/disaster&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-Admin-Pin: YOUR_PIN&quot; \
+  -d &#x27;{&quot;enabled&quot;: false}&#x27;
+</code></pre>
+
+<p><strong>Debrief questions:</strong></p>
+
+<p>1. Who can turn disaster mode on without calling HQ?  </p>
+<p>2. Where is the spare USB mule stored?  </p>
+<p>3. What do we <strong>tell the community</strong> this system is / is not?  </p>
+<p>4. Any RF or power issue found? Log and schedule fix.  </p>
+<p>5. License inventory still complete for every pack moved?</p>
+
+<hr/>
+
+<h2>Partner checklist (civil protection / NGO)</h2>
+
+<p>Copy or print this section for after-action reports.</p>
+
+<h3>Legal &amp; messaging</h3>
+
+<li class="chk">&#9744; Staff can state: **local mesh + store-and-forward**, not free commercial satellite internet  </li>
+<li class="chk">&#9744; `SKYCACHE_LEGAL_RF_MODE` recorded (`receive_only` | `ism_mesh` | `ism_lora_control` | `hybrid_gateway` | `amateur_operator`)  </li>
+<li class="chk">&#9744; National Wi-Fi/ISM rules checked (name + date in logbook)  </li>
+<li class="chk">&#9744; No satellite TX, jamming, or commercial decrypt attempted  </li>
+<li class="chk">&#9744; Admin PIN not default; access limited to trained maintainers  </li>
+
+<h3>Technical proof points</h3>
+
+<li class="chk">&#9744; Disaster mode ON demonstrated  </li>
+<li class="chk">&#9744; Emergency/health content prioritized or present for flood  </li>
+<li class="chk">&#9744; Handoff mule exported to removable media  </li>
+<li class="chk">&#9744; Second node restored and serves packs offline  </li>
+<li class="chk">&#9744; Integrity check run (`skycache verify`)  </li>
+<li class="chk">&#9744; Disaster mode OFF after drill (unless real incident)  </li>
+
+<h3>Ops readiness</h3>
+
+<li class="chk">&#9744; Local maintainer completed [`training-local-maintainer.md`](training-local-maintainer.md) modules  </li>
+<li class="chk">&#9744; Spare USB labeled &quot;SkyCache mule - emergency first&quot;  </li>
+<li class="chk">&#9744; Solar/battery plan survives a multi-hour outage drill  </li>
+<li class="chk">&#9744; Content licenses inventoried for all packs used  </li>
+<li class="chk">&#9744; Next drill date scheduled (recommend quarterly)  </li>
+
+<h3>Explicit non-goals (sign-off)</h3>
+
+<li class="chk">&#9744; Partners agree the system **does not** replace ambulance, fire, or official public warning systems  </li>
+<li class="chk">&#9744; Partners agree gateway pulls (if any) stay on **open/authorized** content with **daily quota**  </li>
+<li class="chk">&#9744; Partners will not request illegal RF features from maintainers  </li>
+
+<p><strong>Drill lead:</strong> _________________ <strong>Date:</strong> ________ <strong>Site:</strong> _________________  </p>
+<p><strong>Legal mode:</strong> _________________ <strong>Result:</strong> PASS / PARTIAL / FAIL  </p>
+<p><strong>Notes:</strong> ________________________________________________________________</p>
+
+<hr/>
+
+<h2>Failure modes during drills (quick map)</h2>
+
+<pre class="tbl">| Symptom | Likely cause | What to do |</pre>
+<pre class="tbl">|---------|--------------|------------|</pre>
+<pre class="tbl">| Admin rejects disaster toggle | Wrong PIN / no admin header | Reset PIN process; use trained operator only |</pre>
+<pre class="tbl">| Handoff folder empty packages | Wrong `--packages` ids / empty content | `ls data/content`; `skycache init --load-samples` |</pre>
+<pre class="tbl">| Second node portal empty | Ingest path wrong | Ingest package **dirs** with `manifest.json`; run `watch --once` |</pre>
+<pre class="tbl">| Mesh peers zero | Radios/sim mode mismatch | See [`mesh-field-checklist.md`](mesh-field-checklist.md); fall back to USB mule |</pre>
+<pre class="tbl">| Doctor fails legal mode | Forbidden keyword or amateur without affirmation | Fix `SKYCACHE_LEGAL_RF_MODE`; never force illegal modes |</pre>
+<pre class="tbl">| Battery critical mid-drill | Undersized solar / ECO mode | Pause RF stress; complete mule-only path |</pre>
+
+<p>Full mesh failures: [<code>mesh-deployment.md</code>](mesh-deployment.md) § Failure modes.</p>
+
+<hr/>
+
+<h2>Frequency &amp; governance</h2>
+
+<pre class="tbl">| Cadence | Activity |</pre>
+<pre class="tbl">|---------|----------|</pre>
+<pre class="tbl">| After install | Lab sim + one full field drill |</pre>
+<pre class="tbl">| Quarterly | Steps 2 - 5 (ON -&gt; mule -&gt; restore -&gt; OFF) |</pre>
+<pre class="tbl">| After content kit change | Re-export mule; verify emergency packs still first |</pre>
+<pre class="tbl">| Real incident | Disaster ON by authority of site lead; OFF when stable; paper log of times |</pre>
+
+<hr/>
+
+<h2>Related commands (cheat sheet)</h2>
+
+<pre><code>
+skycache nexus doctor
+skycache capabilities
+skycache mesh status --compliance
+skycache nexus sim --nodes 3 --disaster
+skycache handoff --out data/handoff --packages emergency-checklist-001 --limit 20
+skycache ingest &lt;package-or-tree&gt;
+skycache verify data/content
+skycache status
+# Admin: /admin disaster ON|OFF
+</code></pre>
+<p class="noprint" style="margin-top:2rem;opacity:.7">Source: SkyCache docs/disaster-drill.md · https://skycache.jonbailey.xyz/</p>
+</body>
+</html>

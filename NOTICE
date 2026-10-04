@@ -1,0 +1,17 @@
+SkyCache
+Copyright 2026 SkyCache Contributors
+
+This product includes software developed for community information access
+in bandwidth-constrained environments.
+
+SkyCache is receive-only by design and only targets unencrypted, free-to-air,
+or openly licensed satellite signals and offline content packages.
+
+Third-party tools commonly used alongside SkyCache (not bundled unless noted):
+  - SatDump (satellite decoding)
+  - gr-satellites (amateur satellite telemetry)
+  - SoapySDR / RTL-SDR drivers
+  - Kiwix (offline ZIM content)
+  - hostapd / dnsmasq (local WiFi hotspot)
+
+Operators must comply with local spectrum and telecommunications law.

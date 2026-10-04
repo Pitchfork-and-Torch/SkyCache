@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-douglass-narrative-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Narrative of the Life of Frederick Douglass - Chapter I"
+  },
+  "summary": {
+    "en": "Public-domain autobiography opening for history, literacy, and human rights education."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 8622,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-douglass-narrative-001",
+        "title": {
+          "en": "Narrative of the Life of Frederick Douglass - Chapter I"
+        },
+        "creators": [
+          "Frederick Douglass"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "history_pd",
+          "literacy",
+          "civics",
+          "heritage"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain autobiography opening for history, literacy, and human rights education."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-douglass-narrative-001-txt",
+        "work_id": "skybrary-pd-douglass-narrative-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 3868,
+        "sha256": "94b039a204649f7ee4f727f114c7a7d132956f154d77dae2a9ea0a5b16cae9a5",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "94b039a204649f7ee4f727f114c7a7d132956f154d77dae2a9ea0a5b16cae9a5"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 4754,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 3868,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "history_pd",
+    "literacy",
+    "civics",
+    "heritage",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

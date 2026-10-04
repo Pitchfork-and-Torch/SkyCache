@@ -1,0 +1,89 @@
+{
+  "id": "skybrary-pd-mosquito-literacy-001",
+  "kind": "skybrary_text",
+  "priority_class": "health",
+  "title": {
+    "en": "Mosquito-borne illness literacy (historical community summary)"
+  },
+  "summary": {
+    "en": "Community literacy on mosquitoes and standing water - not malaria diagnosis."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2456,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-mosquito-literacy-001",
+        "title": {
+          "en": "Mosquito-borne illness literacy (historical community summary)"
+        },
+        "creators": [
+          "Public-domain tropical hygiene education (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "health_edu",
+          "emergency",
+          "safety",
+          "medicine"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Community literacy on mosquitoes and standing water - not malaria diagnosis."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-mosquito-literacy-001-txt",
+        "work_id": "skybrary-pd-mosquito-literacy-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 762,
+        "sha256": "172ed1765767fa7c6753c9c94cfa52450373fa7ef2e59cb20575e23b0db62adf",
+        "priority_class": "health",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "172ed1765767fa7c6753c9c94cfa52450373fa7ef2e59cb20575e23b0db62adf"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1694,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 762,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "health_edu",
+    "emergency",
+    "safety",
+    "medicine",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "health"
+}

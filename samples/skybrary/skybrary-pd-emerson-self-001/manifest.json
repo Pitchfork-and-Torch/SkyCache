@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-emerson-self-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Self-Reliance - excerpt (Ralph Waldo Emerson)"
+  },
+  "summary": {
+    "en": "Public-domain essay excerpt for literacy and civic thought kits."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 5145,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-emerson-self-001",
+        "title": {
+          "en": "Self-Reliance - excerpt (Ralph Waldo Emerson)"
+        },
+        "creators": [
+          "Ralph Waldo Emerson"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "civics"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain essay excerpt for literacy and civic thought kits."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-emerson-self-001-txt",
+        "work_id": "skybrary-pd-emerson-self-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2139,
+        "sha256": "8cf87c65cfcbbeb35999ed5d02edcc78f1e43a360b60e707a2cbb7aa89f43cbb",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "8cf87c65cfcbbeb35999ed5d02edcc78f1e43a360b60e707a2cbb7aa89f43cbb"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3006,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2139,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "civics",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

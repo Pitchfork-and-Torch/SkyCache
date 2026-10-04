@@ -1,0 +1,69 @@
+{
+  "schema": "skycache.mesh.dual_radio_matrix.v1",
+  "built_at": "2026-07-30T00:32:08Z",
+  "boards": [
+    {
+      "id": "rpi4-2gb",
+      "name": "Raspberry Pi 4 (2\u20134 GB)",
+      "mesh_radio": "USB Wi-Fi adapter (ath9k_htc / mt76 recommended)",
+      "client_radio": "onboard wlan0 or second USB",
+      "status": "primary_supported",
+      "notes": "Most common village BOM; dual USB radio for batman + hostapd"
+    },
+    {
+      "id": "rpi5",
+      "name": "Raspberry Pi 5",
+      "mesh_radio": "USB Wi-Fi (PCIe HAT optional later)",
+      "client_radio": "onboard or USB",
+      "status": "primary_supported",
+      "notes": "Same day-one script; watch 5 V power budget with dual radios"
+    },
+    {
+      "id": "rpi3b-plus",
+      "name": "Raspberry Pi 3B+",
+      "mesh_radio": "USB Wi-Fi (onboard often weak for mesh)",
+      "client_radio": "onboard wlan0",
+      "status": "supported_limited",
+      "notes": "1 GB RAM OK for portal; keep pack profiles small"
+    },
+    {
+      "id": "orange-pi-5",
+      "name": "Orange Pi 5 / similar RK3588",
+      "mesh_radio": "USB Wi-Fi",
+      "client_radio": "onboard if present",
+      "status": "community",
+      "notes": "Debian/Ubuntu images vary; verify batctl/kernel module"
+    },
+    {
+      "id": "openwrt-ap-pair",
+      "name": "OpenWrt dual AP + Pi Ethernet",
+      "mesh_radio": "OpenWrt batman-adv on APs",
+      "client_radio": "AP SSID for phones",
+      "status": "recommended_field",
+      "notes": "Preferred field topology: Pi on Ethernet, mesh on APs"
+    },
+    {
+      "id": "sim-laptop",
+      "name": "Laptop / CI sim (no RF)",
+      "mesh_radio": "sim",
+      "client_radio": "n/a",
+      "status": "always_green",
+      "notes": "skycache nexus validate --nodes 2|3 \u2014 zero hardware"
+    }
+  ],
+  "shared_validation": [
+    "DRY_RUN=1 bash deploy/mesh/batman-day-one.sh",
+    "skycache mesh day-one --write",
+    "sudo MESH_IF=\u2026 CLIENT_IF=\u2026 bash deploy/mesh/batman-day-one.sh",
+    "batctl n  (or OpenWrt batctl equivalent)",
+    "skycache nexus validate --nodes 2",
+    "Phone: join client SSID \u2192 portal Library"
+  ],
+  "video": {
+    "storyboard": "docs/mesh-dual-radio-validation.md",
+    "html": "media/dual-radio-validation/storyboard.html",
+    "ffmpeg_script": "media/dual-radio-validation/render-slideshow.sh",
+    "note": "Storyboard + optional FFmpeg slideshow covers all board models with shared steps; per-board notes in matrix JSON."
+  },
+  "legal": "Unlicensed mesh only. Not free commercial broadband. Operator verifies national spectrum rules per site."
+}

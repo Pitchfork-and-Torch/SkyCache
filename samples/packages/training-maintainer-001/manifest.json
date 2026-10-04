@@ -1,0 +1,21 @@
+{
+  "id": "training-maintainer-001",
+  "kind": "training",
+  "priority_class": "education",
+  "title": {"en": "Local maintainer training"},
+  "summary": {"en": "Half-day outline: power, portal, USB packs, honest limits, mesh basics."},
+  "languages": ["en"],
+  "received_at": "2026-07-26T00:00:00+00:00",
+  "freshness_hours": 8760,
+  "size_bytes": 1200,
+  "license": "operator_supplied",
+  "source": {
+    "type": "operator_authored",
+    "legal_note": "Community training material",
+    "plugin": "package_import"
+  },
+  "files": [{"path": "index.html", "mime": "text/html", "size_bytes": 1200, "role": "index"}],
+  "tags": ["training", "maintainer", "nexus"],
+  "pinned": true,
+  "icon": "education"
+}

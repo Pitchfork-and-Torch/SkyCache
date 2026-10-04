@@ -1,0 +1,16 @@
+[Unit]
+Description=SkyCache SatDump product watch (FTA weather auto-ingest)
+After=network-online.target
+
+[Service]
+Type=simple
+# Edit paths for the village node
+Environment=SKYCACHE_DATA_DIR=/var/lib/skycache
+Environment=SKYCACHE_SATDUMP_PRODUCTS=/var/lib/satdump/products
+ExecStart=/usr/bin/env skycache rx watch --dir ${SKYCACHE_SATDUMP_PRODUCTS} --data-dir ${SKYCACHE_DATA_DIR} --interval 30
+Restart=on-failure
+RestartSec=15
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=SkyCache Skybrary bit-rot integrity verify (open packs only)
+After=network-online.target
+
+[Service]
+Type=oneshot
+# Village node: run as the service user that owns the data dir
+ExecStart=/usr/bin/env skycache skybrary doctor --data-dir /var/lib/skycache --verify --record
+Nice=10
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=multi-user.target

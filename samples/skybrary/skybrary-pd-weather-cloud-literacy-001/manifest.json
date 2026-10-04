@@ -1,0 +1,91 @@
+{
+  "id": "skybrary-pd-weather-cloud-literacy-001",
+  "kind": "skybrary_text",
+  "priority_class": "weather",
+  "title": {
+    "en": "Cloud and weather literacy (observational primer)"
+  },
+  "summary": {
+    "en": "Basic cloud observation literacy for schools and farms."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2279,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-weather-cloud-literacy-001",
+        "title": {
+          "en": "Cloud and weather literacy (observational primer)"
+        },
+        "creators": [
+          "Public-domain meteorology primers (curated)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "weather",
+          "science",
+          "stem",
+          "literacy",
+          "safety"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Basic cloud observation literacy for schools and farms."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-weather-cloud-literacy-001-txt",
+        "work_id": "skybrary-pd-weather-cloud-literacy-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 690,
+        "sha256": "98dbcf8aa1a74dcdba8fa608cb2dd895bb4c121d7d527acb5c78054fbd88cc1c",
+        "priority_class": "weather",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "98dbcf8aa1a74dcdba8fa608cb2dd895bb4c121d7d527acb5c78054fbd88cc1c"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1589,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 690,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "weather",
+    "science",
+    "stem",
+    "literacy",
+    "safety",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

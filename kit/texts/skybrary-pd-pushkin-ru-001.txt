@@ -1,0 +1,18 @@
+Ya vas lyubil (I loved you)
+Alexander Pushkin (public domain)
+
+Transliterated Russian (for ASCII-safe offline kits):
+
+Ya vas lyubil: lyubov' eshche, byt' mozhet,
+V dushe moyei ugasla ne sovsem;
+No pust' ona vas bol'she ne trevozhit;
+Ya ne khochu pechalit' vas nichem.
+
+Ya vas lyubil bezmolvno, beznadezhno,
+To robost'yu, to revnost'yu tomim;
+Ya vas lyubil tak iskrenno, tak nezhno,
+Kak dai vam bog lyubimoi byt' drugim.
+
+Note: Cyrillic original is public domain (Pushkin d. 1837). This kit ships an ASCII transliteration so every SkyCache node can render it without font gaps. Operators may replace with full Cyrillic locally.
+
+[Public domain Russian (transliteration) - Skybrary multilingual pack.]

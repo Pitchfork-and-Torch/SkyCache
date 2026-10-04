@@ -1,0 +1,95 @@
+{
+  "id": "skybrary-pd-confucius-zh-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Analects - selected sayings (traditional)",
+    "zh": "Lunyu (selected)"
+  },
+  "summary": {
+    "en": "Public-domain English selections from the Analects for civics/heritage literacy."
+  },
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2843,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-confucius-zh-001",
+        "title": {
+          "en": "Analects - selected sayings (traditional)",
+          "zh": "Lunyu (selected)"
+        },
+        "creators": [
+          "Confucian tradition (public domain English)"
+        ],
+        "languages": [
+          "en",
+          "zh"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "civics",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 1,
+        "summary": {
+          "en": "Public-domain English selections from the Analects for civics/heritage literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-confucius-zh-001-txt",
+        "work_id": "skybrary-pd-confucius-zh-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 980,
+        "sha256": "51dcf5040591e92eba303bd41ae11bd72c2af22da156f1a22177bf5edba721c3",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "51dcf5040591e92eba303bd41ae11bd72c2af22da156f1a22177bf5edba721c3"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1863,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 980,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "civics",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

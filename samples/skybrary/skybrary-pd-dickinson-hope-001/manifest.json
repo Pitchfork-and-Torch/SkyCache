@@ -1,0 +1,87 @@
+{
+  "id": "skybrary-pd-dickinson-hope-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Hope is the thing with feathers (Emily Dickinson)"
+  },
+  "summary": {
+    "en": "Short public-domain poem for literacy packs."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 1793,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-dickinson-hope-001",
+        "title": {
+          "en": "Hope is the thing with feathers (Emily Dickinson)"
+        },
+        "creators": [
+          "Emily Dickinson"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "poetry"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Short public-domain poem for literacy packs."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-dickinson-hope-001-txt",
+        "work_id": "skybrary-pd-dickinson-hope-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 461,
+        "sha256": "8f69a35cddd4bbad3482663c24bf3b4fa9f3e99cfae5ccd8321fd2ce484814f0",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "8f69a35cddd4bbad3482663c24bf3b4fa9f3e99cfae5ccd8321fd2ce484814f0"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1332,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 461,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "poetry",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

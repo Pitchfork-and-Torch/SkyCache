@@ -1,0 +1,93 @@
+{
+  "id": "skybrary-pd-yoruba-proverbs-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "Yoruba proverbs (traditional selection)",
+    "yo": "Owe Yoruba (selected)"
+  },
+  "summary": {
+    "en": "Traditional Yoruba proverbs with English glosses for literacy and community training."
+  },
+  "languages": [
+    "yo",
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 2161,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-yoruba-proverbs-001",
+        "title": {
+          "en": "Yoruba proverbs (traditional selection)",
+          "yo": "Owe Yoruba (selected)"
+        },
+        "creators": [
+          "Traditional Yoruba proverbs"
+        ],
+        "languages": [
+          "yo",
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "literacy",
+          "heritage",
+          "multilingual"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Traditional Yoruba proverbs with English glosses for literacy and community training."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-yoruba-proverbs-001-txt",
+        "work_id": "skybrary-pd-yoruba-proverbs-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 649,
+        "sha256": "1b49a7bf5aeb49d2f5574e44dda813db3e35e5410c451190baf450202634f119",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "1b49a7bf5aeb49d2f5574e44dda813db3e35e5410c451190baf450202634f119"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 1512,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 649,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "literacy",
+    "heritage",
+    "multilingual",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}

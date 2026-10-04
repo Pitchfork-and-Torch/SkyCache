@@ -1,0 +1,88 @@
+{
+  "id": "skybrary-pd-dhammapada-001",
+  "kind": "skybrary_text",
+  "priority_class": "education",
+  "title": {
+    "en": "The Dhammapada - selected verses (Max Muller PD)"
+  },
+  "summary": {
+    "en": "Public-domain Max Muller translation excerpts for heritage literacy."
+  },
+  "languages": [
+    "en"
+  ],
+  "received_at": "2026-08-01T21:56:30.071534+00:00",
+  "freshness_hours": 87600,
+  "size_bytes": 5205,
+  "license": "public domain",
+  "source": {
+    "type": "skybrary_pd_sample",
+    "legal_note": "Public domain curated pack for Skybrary Live",
+    "plugin": "skybrary_sample",
+    "extra": {
+      "work": {
+        "work_id": "skybrary-pd-dhammapada-001",
+        "title": {
+          "en": "The Dhammapada - selected verses (Max Muller PD)"
+        },
+        "creators": [
+          "Buddhist tradition",
+          "F. Max Muller (translator)"
+        ],
+        "languages": [
+          "en"
+        ],
+        "subjects": [
+          "literature_pd",
+          "heritage",
+          "literacy"
+        ],
+        "era": null,
+        "license": "public domain",
+        "provenance": {
+          "source": "skybrary_curated_pd_sample",
+          "note": "Curated public-domain pack for Skybrary Live dual-access; not a complete corpus dump",
+          "retrieval_date": "2026-08-01"
+        },
+        "civilizational_tier": 2,
+        "summary": {
+          "en": "Public-domain Max Muller translation excerpts for heritage literacy."
+        }
+      },
+      "edition": {
+        "edition_id": "skybrary-pd-dhammapada-001-txt",
+        "work_id": "skybrary-pd-dhammapada-001",
+        "format": "txt",
+        "path": "work.txt",
+        "size_bytes": 2151,
+        "sha256": "b740d40cb9b8d6a333101f2b12d3777dd326b6e19efc7fcf871d9558b360200d",
+        "priority_class": "education",
+        "received_at": "2026-08-01T21:56:30.071534Z"
+      },
+      "sha256": "b740d40cb9b8d6a333101f2b12d3777dd326b6e19efc7fcf871d9558b360200d"
+    }
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "mime": "text/html",
+      "size_bytes": 3054,
+      "role": "index"
+    },
+    {
+      "path": "work.txt",
+      "mime": "text/plain",
+      "size_bytes": 2151,
+      "role": "payload"
+    }
+  ],
+  "tags": [
+    "literature_pd",
+    "heritage",
+    "literacy",
+    "skybrary",
+    "public-domain"
+  ],
+  "pinned": true,
+  "icon": "education"
+}
